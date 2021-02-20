@@ -1,0 +1,9 @@
+[user]
+	email = nazar.vinnichuk@tutanota.com
+	name = Nazar Vinnichuk
+[core]
+    editor = nvim
+[pull]
+	ff = only
+[push]
+	default = current

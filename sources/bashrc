@@ -1,0 +1,21 @@
+case $- in
+    *i*) ;;
+    *) return;;
+esac
+
+export HISTCONTROL=erasedups
+export HISTSIZE=-1
+
+shopt -s autocd
+shopt -s histappend
+
+bind -m vi 'o: "ddagit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "'
+bind -m vi '/: "dd\C-r"'
+bind -m vi '?: "\C-r"'
+bind -m vi 'Y: "A | xsel -bi\C-j"'
+bind -m vi 'TAB: "ifuck\C-j"'
+
+eval "$(thefuck --alias)"
+
+source "$(fzf-share)"/key-bindings.bash
+source "$(fzf-share)"/completion.bash
