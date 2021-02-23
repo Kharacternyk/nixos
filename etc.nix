@@ -3,6 +3,7 @@
         fzf
         git
         lf
+        man-pages
         mkpasswd
         neofetch
         pywal
