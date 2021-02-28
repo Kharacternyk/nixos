@@ -1,15 +1,18 @@
-{pkgs, ...}: {
+{lib, pkgs, ...}: {
     environment.systemPackages = with pkgs; [
+        alacritty
         mpv
         pulsemixer
         qutebrowser
         spotify
         tdesktop
-        termite
         zathura
         zeroad
         zoom-us
     ];
+    environment.etc = {
+        alacritty.source = ./sources/alacritty;
+    };
     services.xserver = {
         enable = true;
         layout = "us,ua";
@@ -31,7 +34,16 @@
     fonts = {
         enableDefaultFonts = false;
         fonts = with pkgs; [
-            ibm-plex
+            (let version = "5.1.3"; in fetchzip {
+                name = "ibm-plex-ttf-${version}";
+                url = "https://github.com/IBM/plex/releases/download/" +
+                      "v${version}/TrueType.zip";
+                postFetch = ''
+                    mkdir -p $out/share/fonts
+                    unzip -oj $downloadedFile "TrueType/*/*.ttf" -d $out/share/fonts/truetype
+                '';
+                sha256 = "0pgxn7sj6w0qq2h1n7pzxw2pl8zg376kgd3czsczafvwa6bqnb4r";
+            })
             noto-fonts-emoji
             noto-fonts-cjk
         ];
