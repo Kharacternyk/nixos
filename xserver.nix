@@ -10,6 +10,17 @@
         zathura
         zeroad
         zoom-us
+        (stdenv.mkDerivation rec {
+            pname = "bspwm-undo";
+            version = "0.1";
+            installPhase = "install -Dm755 ./ubspc.sh $out/bin/ubspc";
+            src = fetchFromGitHub {
+                owner = "Kharacternyk";
+                repo = pname;
+                rev = "v" + version;
+                sha256 = "1399mb7lc5y1pwjz48c8rhx6cdj8859lqxx9wv9i2zzj6d04k2ni";
+            };
+        })
     ];
     environment.etc = {
         alacritty.source = ./sources/alacritty;
