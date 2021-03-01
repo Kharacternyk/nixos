@@ -1,6 +1,7 @@
 {lib, pkgs, ...}: {
     environment.systemPackages = with pkgs; [
         alacritty
+        imv
         mpv
         pulsemixer
         qutebrowser
