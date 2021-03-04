@@ -10,16 +10,19 @@
         objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
     };
     programs.bash.promptInit = ''
+        BOLD="$(tput bold)"
+        RED="$(tput setaf 1)"
+        CYAN="$(tput setaf 6)"
+        RESET="$(tput sgr0)"
         PROMPT_COMMAND='
-        ECODE=$?
-        PROMPT_COLOR=6
-        [[ -n $VIRTUAL_ENV ]] && PROMPT_COLOR=2
-        [[ $ECODE != 0 ]] && PROMPT_COLOR=1
-        history -a
-        history -n'
-
-        PS1='\[$(tput setaf $PROMPT_COLOR)\]█◤\[$(tput sgr0)\]'
-        PS2='\[$(tput setaf $PROMPT_COLOR)\]█ \[$(tput sgr0)\]'
+            ECODE=$?
+            PROMPT_COLOR="$BOLD$CYAN"
+            [[ $ECODE != 0 ]] && PROMPT_COLOR="$BOLD$RED"
+            history -a
+            history -n
+        '
+        PS1='\[$PROMPT_COLOR\]\$ \[$RESET\]'
+        PS2='\[$PROMPT_COLOR\]> \[$RESET\]'
     '';
     programs.bash.interactiveShellInit = builtins.readFile ./sources/bashrc;
     programs.bash.vteIntegration = true;

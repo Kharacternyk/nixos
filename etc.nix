@@ -20,13 +20,10 @@
     environment.variables = {
         FZF_DEFAULT_OPTS = ''
             --bind=ctrl-l:accept,change:top
-            --prompt='█◤'
-            --marker='◤'
-            --pointer=' '
+            --prompt='/ '
             --info=hidden
-            --no-bold
-            --color fg:-1,bg:-1,hl:1,fg+:0,bg+:4,hl+:0
-            --color info:-1,prompt:4,spinner:1,marker:0
+            --color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1
+            --color prompt:4,spinner:4,marker:4,pointer:4
             --reverse
         '';
         NIX_SHELL_PRESERVE_PROMPT = "";
