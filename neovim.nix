@@ -13,6 +13,7 @@
                         easymotion
                         gruvbox-community
                         ultisnips
+                        undotree
                         vim-nix
                         vim-snippets
                         vimtex
