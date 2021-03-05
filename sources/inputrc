@@ -15,6 +15,6 @@ set enable-bracketed-paste on
 set colored-stats on
 
 set keymap vi-command
-"L": end-of-line
-"H": beginning-of-line
+L: end-of-line
+H: beginning-of-line
 set keymap vi-insert
