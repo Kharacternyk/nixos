@@ -1,28 +1,61 @@
 font:
-    size: 12.5
+  size: 12.5
 
-# Colors (Gruvbox light hard)
-colors:
-  primary:
-    background: '#f9f5d7'
-    foreground: '#3c3836'
+schemes:
+  zapysnyk: &zapysnyk
+    # Default colors
+    primary:
+      background: '0xeee8d5'
+      foreground: '0x424242'
 
-  normal:
-    black:   '#3c3836'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#f9f5d7'
+    # Normal colors
+    normal:
+      black:   '0xeee8d5'
+      red:     '0x7f0000'
+      green:   '0x005700'
+      yellow:  '0x673400'
+      blue:    '0x000099'
+      magenta: '0x5e005e'
+      cyan:    '0x004466'
+      white:   '0x424242'
 
-  bright:
-    black:   '#7c6f64'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
+    # Bright colors
+    bright:
+      black:   '0x858585'
+      red:     '0x7f0000'
+      green:   '0x005700'
+      yellow:  '0x673400'
+      blue:    '0x000099'
+      magenta: '0x5e005e'
+      cyan:    '0x004466'
+      white:   '0x424242'
+
+  tender: &tender
+    # Default colors
+    primary:
+      background: '#282828'
+      foreground: '#eeeeee'
+
+    # Normal colors
+    normal:
+      black:   '#282828'
+      red:     '#f43753'
+      green:   '#c9d05c'
+      yellow:  '#ffc24b'
+      blue:    '#b3deef'
+      magenta: '#d3b987'
+      cyan:    '#73cef4'
+      white:   '#eeeeee'
+
+    # Bright colors
+    bright:
+      black:   '#4c4c4c'
+      red:     '#f43753'
+      green:   '#c9d05c'
+      yellow:  '#ffc24b'
+      blue:    '#b3deef'
+      magenta: '#d3b987'
+      cyan:    '#73cef4'
+      white:   '#feffff'
+
+colors: *zapysnyk

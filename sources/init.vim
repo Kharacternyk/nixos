@@ -1,4 +1,3 @@
-set background=light
 set clipboard+=unnamedplus
 set expandtab
 set ignorecase
@@ -11,7 +10,6 @@ set smartcase
 set spell
 set spelllang=en,uk,de
 set tabstop=4
-set termguicolors
 
 set iminsert=0
 
@@ -20,8 +18,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-q>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-q>"
-let g:gruvbox_contrast_light="hard"
-let g:gruvbox_italic=1
+let g:python_highlight_all=1
 let g:suda_smart_edit=1
 let g:tex_flavor="latex"
 let mapleader=" "
@@ -48,13 +45,5 @@ ca H tab help
 ca M tab Man
 
 au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-au BufEnter *.asm setlocal syntax=fasm
-au BufEnter *.nix setlocal shiftwidth=4
 au TermOpen * setlocal nospell
 au TermOpen * startinsert
-au ColorScheme * hi SpellBad gui=undercurl guifg=none guisp=fg
-au ColorScheme * hi SpellCap gui=underline guifg=none guisp=fg
-au ColorScheme * hi SpellLocal gui=underline guifg=none guisp=fg
-au ColorScheme * hi SpellRare gui=underline guifg=none guisp=fg
-
-colorscheme gruvbox

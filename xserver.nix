@@ -23,7 +23,10 @@
         })
     ];
     environment.etc = {
-        alacritty.source = ./sources/alacritty;
+        alacritty= {
+            source = ./sources/alacritty;
+            mode = "0644";
+        };
     };
     services.xserver = {
         enable = true;
