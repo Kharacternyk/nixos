@@ -2,6 +2,7 @@
     environment.systemPackages = with pkgs; [
         fzf
         git
+        gitAndTools.pre-commit
         lf
         man-pages
         mkpasswd
