@@ -30,6 +30,25 @@
         NIX_SHELL_PRESERVE_PROMPT = "";
         LESSHISTFILE = "/dev/null";
     };
+    systemd = {
+        timers.collect-garbage = {
+            wantedBy = ["timers.target"];
+            timerConfig = {
+                Unit = "collect-garbage.service";
+                Persistent = "yes";
+                OnCalendar = "*-*-* 00:00:00";
+            };
+        };
+        services.collect-garbage = {
+            serviceConfig = {
+                Type = "oneshot";
+                Restart = "no";
+            };
+            script = ''
+                nix-collect-garbage --delete-older-than 3d
+            '';
+        };
+    };
     hardware.enableAllFirmware = true;
     nixpkgs.config.allowUnfree = true;
     documentation.dev.enable = true;
