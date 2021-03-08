@@ -1,28 +1,34 @@
 font:
     size: 12.5
 
-# Colors (Gruvbox light hard)
 colors:
   primary:
-    background: '#f9f5d7'
-    foreground: '#3c3836'
-
+    background: '#282828'
+    foreground: '#ebdbb2'
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  selection:
+    text:       CellBackground
+    background: CellForeground
   normal:
-    black:   '#3c3836'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#f9f5d7'
-
+    black:   '#282828'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
   bright:
-    black:   '#7c6f64'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
+    black:   '#282828'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
