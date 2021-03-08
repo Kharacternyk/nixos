@@ -51,6 +51,9 @@ highlight ErrorMsg       ctermfg=0    ctermbg=1
 " LaTeX
 highlight texZone        ctermfg=6    ctermbg=NONE
 
+" Python
+highlight pythonClassVar ctermfg=5
+
 " ===============
 " Plugin settings
 " ===============
