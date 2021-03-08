@@ -21,6 +21,9 @@
                 sha256 = "1399mb7lc5y1pwjz48c8rhx6cdj8859lqxx9wv9i2zzj6d04k2ni";
             };
         })
+        (writeShellScriptBin "chcolors" ''
+            sed -i 's/^colors:.*$/colors: \*'"$1"'/' /etc/alacritty
+        '')
     ];
     environment.etc = {
         alacritty= {
