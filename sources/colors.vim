@@ -5,51 +5,52 @@ set background=light
 " ================
 
 " Inverted stuff
-highlight Visual         ctermfg=NONE ctermbg=NONE cterm=inverse
+highlight Visual         ctermfg=none ctermbg=none cterm=inverse
 
 " Bold stuff
-highlight Search         ctermfg=NONE ctermbg=NONE cterm=bold
-highlight MatchParen     ctermfg=NONE ctermbg=NONE cterm=bold
+highlight Search         ctermfg=none ctermbg=none cterm=bold
+highlight MatchParen     ctermfg=none ctermbg=none cterm=bold
 
 " Underlined stuff
-highlight SpellBad       ctermfg=NONE ctermbg=NONE cterm=undercurl guisp=fg
-highlight SpellCap       ctermfg=NONE ctermbg=NONE cterm=underline guisp=fg
-highlight SpellLocal     ctermfg=NONE ctermbg=NONE cterm=underline guisp=fg
-highlight SpellRare      ctermfg=NONE ctermbg=NONE cterm=underline guisp=fg
+highlight SpellBad       ctermfg=none ctermbg=none cterm=undercurl guisp=fg
+highlight SpellCap       ctermfg=none ctermbg=none cterm=underline guisp=fg
+highlight SpellLocal     ctermfg=none ctermbg=none cterm=underline guisp=fg
+highlight SpellRare      ctermfg=none ctermbg=none cterm=underline guisp=fg
 
 " Crossed out stuff
-highlight Error          ctermfg=8    ctermbg=NONE cterm=strikethrough
+highlight Error          ctermfg=8    ctermbg=none cterm=strikethrough
 
 " Italic stuff
 highlight Comment        ctermfg=4                 cterm=italic
-highlight Todo           ctermfg=4    ctermbg=NONE cterm=italic
+highlight Todo           ctermfg=4    ctermbg=none cterm=italic
 
 " Custom colors
 highlight LineNr         ctermfg=8
-highlight ColorColumn    ctermfg=7    ctermbg=8
-highlight Folded         ctermfg=7    ctermbg=8
-highlight FoldColumn     ctermfg=7    ctermbg=8
-highlight SignColumn                  ctermbg=8
-highlight Pmenu          ctermfg=NONE ctermbg=NONE
-highlight PmenuSel       ctermfg=0    ctermbg=4
-highlight PmenuSbar                   ctermbg=NONE
+highlight ColorColumn    ctermfg=8    ctermbg=none cterm=inverse
+highlight Folded         ctermfg=8    ctermbg=none cterm=inverse
+highlight FoldColumn     ctermfg=8    ctermbg=none cterm=inverse
+highlight SignColumn     ctermfg=8    ctermbg=none cterm=inverse
+highlight Pmenu          ctermfg=none ctermbg=none
+highlight PmenuSel       ctermfg=none ctermbg=none    cterm=bold
+highlight PmenuSbar                   ctermbg=8
 highlight PmenuThumb                  ctermbg=4
 highlight CursorLineNr   ctermfg=3
-highlight Conceal        ctermfg=7    ctermbg=8
-highlight CursorColumn   ctermfg=7    ctermbg=8
+highlight Conceal        ctermfg=8    ctermbg=none
+highlight CursorColumn   ctermfg=8    ctermbg=none cterm=inverse
 highlight Statement      ctermfg=3
-highlight DiffAdd        ctermfg=2    ctermbg=0
-highlight DiffChange     ctermfg=3    ctermbg=0
-highlight DiffDelete     ctermfg=1    ctermbg=0
-highlight DiffText       ctermfg=7    ctermbg=0    cterm=NONE
-highlight ErrorMsg       ctermfg=0    ctermbg=1
+highlight DiffAdd        ctermfg=2    ctermbg=none
+highlight DiffChange     ctermfg=3    ctermbg=none
+highlight DiffDelete     ctermfg=1    ctermbg=none
+highlight DiffText       ctermfg=none ctermbg=none cterm=none
+highlight ErrorMsg       ctermfg=1    ctermbg=none cterm=inverse
+highlight TabLine        ctermfg=none ctermbg=none cterm=inverse
 
 " =================
 " Language settings
 " =================
 
 " LaTeX
-highlight texZone        ctermfg=6    ctermbg=NONE
+highlight texZone        ctermfg=6    ctermbg=none
 
 " Python
 highlight pythonClassVar ctermfg=5
@@ -62,4 +63,4 @@ highlight pythonClassVar ctermfg=5
 highlight EasyMotionTarget        ctermfg=1 cterm=bold
 highlight EasyMotionTarget2First  ctermfg=1 cterm=bold
 highlight EasyMotionTarget2Second ctermfg=8 cterm=bold
-highlight EasyMotionShade         ctermfg=8 cterm=NONE
+highlight EasyMotionShade         ctermfg=8 cterm=none

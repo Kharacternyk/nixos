@@ -10,14 +10,14 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '0xeee8d5'
+      black:   '0x424242'
       red:     '0x7f0000'
       green:   '0x005700'
       yellow:  '0x673400'
       blue:    '0x000099'
       magenta: '0x5e005e'
       cyan:    '0x004466'
-      white:   '0x424242'
+      white:   '0xeee8d5'
 
     # Bright colors
     bright:
@@ -28,7 +28,7 @@ schemes:
       blue:    '0x000099'
       magenta: '0x5e005e'
       cyan:    '0x004466'
-      white:   '0x424242'
+      white:   '0xeee8d5'
 
   tender: &tender
     # Default colors
