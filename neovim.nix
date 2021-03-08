@@ -12,8 +12,10 @@
                     start = [
                         easymotion
                         gruvbox-community
+                        sleuth
                         ultisnips
                         undotree
+                        vim-cpp-enhanced-highlight
                         vim-nix
                         vim-snippets
                         vimtex
@@ -25,6 +27,16 @@
                                 rev = "v0.3.0";
                                 sha256 = "01kys8q3gycxqf760ydq1k8wq20br" +
                                          "jvl1gxpl8j87jvnyx87kmnf";
+                            };
+                        })
+                        (pkgs.vimUtils.buildVimPlugin {
+                            name = "python-syntax";
+                            src = pkgs.fetchFromGitHub {
+                                owner = "vim-python";
+                                repo = "python-syntax";
+                                rev = "master";
+                                sha256 = "1w4yd25rnbhsps81agvq0kr3vcbif" +
+                                         "rlpb7h4z0vcgsx1nvmxy205";
                             };
                         })
                     ];
