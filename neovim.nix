@@ -11,7 +11,6 @@
                 packages.myPlugins = with pkgs.vimPlugins; {
                     start = [
                         easymotion
-                        gruvbox-community
                         sleuth
                         ultisnips
                         undotree
@@ -19,6 +18,16 @@
                         vim-nix
                         vim-snippets
                         vimtex
+                        (pkgs.vimUtils.buildVimPlugin {
+                            name = "gruvbox";
+                            src = pkgs.fetchFromGitHub {
+                                owner = "gruvbox-community";
+                                repo = "gruvbox";
+                                rev = "master";
+                                sha256 = "18ng4qk4wi56bq64hc7sw3dx299cn" +
+                                         "jcg0zghk9r39dpi5fv68d8h";
+                            };
+                        })
                         (pkgs.vimUtils.buildVimPlugin {
                             name = "suda";
                             src = pkgs.fetchFromGitHub {
