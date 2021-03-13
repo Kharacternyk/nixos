@@ -49,6 +49,10 @@
             '';
         };
     };
+    services.earlyoom = {
+        enable = true;
+        ignoreOOMScoreAdjust = true;
+    };
     hardware.enableAllFirmware = true;
     nixpkgs.config.allowUnfree = true;
     documentation.dev.enable = true;
