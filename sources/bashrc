@@ -10,8 +10,7 @@ shopt -s autocd
 shopt -s histappend
 
 bind -m vi 'o: "ddagit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "'
-bind -m vi '/: "dd\C-r"'
-bind -m vi '?: "\C-r"'
+bind -m vi '/: "\C-r"'
 bind -m vi 'Y: "A | xsel -bi\C-j"'
 bind -m vi 'TAB: "ddifuck\C-j"'
 
