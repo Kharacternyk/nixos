@@ -7,7 +7,6 @@
         man-pages
         mkpasswd
         neofetch
-        pywal
         ripgrep
         thefuck
         (let python-packages = packages: with packages; [
