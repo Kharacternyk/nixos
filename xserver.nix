@@ -28,8 +28,7 @@
   services.xserver = {
     enable = true;
     layout = "us,ua";
-    xkbOptions = "caps:swapescape,grp:ctrls_toggle," +
-      "compose:lctrl,ctrl:swap_lwin_lctl";
+    xkbOptions = "caps:swapescape,grp:ctrls_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
     windowManager.bspwm.enable = true;
   };
   services.picom = {
@@ -50,8 +49,7 @@
         let version = "5.1.3"; in
         fetchzip {
           name = "ibm-plex-ttf-${version}";
-          url = "https://github.com/IBM/plex/releases/download/" +
-            "v${version}/TrueType.zip";
+          url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
           postFetch = ''
             mkdir -p $out/share/fonts
             unzip -oj $downloadedFile "TrueType/*/*.ttf" -d $out/share/fonts/truetype
