@@ -5,12 +5,10 @@ set ignorecase
 set keymap=ukrainian-jcuken
 set laststatus=0
 set scrolloff=100
-set shiftwidth=4
 set shortmess+=I
 set smartcase
 set spell
 set spelllang=en,uk,de
-set tabstop=4
 set termguicolors
 
 set iminsert=0
@@ -50,9 +48,5 @@ ca M tab Man
 au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 au TermOpen * setlocal nospell
 au TermOpen * startinsert
-au ColorScheme * hi SpellBad gui=undercurl guifg=none guisp=fg
-au ColorScheme * hi SpellCap gui=underline guifg=none guisp=fg
-au ColorScheme * hi SpellLocal gui=underline guifg=none guisp=fg
-au ColorScheme * hi SpellRare gui=underline guifg=none guisp=fg
 
 colorscheme gruvbox
