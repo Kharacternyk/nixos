@@ -25,5 +25,4 @@
     PS2='\[$PROMPT_COLOR\]> \[$RESET\]'
   '';
   programs.bash.interactiveShellInit = builtins.readFile ./sources/bashrc;
-  programs.bash.vteIntegration = true;
 }

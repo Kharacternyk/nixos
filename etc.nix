@@ -57,7 +57,6 @@
   };
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
-  documentation.dev.enable = true;
   time.timeZone = "Europe/Kiev";
   i18n.defaultLocale = "en_US.UTF-8";
   location = {
