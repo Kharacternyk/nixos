@@ -29,7 +29,6 @@
       --color prompt:4,spinner:4,marker:4,pointer:4
       --reverse
     '';
-    NIX_SHELL_PRESERVE_PROMPT = "";
     LESSHISTFILE = "/dev/null";
   };
   systemd = {

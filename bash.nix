@@ -8,15 +8,20 @@
     diff = "diff --color=auto";
     ncdu = "ncdu --color=dark";
     objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
+    nix-shell = ''
+      nix-shell --command "$(declare -p PS1); export NIX_SHELL=1; return"
+    '';
   };
   programs.bash.promptInit = ''
     BOLD="$(tput bold)"
     RED="$(tput setaf 1)"
     CYAN="$(tput setaf 6)"
+    MAGENTA="$(tput setaf 5)"
     RESET="$(tput sgr0)"
     PROMPT_COMMAND='
         ECODE=$?
         PROMPT_COLOR="$BOLD$CYAN"
+        [[ -n $NIX_SHELL ]] && PROMPT_COLOR="$BOLD$MAGENTA"
         [[ $ECODE != 0 ]] && PROMPT_COLOR="$BOLD$RED"
         history -a
         history -n
