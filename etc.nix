@@ -9,7 +9,6 @@
     neofetch
     nixpkgs-fmt
     ripgrep
-    thefuck
     (
       let python-packages = packages: with packages; [
         pygments
