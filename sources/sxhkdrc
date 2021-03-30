@@ -1,0 +1,116 @@
+# Lauchers
+
+alt + semicolon
+    alacritty --config-file /etc/alacritty
+
+alt + shift + semicolon
+    alacritty --config-file /etc/alacritty -e lf
+
+alt + p
+    alacritty --config-file /etc/alacritty -e nvim
+
+alt + y
+    alacritty --config-file /etc/alacritty -e pulsemixer
+
+alt + u
+    qutebrowser
+
+alt + shift + u
+    telegram-desktop
+
+alt + ctrl + u
+    spotify
+
+alt + ctrl + shift + u
+    zoom
+
+alt + i
+    zathura
+
+alt + o
+    viter ghci -v0
+
+alt + p
+    viter python -q
+
+# Screenshots and screencasts
+
+alt + Return
+    cd .cache && mss
+
+alt + shift + Return
+    simplescreenrecorder
+
+# Reset
+
+alt + BackSpace
+    bspc wm -r; \
+    pkill -USR1 -x sxhkd
+
+ctrl + alt + BackSpace
+    bspc quit
+
+shift + alt + BackSpace
+    reboot
+
+shift + ctrl + alt + BackSpace
+    poweroff
+
+# BSPWM
+
+alt + apostrophe
+    ubspc close
+
+alt + shift + apostrophe
+    ubspc undo close
+
+alt + ctrl + apostrophe
+    bspc node -c
+
+alt + ctrl + {comma, period}
+    bspc node -t {floating, tiled}
+
+alt + m
+   bspc desktop -l next
+
+alt + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}.local
+
+alt + ctrl + shift + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+alt + {_, shift + }slash
+	bspc node -f @{parent,/}
+
+alt + {_, shift + }period
+	bspc node -f @{first,brother}
+
+alt + {_,shift + }space
+    bspc desktop -f {next,prev}.local
+
+alt + ctrl + {_,shift + }space
+    bspc desktop -b {next,prev}
+
+alt + {_,shift + }backslash
+    bspc monitor -f {next,prev}
+
+alt + comma
+    bspc monitor -a ''
+
+alt + shift + comma
+    bspc desktop -r
+
+alt + shift + m
+    bspc node -R 90
+
+alt + ctrl + m
+    bspc node -g sticky
+
+alt + {_,shift} + n
+    bspc node -d {next,prev}.local
+
+alt + ctrl + n
+    bspc node -m next
+
+alt + ctrl + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
