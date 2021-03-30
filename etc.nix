@@ -18,6 +18,7 @@
   environment.etc = {
     inputrc.source = ./sources/inputrc;
     gitconfig.source = ./sources/gitconfig;
+    "lf/lfrc".source = ./sources/lfrc;
   };
   environment.variables = {
     FZF_DEFAULT_OPTS = ''
