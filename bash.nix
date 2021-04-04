@@ -8,9 +8,6 @@
     diff = "diff --color=auto";
     ncdu = "ncdu --color=dark";
     objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
-    nix-shell = ''
-      nix-shell --command "$(declare -p PS1); export NIX_SHELL=1; return"
-    '';
   };
   programs.bash.promptInit = ''
     BOLD="$(tput bold)"
