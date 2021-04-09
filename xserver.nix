@@ -1,6 +1,7 @@
 { lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     alacritty
+    imagemagick
     imv
     mpv
     pulsemixer
