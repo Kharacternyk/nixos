@@ -1,6 +1,7 @@
 { lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     alacritty
+    graphviz
     imagemagick
     imv
     mpv
