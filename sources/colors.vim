@@ -21,6 +21,9 @@ hi! link structure statement
 hi! link preproc statement
 hi! link special statement
 hi! link underlined statement
+hi! link title statement
+hi! link htmltag statement
+hi! link htmlendtag statement
 
 hi! link pmenu visual
 hi! link pmenusbar visual
