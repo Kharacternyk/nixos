@@ -25,3 +25,7 @@ colors:
     magenta: '#8f3f71'
     cyan:    '#427b58'
     white:   '#fbf1c7'
+
+env:
+  # https://github.com/alacritty/alacritty/issues/1501
+  WINIT_X11_SCALE_FACTOR: '1.0'
