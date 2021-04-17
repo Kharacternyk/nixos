@@ -9,6 +9,7 @@ set shortmess+=I
 set smartcase
 set spell
 set spelllang=en,uk,de
+set termguicolors
 
 set iminsert=0
 
@@ -18,6 +19,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-q>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-q>"
 let g:gruvbox_italic=1
+let g:python_highlight_all=1
 let g:suda_smart_edit=1
 let g:tex_flavor="latex"
 let mapleader=" "
@@ -46,3 +48,5 @@ ca M tab Man
 au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 au TermOpen * setlocal nospell
 au TermOpen * startinsert
+
+colorscheme gruvbox

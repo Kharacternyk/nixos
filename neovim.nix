@@ -14,6 +14,7 @@
             sleuth
             ultisnips
             undotree
+            vim-cpp-enhanced-highlight
             vim-nix
             vim-snippets
             vimtex
@@ -35,10 +36,18 @@
                 sha256 = "01kys8q3gycxqf760ydq1k8wq20brjvl1gxpl8j87jvnyx87kmnf";
               };
             })
+            (pkgs.vimUtils.buildVimPlugin {
+              name = "python-syntax";
+              src = pkgs.fetchFromGitHub {
+                owner = "vim-python";
+                repo = "python-syntax";
+                rev = "master";
+                sha256 = "1w4yd25rnbhsps81agvq0kr3vcbifrlpb7h4z0vcgsx1nvmxy205";
+              };
+            })
           ];
         };
-        customRC = builtins.readFile ./sources/init.vim
-          + builtins.readFile ./sources/colors.vim;
+        customRC = builtins.readFile ./sources/init.vim;
       };
     })
     neovim-remote
