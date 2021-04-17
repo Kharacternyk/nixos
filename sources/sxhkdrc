@@ -1,16 +1,16 @@
 # Lauchers
 
 alt + semicolon
-    alacritty --config-file /etc/alacritty
+    alacritty --config-file /etc/alacritty.yaml
 
 alt + shift + semicolon
-    alacritty --config-file /etc/alacritty -e lf
+    alacritty --config-file /etc/alacritty.yaml -e lf
 
 alt + p
-    alacritty --config-file /etc/alacritty -e nvim
+    alacritty --config-file /etc/alacritty.yaml -e nvim
 
 alt + y
-    alacritty --config-file /etc/alacritty -e pulsemixer
+    alacritty --config-file /etc/alacritty.yaml -e pulsemixer
 
 alt + u
     qutebrowser

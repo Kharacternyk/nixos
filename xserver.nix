@@ -25,7 +25,7 @@
     })
   ];
   environment.etc = {
-    alacritty.source = ./sources/alacritty;
+    "alacritty.yaml".source = ./sources/alacritty.yaml;
     bspwmrc.source = ./sources/bspwmrc;
     bspwmrc.mode = "0755";
     sxhkdrc.source = ./sources/sxhkdrc;
