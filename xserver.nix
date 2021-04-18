@@ -29,6 +29,7 @@
     bspwmrc.source = ./sources/bspwmrc;
     bspwmrc.mode = "0755";
     sxhkdrc.source = ./sources/sxhkdrc;
+    zathurarc.source = ./sources/zathurarc;
   };
   services.xserver = {
     enable = true;

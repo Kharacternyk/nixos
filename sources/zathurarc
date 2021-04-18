@@ -1,0 +1,11 @@
+set font "monospace 12.5"
+set guioptions none
+set selection-clipboard clipboard
+set statusbar-home-tilde
+set sandbox none
+
+map <Space> scroll half-down
+map <S-Space> scroll half-up
+
+unmap q
+unmap [index] q
