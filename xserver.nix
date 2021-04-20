@@ -28,6 +28,7 @@
     "alacritty.yaml".source = ./sources/alacritty.yaml;
     bspwmrc.source = ./sources/bspwmrc;
     bspwmrc.mode = "0755";
+    "qutebrowser.py".source = ./sources/qutebrowser.py;
     sxhkdrc.source = ./sources/sxhkdrc;
     zathurarc.source = ./sources/zathurarc;
   };
