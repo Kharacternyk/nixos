@@ -10,7 +10,6 @@
     spotify
     tdesktop
     zathura
-    zeroad
     zoom-us
     (stdenv.mkDerivation rec {
       pname = "bspwm-undo";
