@@ -37,7 +37,7 @@
       timerConfig = {
         Unit = "collect-garbage.service";
         Persistent = "yes";
-        OnCalendar = "*-*-* 00:00:00";
+        OnCalendar = "Thu *-*-* 00:00:00";
       };
     };
     services.collect-garbage = {
@@ -46,7 +46,7 @@
         Restart = "no";
       };
       script = ''
-        ${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 3d
+        ${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 7d
       '';
     };
   };
