@@ -54,7 +54,6 @@
     enable = true;
     ignoreOOMScoreAdjust = true;
   };
-  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
   time.timeZone = "Europe/Kiev";
   i18n.defaultLocale = "en_US.UTF-8";
