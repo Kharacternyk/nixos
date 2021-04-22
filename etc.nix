@@ -22,7 +22,7 @@
   };
   environment.variables = {
     FZF_DEFAULT_OPTS = ''
-      --bind=ctrl-l:accept,change:top
+      --bind=change:top
       --prompt='/ '
       --info=hidden
       --color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1

@@ -29,10 +29,10 @@ let $GIT_EDITOR="nvr --remote-tab-wait"
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader><Leader> <Plug>(easymotion-repeat)
 
-noremap <silent><C-l> :nohlsearch<CR>
+noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
 
-noremap! <silent><C-l> <C-o>:nohlsearch<CR>
+noremap! <silent><C-_> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
 
