@@ -43,6 +43,8 @@ noremap! <C-Space> <C-^>
 au FileType tex map! <C-k> <Plug>(vimtex-delim-close)
 au FileType html,xml noremap! <C-k> </<C-x><C-o><Esc>==A
 
+vnoremap y ygv<Esc>
+
 ca H tab help
 ca M tab Man
 
