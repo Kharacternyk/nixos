@@ -18,10 +18,6 @@ au TermOpen * setlocal nospell
 au TermOpen * startinsert
 
 let g:EasyMotion_smartcase=1
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-q>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-q>"
 let g:gruvbox_italic=1
 let g:suda_smart_edit=1
 let g:tex_flavor="latex"

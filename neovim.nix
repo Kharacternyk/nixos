@@ -12,10 +12,8 @@
           start = [
             easymotion
             sleuth
-            ultisnips
             undotree
             vim-nix
-            vim-snippets
             vimtex
             (pkgs.vimUtils.buildVimPlugin {
               name = "gruvbox";
