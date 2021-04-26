@@ -13,6 +13,10 @@ set termguicolors
 
 set iminsert=0
 
+au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+au TermOpen * setlocal nospell
+au TermOpen * startinsert
+
 let g:EasyMotion_smartcase=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-q>"
@@ -31,21 +35,17 @@ map <Leader><Leader> <Plug>(easymotion-repeat)
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
+noremap H ^
+noremap L $
+noremap S qq
+noremap s @q
 
 noremap! <silent><C-_> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
 
-nnoremap H ^
-nnoremap L $
-nnoremap S qq
-nnoremap s @q
 
 ca H tab help
 ca M tab Man
-
-au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-au TermOpen * setlocal nospell
-au TermOpen * startinsert
 
 colorscheme gruvbox
