@@ -40,6 +40,8 @@ noremap! <silent><C-_> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
 
+au FileType tex map! <C-k> <Plug>(vimtex-delim-close)
+au FileType html,xml noremap! <C-k> </<C-x><C-o><Esc>==A
 
 ca H tab help
 ca M tab Man
