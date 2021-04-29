@@ -47,5 +47,6 @@ vnoremap y ygv<Esc>
 
 ca H tab help
 ca M tab Man
+ca W w
 
 colorscheme gruvbox
