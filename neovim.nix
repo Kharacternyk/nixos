@@ -21,7 +21,7 @@
                 owner = "gruvbox-community";
                 repo = "gruvbox";
                 rev = "master";
-                sha256 = "18ng4qk4wi56bq64hc7sw3dx299cnjcg0zghk9r39dpi5fv68d8h";
+                sha256 = "0y509alsjky51z6yzijfjh13lmj2na16wvwayzvf5nc19ls6adxk";
               };
             })
             (pkgs.vimUtils.buildVimPlugin {
