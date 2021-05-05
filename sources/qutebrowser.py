@@ -1,9 +1,6 @@
 config.load_autoconfig()
 
 config.bind(",", "download-open")
-config.bind("<Space>", "scroll-page 0 .5")
-config.bind("<Shift+Space>", "scroll-page 0 -.5")
-config.bind("<Ctrl+Space>", "fake-key <Space>")
 config.bind("J", "scroll-page 0 1")
 config.bind("K", "scroll-page 0 -1")
 config.bind("M", "spawn mpv {url}")
