@@ -9,6 +9,7 @@
     neofetch
     nixpkgs-fmt
     ripgrep
+    unzip
     (
       let python-packages = packages: with packages; [
         pygments
