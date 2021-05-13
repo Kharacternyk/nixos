@@ -16,6 +16,15 @@
             vim-nix
             vimtex
             (pkgs.vimUtils.buildVimPlugin {
+              name = "bullets";
+              src = pkgs.fetchFromGitHub {
+                owner = "dkarter";
+                repo = "bullets.vim";
+                rev = "1.8.0";
+                sha256 = "1gvv2ixq5qnxc546pr9qpn3z6h745q62aqf8rsavv5dvqajv68pp";
+              };
+            })
+            (pkgs.vimUtils.buildVimPlugin {
               name = "gruvbox";
               src = pkgs.fetchFromGitHub {
                 owner = "gruvbox-community";

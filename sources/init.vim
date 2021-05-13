@@ -36,6 +36,9 @@ noremap L $
 noremap S qq
 noremap s @q
 
+" To trigger the bullets.vim list completion
+map! <C-j> <CR>
+
 noremap! <silent><C-_> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
