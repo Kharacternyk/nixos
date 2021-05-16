@@ -34,6 +34,15 @@
               };
             })
             (pkgs.vimUtils.buildVimPlugin {
+              name = "jinja2-syntax";
+              src = pkgs.fetchFromGitHub {
+                owner = "Glench";
+                repo = "Vim-Jinja2-Syntax";
+                rev = "master";
+                sha256 = "1ss065b2psalli46bs3v13fhaplqydh13bg3jg3zr98wbdn70cws";
+              };
+            })
+            (pkgs.vimUtils.buildVimPlugin {
               name = "suda";
               src = pkgs.fetchFromGitHub {
                 owner = "lambdalisue";
