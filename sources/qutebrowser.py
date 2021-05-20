@@ -1,3 +1,10 @@
+import qutelaunch
+
+qutelaunch.init(config, c, exclude_patterns=[
+    "https?://(www.)?archlinux.org.*",
+    "https?://duckduckgo.com.*",
+])
+
 config.load_autoconfig()
 
 config.bind(",", "download-open")
