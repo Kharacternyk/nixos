@@ -3,6 +3,7 @@
     fzf
     git
     gitAndTools.pre-commit
+    killall
     lf
     man-pages
     mkpasswd
