@@ -4,6 +4,7 @@
     graphviz
     imagemagick
     imv
+    libreoffice
     mpv
     pulsemixer
     spotify
