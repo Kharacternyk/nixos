@@ -13,6 +13,7 @@
             easymotion
             sleuth
             undotree
+            vim-jsx-pretty
             vim-nix
             vimtex
             (pkgs.vimUtils.buildVimPlugin {
