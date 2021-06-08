@@ -1,4 +1,7 @@
 { lib, pkgs, ... }: {
+  imports = [
+    ./qutebrowser.nix
+  ];
   environment.systemPackages = with pkgs; [
     alacritty
     graphviz
@@ -22,29 +25,6 @@
         sha256 = "1399mb7lc5y1pwjz48c8rhx6cdj8859lqxx9wv9i2zzj6d04k2ni";
       };
     })
-    (qutebrowser.overridePythonAttrs (
-      old: {
-        propagatedBuildInputs = (old.propagatedBuildInputs) ++ [
-          (pkgs.python3Packages.buildPythonPackage {
-            name = "qutelaunch";
-            src = fetchFromGitHub {
-              owner = "Kharacternyk";
-              repo = "qutelaunch";
-              rev = "master";
-              sha256 = "0yj1ij1r291sjm3qf0pi2p3v2dhhx7z4rlylz3gisx5rc3nzxw81";
-            };
-            propagatedBuildInputs = with pkgs; [
-              python3Packages.jinja2
-            ];
-            nativeBuildInputs = with pkgs; [
-              python3Packages.pytest
-              python3Packages.hypothesis
-            ];
-          })
-        ];
-      }
-    )
-    )
   ];
   environment.etc = {
     "alacritty.yaml".source = ./sources/alacritty.yaml;

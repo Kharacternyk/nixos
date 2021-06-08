@@ -13,7 +13,7 @@ alt + y
     alacritty --config-file /etc/alacritty.yaml -e pulsemixer
 
 alt + u
-    qutebrowser
+    qb 127.0.0.1:42512/index.html
 
 alt + shift + u
     telegram-desktop
