@@ -1,6 +1,7 @@
 { ... }: {
   environment.shellAliases = {
     sudo = "sudo ";
+    btm = "btm --color=default-light";
     ls = "ls --color=auto -FA";
     grep = "grep --color=auto";
     fgrep = "fgrep --color=auto";

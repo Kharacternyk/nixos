@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    bottom
     fzf
     git
     gitAndTools.pre-commit
