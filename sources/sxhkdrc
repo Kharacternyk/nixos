@@ -73,6 +73,9 @@ alt + ctrl + apostrophe
 alt + ctrl + {comma, period}
     bspc node -t {floating, tiled}
 
+alt + ctrl + slash
+    bspc node -g hidden
+
 alt + m
     bspc desktop -l next
 
