@@ -37,7 +37,7 @@
               owner = "Glench";
               repo = "Vim-Jinja2-Syntax";
               rev = "master";
-              sha256 = "1ss065b2psalli46bs3v13fhaplqydh13bg3jg3zr98wbdn70cws";
+              sha256 = "13mfzsw3kr3r826wkpd3jhh1sy2j10hlj1bv8n8r01hpbngikfg7";
             };
           })
           (pkgs.vimUtils.buildVimPlugin {

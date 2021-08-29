@@ -8,7 +8,7 @@ let qutebrowser_with_qutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
           owner = "Kharacternyk";
           repo = "qutelaunch";
           rev = "master";
-          sha256 = "0xkx0dbwc72d97dhzrnbfsjq0dxk5zfi6bji4k9wc1r3fwsz9zjw";
+          sha256 = "1yqjfnqswsjqv26fxlj5hrfnd4cxv0x1bg219q1mykz5gmams8xd";
         };
         propagatedBuildInputs = with pkgs; [
           python3Packages.flask
