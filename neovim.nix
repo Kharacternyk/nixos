@@ -13,6 +13,7 @@
           vim-jsx-pretty
           vim-nix
           vimtex
+          plantuml-syntax
           (pkgs.vimUtils.buildVimPlugin {
             name = "bullets";
             src = pkgs.fetchFromGitHub {
