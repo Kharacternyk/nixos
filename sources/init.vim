@@ -5,6 +5,7 @@ set ignorecase
 set keymap=ukrainian-jcuken
 set laststatus=0
 set scrolloff=100
+set shiftwidth=4
 set shortmess+=I
 set smartcase
 set spell
