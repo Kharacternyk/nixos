@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let qutebrowser_with_qutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
+let qutebrowserWithQutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
   old: {
     propagatedBuildInputs = (old.propagatedBuildInputs) ++ [
       (pkgs.python3Packages.buildPythonPackage {
@@ -19,12 +19,12 @@ let qutebrowser_with_qutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
 )
 ); in
 let qb = pkgs.writeShellScriptBin "qb" ''
-  ${qutebrowser_with_qutelaunch}/share/qutebrowser/scripts/open_url_in_instance.sh "$@"
+  ${qutebrowserWithQutelaunch}/share/qutebrowser/scripts/open_url_in_instance.sh "$@"
 ''; in
 {
   environment.systemPackages = [
     pkgs.socat
-    qutebrowser_with_qutelaunch
+    qutebrowserWithQutelaunch
     qb
   ];
   environment.etc = {
