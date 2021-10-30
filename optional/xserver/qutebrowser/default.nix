@@ -27,4 +27,7 @@ let qb = pkgs.writeShellScriptBin "qb" ''
     qutebrowser_with_qutelaunch
     qb
   ];
+  environment.etc = {
+    "qutebrowser.py".source = ./qutebrowser.py;
+  };
 }

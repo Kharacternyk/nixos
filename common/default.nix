@@ -1,8 +1,29 @@
 { pkgs, ... }: {
+  imports = [
+    ./bash
+    ./neovim
+  ];
+  users.users.nazar = {
+    uid = 1000;
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "dialout"
+    ];
+  };
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   environment.systemPackages = with pkgs; [
     bottom
+    clang-tools
     entr
     fzf
+    gdb
     git
     gitAndTools.pre-commit
     killall
@@ -11,8 +32,10 @@
     mkpasswd
     neofetch
     nixpkgs-fmt
+    nodejs
     ripgrep
     unzip
+    valgrind
     (
       let python-packages = packages: with packages; [
         pygments
@@ -20,9 +43,9 @@
     )
   ];
   environment.etc = {
-    inputrc.source = ./sources/inputrc;
-    gitconfig.source = ./sources/gitconfig;
-    "lf/lfrc".source = ./sources/lfrc;
+    inputrc.source = ./inputrc;
+    gitconfig.source = ./gitconfig;
+    "lf/lfrc".source = ./lfrc;
   };
   environment.variables = {
     FZF_DEFAULT_OPTS = ''

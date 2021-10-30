@@ -1,6 +1,6 @@
 { lib, pkgs, ... }: {
   imports = [
-    ./qutebrowser.nix
+    ./qutebrowser
   ];
   environment.systemPackages = with pkgs; [
     alacritty
@@ -29,12 +29,11 @@
     })
   ];
   environment.etc = {
-    "alacritty.yaml".source = ./sources/alacritty.yaml;
-    bspwmrc.source = ./sources/bspwmrc;
+    "alacritty.yaml".source = ./alacritty.yaml;
+    bspwmrc.source = ./bspwmrc;
     bspwmrc.mode = "0755";
-    "qutebrowser.py".source = ./sources/qutebrowser.py;
-    sxhkdrc.source = ./sources/sxhkdrc;
-    zathurarc.source = ./sources/zathurarc;
+    sxhkdrc.source = ./sxhkdrc;
+    zathurarc.source = ./zathurarc;
   };
   services.xserver = {
     enable = true;

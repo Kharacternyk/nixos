@@ -52,7 +52,7 @@
           })
         ];
       };
-      customRC = builtins.readFile ./sources/init.vim;
+      customRC = builtins.readFile ./init.vim;
     };
   };
 }
