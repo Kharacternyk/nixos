@@ -13,6 +13,14 @@ bind -m vi '/: "\C-r"'
 
 source "$(fzf-share)"/key-bindings.bash
 
-nix-shell() {
-    command nix-shell "$@" --command "$(declare -p PS1); export NIX_SHELL=1; return"
+get() {
+    pkgs=""
+    for pkg in "$@"; do
+        if [[ $pkg == *#* ]]; then
+            pkgs+=" $pkg"
+        else
+            pkgs+=" nixpkgs#$pkg"
+        fi
+    done
+    nix shell$pkgs
 }

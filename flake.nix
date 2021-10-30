@@ -5,10 +5,7 @@
 
   outputs = { self, nixpkgs }:
     let inherit-nixpkgs = {
-      nix.registry = {
-        nixpkgs.flake = nixpkgs;
-        p.flake = nixpkgs;
-      };
+      nix.registry.nixpkgs.flake = nixpkgs;
     }; in
     {
       nixosConfigurations = {
