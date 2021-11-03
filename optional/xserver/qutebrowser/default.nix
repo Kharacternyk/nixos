@@ -22,12 +22,18 @@ let
   qb = pkgs.writeShellScriptBin "qb" ''
     ${qutebrowserWithQutelaunch}/share/qutebrowser/scripts/open_url_in_instance.sh "$@"
   '';
+  qbDesktop = pkgs.makeDesktopItem {
+    name = "qb";
+    desktopName = "Qutebrowser";
+    exec = "${qb}/bin/qb";
+  };
 in
 {
   environment.systemPackages = [
     pkgs.socat
     qutebrowserWithQutelaunch
     qb
+    qbDesktop
   ];
   environment.etc = {
     "qutebrowser.py".source = ./qutebrowser.py;

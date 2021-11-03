@@ -34,6 +34,7 @@
     bspwmrc.mode = "0755";
     sxhkdrc.source = ./sxhkdrc;
     zathurarc.source = ./zathurarc;
+    "xdg/mimeapps.list".source = ./mimeapps.list;
   };
   services.xserver = {
     enable = true;
