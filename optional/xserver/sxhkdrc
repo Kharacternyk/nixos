@@ -1,4 +1,4 @@
-# Lauchers
+# Launchers
 
 alt + semicolon
     alacritty --config-file /etc/alacritty.yaml
