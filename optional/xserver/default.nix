@@ -40,7 +40,10 @@
     enable = true;
     layout = "us,ua";
     xkbOptions = "caps:swapescape,grp:ctrls_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
-    displayManager.setupCommands = "${pkgs.xorg.setxkbmap}/bin/setxkbmap";
+    displayManager.setupCommands = ''
+      ${pkgs.xorg.setxkbmap}/bin/setxkbmap
+      ${pkgs.xorg.xset}/bin/xset -dpms
+    '';
     windowManager.bspwm = {
       enable = true;
       configFile = "/etc/bspwmrc";
