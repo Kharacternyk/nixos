@@ -6,6 +6,9 @@ set sandbox none
 
 map <Space> scroll half-down
 map <S-Space> scroll half-up
+map ; feedkeys ":blist<Tab>"
+map u feedkeys ":bdelete<Tab>"
+map b feedkeys ":bmark "
 
 unmap q
 unmap [index] q
