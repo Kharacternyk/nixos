@@ -7,6 +7,8 @@
     configure = {
       packages.myPlugins = with pkgs.vimPlugins; {
         start = [
+          coc-nvim
+          coc-tsserver
           easymotion
           sleuth
           undotree
