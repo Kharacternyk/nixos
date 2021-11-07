@@ -25,7 +25,7 @@ let
   qbDesktop = pkgs.makeDesktopItem {
     name = "qb";
     desktopName = "Qutebrowser";
-    exec = "${qb}/bin/qb";
+    exec = "${qb}/bin/qb %u";
   };
 in
 {
