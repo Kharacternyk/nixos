@@ -30,14 +30,13 @@ let $VISUAL="nvr -p"
 let $GIT_EDITOR="nvr --remote-tab-wait"
 
 map <Leader> <Plug>(easymotion-prefix)
-map <Leader><Leader> <Plug>(easymotion-repeat)
+map <Leader>; <Plug>(easymotion-repeat)
 
-nmap gd <Plug>(coc-definition)
-nmap gy <Plug>(coc-type-definition)
-nmap gi <Plug>(coc-implementation)
-nmap gw <Plug>(coc-references)
-nmap gr <Plug>(coc-rename)
-nmap gf <Plug>(coc-fix-current)
+nmap <Leader>d <Plug>(coc-definition)
+nmap <Leader>y <Plug>(coc-type-definition)
+nmap <Leader>i <Plug>(coc-implementation)
+nmap <Leader>r <Plug>(coc-rename)
+nmap <Leader><Leader> <Plug>(coc-fix-current)
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
