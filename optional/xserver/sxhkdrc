@@ -6,9 +6,6 @@ alt + semicolon
 alt + shift + semicolon
     alacritty --config-file /etc/alacritty.yaml -e lf
 
-alt + p
-    alacritty --config-file /etc/alacritty.yaml -e nvim
-
 alt + y
     alacritty --config-file /etc/alacritty.yaml -e pulsemixer
 
@@ -24,17 +21,14 @@ alt + shift + u
 alt + ctrl + u
     spotify
 
-alt + ctrl + shift + u
-    firefox
-
 alt + i
     zathura
 
 alt + o
-    viter ghci -v0
+    firefox
 
 alt + p
-    viter python -q
+    thunderbird
 
 # Screenshots and screencasts
 

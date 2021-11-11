@@ -14,6 +14,7 @@
     pulsemixer
     spotify
     tdesktop
+    thunderbird
     zathura
     zoom-us
     (stdenv.mkDerivation rec {
