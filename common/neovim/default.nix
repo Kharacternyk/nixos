@@ -33,7 +33,7 @@
               owner = "gruvbox-community";
               repo = "gruvbox";
               rev = "master";
-              sha256 = "0y509alsjky51z6yzijfjh13lmj2na16wvwayzvf5nc19ls6adxk";
+              sha256 = "RcgxyRVK+fllhW6wCcTouSzfHRWjmYtnmdvM2okRdM8=";
             };
           })
           (pkgs.vimUtils.buildVimPlugin {
@@ -50,8 +50,8 @@
             src = pkgs.fetchFromGitHub {
               owner = "lambdalisue";
               repo = "suda.vim";
-              rev = "v0.3.0";
-              sha256 = "01kys8q3gycxqf760ydq1k8wq20brjvl1gxpl8j87jvnyx87kmnf";
+              rev = "v0.3.2";
+              sha256 = "YfOYDHq9osVcujxY2Of7oYWNAw3RLf48nc9ys77rilg=";
             };
           })
         ];

@@ -62,7 +62,7 @@
     enableDefaultFonts = false;
     fonts = with pkgs; [
       (
-        let version = "5.1.3"; in
+        let version = "6.0.0"; in
         fetchzip {
           name = "ibm-plex-ttf-${version}";
           url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
@@ -70,7 +70,7 @@
             mkdir -p $out/share/fonts
             unzip -oj $downloadedFile "TrueType/*/*.ttf" -d $out/share/fonts/truetype
           '';
-          sha256 = "0pgxn7sj6w0qq2h1n7pzxw2pl8zg376kgd3czsczafvwa6bqnb4r";
+          sha256 = "I4i/wr901yu7qp6zglBqsUSRVcetr3I0MBh9KqcuiLc=";
         }
       )
       noto-fonts-emoji
