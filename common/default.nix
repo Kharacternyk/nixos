@@ -22,6 +22,7 @@
     bottom
     clang-tools
     entr
+    fasm-bin
     fzf
     gdb
     git
