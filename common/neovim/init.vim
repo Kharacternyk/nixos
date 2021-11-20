@@ -76,8 +76,10 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-au FileType tex map! <C-k> <Plug>(vimtex-delim-close)
-au FileType html,xml noremap! <C-k> </<C-x><C-o><Esc>==A
+au FileType tex map! <buffer> <C-k> <Plug>(vimtex-delim-close)
+au FileType html,xml noremap! <buffer> <C-k> </<C-x><C-o><Esc>==A
+au FileType fasm setlocal nospell
+au BufEnter *.asm setlocal filetype=fasm
 
 vnoremap y ygv<Esc>
 
