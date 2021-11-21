@@ -15,6 +15,7 @@
     spotify
     tdesktop
     thunderbird
+    xsel
     zathura
     zoom-us
     (stdenv.mkDerivation rec {
