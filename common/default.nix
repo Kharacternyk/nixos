@@ -58,6 +58,7 @@
       --reverse
     '';
     LESSHISTFILE = "/dev/null";
+    ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
   };
   systemd = {
     timers.collect-garbage = {
