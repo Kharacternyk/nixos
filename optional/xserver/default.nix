@@ -76,11 +76,16 @@
           sha256 = "I4i/wr901yu7qp6zglBqsUSRVcetr3I0MBh9KqcuiLc=";
         }
       )
+      (
+        nerdfonts.override {
+          fonts = [ "IBMPlexMono" ];
+        }
+      )
       noto-fonts-emoji
       noto-fonts-cjk
     ];
     fontconfig.defaultFonts = {
-      monospace = [ "IBM Plex Mono" ];
+      monospace = [ "Blex Mono Nerd Font Mono" ];
       serif = [ "IBM Plex Serif" ];
       sansSerif = [ "IBM Plex Sans" ];
     };
