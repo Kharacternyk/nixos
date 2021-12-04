@@ -1,5 +1,8 @@
 #!/bin/sh
 
+killall -q polybar
+polybar -c /etc/polybar.conf default & disown
+
 bspc config window_gap 8
 bspc config border_width 4
 bspc config pointer_modifier mod1

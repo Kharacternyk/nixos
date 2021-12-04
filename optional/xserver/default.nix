@@ -11,6 +11,7 @@
     libreoffice
     mpv
     plantuml
+    polybarFull
     pulsemixer
     spotify
     tdesktop
@@ -34,6 +35,7 @@
     "alacritty.yaml".source = ./alacritty.yaml;
     bspwmrc.source = ./bspwmrc;
     bspwmrc.mode = "0755";
+    "polybar.conf".source = ./polybar.conf;
     sxhkdrc.source = ./sxhkdrc;
     zathurarc.source = ./zathurarc;
     "xdg/mimeapps.list".source = ./mimeapps.list;
