@@ -64,14 +64,17 @@ alt + shift + apostrophe
 alt + ctrl + apostrophe
     bspc node -c
 
-alt + ctrl + comma
-    bspc node -t floating
-
 alt + ctrl + slash
     bspc node -g hidden
 
-alt + {_, shift + } m
-    bspc node -t {fullscreen,tiled}
+alt + m
+    bspc node -t tiled
+
+alt + shift + m
+    bspc node -t fullscreen
+
+alt + ctrl + m
+    bspc node -t floating
 
 alt + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}.local
@@ -100,7 +103,7 @@ alt + comma
 alt + shift + comma
     bspc desktop -r
 
-alt + shift + m
+alt + ctrl + period
     bspc node -R 90
 
 alt + {_,shift} + n
