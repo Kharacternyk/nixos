@@ -61,6 +61,12 @@ alt + apostrophe
 alt + shift + apostrophe
     ubspc undo close
 
+alt + comma
+    ubspc branch
+
+alt + shift + comma
+    bspc desktop -r
+
 alt + ctrl + apostrophe
     bspc node -c
 
@@ -96,12 +102,6 @@ alt + ctrl + {_,shift + }space
 
 alt + {_,shift + }backslash
     bspc monitor -f {next,prev}
-
-alt + comma
-    bspc monitor -a ''
-
-alt + shift + comma
-    bspc desktop -r
 
 alt + ctrl + period
     bspc node -R 90
