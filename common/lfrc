@@ -9,4 +9,4 @@ map q
 map D delete $fx
 
 cmd q quit
-cmd open $xdg-open $f
+cmd open $xdg-open "$f"
