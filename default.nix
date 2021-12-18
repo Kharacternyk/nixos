@@ -1,8 +1,6 @@
 nixpkgs:
 hostname:
-{ headless ? false
-,
-}:
+{ headless ? false }:
 let
   machineModule = ./machines + "/${hostname}/configuration.nix";
   commonModules = [
