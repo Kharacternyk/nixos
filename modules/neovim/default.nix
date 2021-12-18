@@ -59,4 +59,7 @@
       customRC = builtins.readFile ./init.vim;
     };
   };
+  environment.etc = {
+    inputrc.source = ./inputrc;
+  };
 }
