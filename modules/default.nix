@@ -27,6 +27,7 @@ let
         experimental-features = nix-command flakes
       '';
       registry.nixpkgs.flake = nixpkgs;
+      nixPath = [ ];
     };
     nixpkgs.config.allowUnfree = true;
   };
