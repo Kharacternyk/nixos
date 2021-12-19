@@ -1,15 +1,13 @@
-nixpkgs:
-hostname:
-{ headless ? false }:
+nixpkgs: hostname: { headless ? false }:
 let
-  machineModule = ./machines + "/${hostname}/configuration.nix";
+  machineModule = ../machines + "/${hostname}/configuration.nix";
   commonModules = [
-    ./modules/bash
-    ./modules/dev
-    ./modules/gc
-    ./modules/git
-    ./modules/neovim
-    ./modules/lf
+    ./bash
+    ./dev
+    ./gc
+    ./git
+    ./neovim
+    ./lf
     ({ pkgs, ... }: {
       users.users.nazar = {
         uid = 1000;
@@ -70,12 +68,12 @@ let
     })
   ];
   xserverModules = if headless then [ ] else [
-    ./modules/alacritty
-    ./modules/bspwm
-    ./modules/fonts
-    ./modules/qutebrowser
-    ./modules/texlive
-    ./modules/zathura
+    ./alacritty
+    ./bspwm
+    ./fonts
+    ./qutebrowser
+    ./texlive
+    ./zathura
     ({ pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         firefox
