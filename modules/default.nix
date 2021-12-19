@@ -30,6 +30,6 @@ let
     };
     nixpkgs.config.allowUnfree = true;
   };
-  machineModule = ../machines + "/${hostname}/configuration.nix";
+  hostModule = ../hosts + "/${hostname}/configuration.nix";
 in
-commonModules ++ xserverModules ++ [ machineModule nixModule ]
+commonModules ++ xserverModules ++ [ nixModule hostModule ]
