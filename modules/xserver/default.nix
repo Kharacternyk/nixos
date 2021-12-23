@@ -37,8 +37,12 @@
     };
     unclutter-xfixes.enable = true;
   };
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
   environment.etc."xdg/mimeapps.list".text = ''
     [Default Applications]
     x-scheme-handler/http=qb.desktop
