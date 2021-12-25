@@ -15,7 +15,6 @@
   environment.etc = {
     bspwmrc.source = ./bspwmrc;
     bspwmrc.mode = "0755";
-    "polybar.conf".source = ./polybar.conf;
     sxhkdrc.source = ./sxhkdrc;
   };
   services.xserver.windowManager.bspwm = {

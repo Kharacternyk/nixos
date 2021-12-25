@@ -15,6 +15,7 @@ let
     ./alacritty
     ./bspwm
     ./fonts
+    ./polybar
     ./qutebrowser
     ./texlive
     ./xserver
