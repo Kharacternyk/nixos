@@ -8,7 +8,7 @@ let
           src = fetchFromGitHub {
             owner = "Kharacternyk";
             repo = "qutelaunch";
-            rev = "master";
+            rev = "bd12034d5032aa1640119460ab62cdb4a75eddc2";
             sha256 = "1yqjfnqswsjqv26fxlj5hrfnd4cxv0x1bg219q1mykz5gmams8xd";
           };
           propagatedBuildInputs = with pkgs; [

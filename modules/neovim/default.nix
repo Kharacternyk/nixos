@@ -32,17 +32,8 @@
             src = pkgs.fetchFromGitHub {
               owner = "gruvbox-community";
               repo = "gruvbox";
-              rev = "master";
+              rev = "1f8500f033813fcc6f41f0fe366e27faa163f2c2";
               sha256 = "RcgxyRVK+fllhW6wCcTouSzfHRWjmYtnmdvM2okRdM8=";
-            };
-          })
-          (pkgs.vimUtils.buildVimPlugin {
-            name = "jinja2-syntax";
-            src = pkgs.fetchFromGitHub {
-              owner = "Glench";
-              repo = "Vim-Jinja2-Syntax";
-              rev = "master";
-              sha256 = "13mfzsw3kr3r826wkpd3jhh1sy2j10hlj1bv8n8r01hpbngikfg7";
             };
           })
           (pkgs.vimUtils.buildVimPlugin {
