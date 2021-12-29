@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ headless, pkgs, ... }: if headless then { } else {
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [

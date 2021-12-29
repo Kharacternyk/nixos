@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ headless, pkgs, ... }: if headless then { } else
 let
   qutebrowserWithQutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
     old: {
