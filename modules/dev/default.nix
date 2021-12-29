@@ -3,6 +3,7 @@
     clang-tools
     fasm-bin
     gdb
+    ghc
     nodejs
     valgrind
   ];

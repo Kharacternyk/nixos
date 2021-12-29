@@ -12,6 +12,7 @@
           coc-tsserver
           coc-vimtex
           easymotion
+          haskell-vim
           sleuth
           undotree
           vim-jsx-pretty
