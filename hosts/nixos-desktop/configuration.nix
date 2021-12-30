@@ -2,14 +2,7 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  networking = rec {
-    hostName = "nixos-desktop";
-    useDHCP = false;
-    interfaces.wlp2s0u1u4.useDHCP = false;
-    networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ ];
-    firewall.allowedUDPPorts = firewall.allowedTCPPorts;
-  };
+  networking.interfaces.wlp2s0u1u4.useDHCP = false;
   services.xserver = {
     xrandrHeads = [
       {
