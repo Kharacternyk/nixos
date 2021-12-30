@@ -5,7 +5,9 @@
       experimental-features = nix-command flakes
     '';
     registry.nixpkgs.flake = nixpkgs;
-    nixPath = [ ];
+    nixPath = [
+      "nixpkgs=${nixpkgs}"
+    ];
   };
   nixpkgs.config.allowUnfree = true;
 }
