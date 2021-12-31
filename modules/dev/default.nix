@@ -5,6 +5,7 @@
     gdb
     ghc
     nodejs
+    poetry
     valgrind
   ];
   environment.variables = {
