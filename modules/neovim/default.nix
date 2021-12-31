@@ -9,6 +9,7 @@
         start = [
           coc-css
           coc-nvim
+          coc-pyright
           coc-tsserver
           coc-vimtex
           easymotion
