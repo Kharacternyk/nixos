@@ -1,5 +1,8 @@
 { pkgs, ... }: {
+  virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
+    awscli
+    aws-sam-cli
     clang-tools
     fasm-bin
     gdb
