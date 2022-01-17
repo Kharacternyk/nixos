@@ -10,6 +10,7 @@
     nodejs
     poetry
     valgrind
+    yarn
   ];
   environment.variables = {
     ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
