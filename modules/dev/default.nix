@@ -4,6 +4,7 @@
     awscli
     aws-sam-cli
     clang-tools
+    dbeaver
     fasm-bin
     gdb
     ghc
