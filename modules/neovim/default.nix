@@ -7,6 +7,7 @@
     configure = {
       packages.myPlugins = with pkgs.vimPlugins; {
         start = [
+          coc-clangd
           coc-css
           coc-nvim
           coc-pyright
