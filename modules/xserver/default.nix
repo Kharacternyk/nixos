@@ -1,4 +1,4 @@
-{ headless, pkgs, ... }: if headless then { } else {
+{ headless, hardwareAcceleration, pkgs, ... }: if headless then { } else {
   environment.systemPackages = with pkgs; [
     firefox
     graphviz
@@ -25,7 +25,7 @@
       xkbOptions = "caps:swapescape,grp:ctrls_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
     };
     picom = {
-      enable = true;
+      enable = hardwareAcceleration;
       vSync = true;
       backend = "glx";
     };
@@ -49,4 +49,7 @@
     image/jpeg=imv.desktop;
     application/pdf=org.pwmt.zathura.desktop
   '';
+  environment.etc.background = {
+    source = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
+  };
 }

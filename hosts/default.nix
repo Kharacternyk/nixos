@@ -7,5 +7,6 @@ nixpkgs: hostname: opts: nixpkgs.lib.nixosSystem {
     hostname = hostname;
     nixpkgs = nixpkgs;
     headless = false;
+    hardwareAcceleration = true;
   } // opts;
 }
