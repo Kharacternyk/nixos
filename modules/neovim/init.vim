@@ -9,16 +9,11 @@ set shiftwidth=4
 set shortmess+=I
 set signcolumn=no
 set smartcase
-set spell
 set spelllang=en,uk,de
 set termguicolors
 set updatetime=300
 
 set iminsert=0
-
-au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-au TermOpen * setlocal nospell
-au TermOpen * startinsert
 
 let g:EasyMotion_smartcase=1
 let g:gruvbox_italic=1
@@ -76,10 +71,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+au FileType gitcommit setlocal spell
+au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 au FileType tex map! <buffer> <C-k> <Plug>(vimtex-delim-close)
 au FileType html,xml noremap! <buffer> <C-k> </<C-x><C-o><Esc>==A
-au FileType fasm setlocal nospell
 au BufEnter *.asm setlocal filetype=fasm
+au TermOpen * startinsert
 
 vnoremap y ygv<Esc>
 
