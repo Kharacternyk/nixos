@@ -18,6 +18,7 @@
           sleuth
           undotree
           vim-jsx-pretty
+          vim-markdown
           vim-nix
           vimtex
           plantuml-syntax
