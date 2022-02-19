@@ -20,6 +20,7 @@ let g:gruvbox_italic=1
 let g:suda_smart_edit=1
 let g:tex_flavor="latex"
 let g:vim_markdown_math=1
+let g:vim_markdown_folding_disabled=1
 let mapleader=" "
 let $EDITOR="nvr -p"
 let $VISUAL="nvr -p"
