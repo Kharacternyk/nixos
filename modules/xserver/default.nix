@@ -12,7 +12,6 @@
     tdesktop
     thunderbird
     xsel
-    zoom-us
   ];
   services = {
     earlyoom = {
