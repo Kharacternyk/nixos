@@ -1,4 +1,11 @@
-{ ... }: {
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    direnv
+    nix-direnv
+  ];
+  environment.variables = {
+    NIX_DIRENV = "${pkgs.nix-direnv}/share/nix-direnv/direnvrc";
+  };
   environment.shellAliases = {
     sudo = "sudo ";
     btm = "btm --color=default-light";
