@@ -14,10 +14,6 @@
     xsel
   ];
   services = {
-    earlyoom = {
-      enable = true;
-      ignoreOOMScoreAdjust = true;
-    };
     xserver = {
       enable = true;
       layout = "us,ua";
@@ -34,6 +30,7 @@
       temperature.night = 3500;
     };
     unclutter-xfixes.enable = true;
+    earlyoom.enable = true;
   };
   security.rtkit.enable = true;
   services.pipewire = {
