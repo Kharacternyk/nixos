@@ -6,6 +6,7 @@
       keep-outputs = true
       keep-derivations = true
       flake-registry = /etc/nixos/registry.json
+      warn-dirty = false
     '';
     registry.nixpkgs.flake = nixpkgs;
     nixPath = [
