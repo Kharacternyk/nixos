@@ -8,10 +8,15 @@
       flake-registry = /etc/nixos/registry.json
       warn-dirty = false
     '';
-    registry.nixpkgs.flake = inputs.nixpkgs;
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
+    registry.nixpkgs.to = {
+      owner = "NixOS";
+      repo = "nixpkgs";
+      rev = inputs.nixpkgs.rev;
+      type = "github";
+    };
   };
   nixpkgs.config.allowUnfree = true;
 }
