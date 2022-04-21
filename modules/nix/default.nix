@@ -1,4 +1,4 @@
-{ nixpkgs, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -8,9 +8,9 @@
       flake-registry = /etc/nixos/registry.json
       warn-dirty = false
     '';
-    registry.nixpkgs.flake = nixpkgs;
+    registry.nixpkgs.flake = inputs.nixpkgs;
     nixPath = [
-      "nixpkgs=${nixpkgs}"
+      "nixpkgs=${inputs.nixpkgs}"
     ];
   };
   nixpkgs.config.allowUnfree = true;

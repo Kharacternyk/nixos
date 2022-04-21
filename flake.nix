@@ -3,10 +3,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = inputs: {
     nixosConfigurations = {
-      nixos-desktop = import ./hosts nixpkgs "nixos-desktop" { };
-      nixos-laptop-vm = import ./hosts nixpkgs "nixos-laptop-vm" {
+      nixos-desktop = import ./hosts inputs "nixos-desktop" { };
+      nixos-laptop-vm = import ./hosts inputs "nixos-laptop-vm" {
         hardwareAcceleration = false;
       };
     };

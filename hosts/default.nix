@@ -1,11 +1,11 @@
-nixpkgs: hostname: opts: nixpkgs.lib.nixosSystem {
+inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   modules = import ../modules ++ [
     (./. + "/${hostname}/configuration.nix")
   ];
   specialArgs = {
     hostname = hostname;
-    nixpkgs = nixpkgs;
+    inputs = inputs;
     headless = false;
     hardwareAcceleration = true;
   } // opts;
