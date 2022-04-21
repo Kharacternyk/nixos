@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -24,30 +24,15 @@
           plantuml-syntax
           (pkgs.vimUtils.buildVimPlugin {
             name = "bullets";
-            src = pkgs.fetchFromGitHub {
-              owner = "dkarter";
-              repo = "bullets.vim";
-              rev = "1.8.0";
-              sha256 = "1gvv2ixq5qnxc546pr9qpn3z6h745q62aqf8rsavv5dvqajv68pp";
-            };
+            src = inputs.vim-bullets;
           })
           (pkgs.vimUtils.buildVimPlugin {
             name = "gruvbox";
-            src = pkgs.fetchFromGitHub {
-              owner = "gruvbox-community";
-              repo = "gruvbox";
-              rev = "1f8500f033813fcc6f41f0fe366e27faa163f2c2";
-              sha256 = "RcgxyRVK+fllhW6wCcTouSzfHRWjmYtnmdvM2okRdM8=";
-            };
+            src = inputs.vim-gruvbox;
           })
           (pkgs.vimUtils.buildVimPlugin {
             name = "suda";
-            src = pkgs.fetchFromGitHub {
-              owner = "lambdalisue";
-              repo = "suda.vim";
-              rev = "v0.3.2";
-              sha256 = "YfOYDHq9osVcujxY2Of7oYWNAw3RLf48nc9ys77rilg=";
-            };
+            src = inputs.vim-suda;
           })
         ];
       };

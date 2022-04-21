@@ -1,15 +1,9 @@
-{ headless, pkgs, ... }: if headless then { } else {
+{ inputs, headless, pkgs, ... }: if headless then { } else {
   environment.systemPackages = with pkgs; [
     (stdenv.mkDerivation rec {
-      pname = "bspwm-utils";
-      version = "0.2";
+      name = "bspwm-utils";
       installPhase = "install -Dm755 ./ubspc.sh $out/bin/ubspc";
-      src = fetchFromGitHub {
-        owner = "Kharacternyk";
-        repo = pname;
-        rev = "v" + version;
-        sha256 = "loWrtURpxibJgoprNYENLNsuLTcv6hsk0xESe4i8ZXc=";
-      };
+      src = inputs.bspwm-utils;
     })
   ];
   environment.etc = {

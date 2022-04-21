@@ -1,16 +1,11 @@
-{ headless, pkgs, ... }: if headless then { } else
+{ inputs, headless, pkgs, ... }: if headless then { } else
 let
   qutebrowserWithQutelaunch = with pkgs; (qutebrowser.overridePythonAttrs (
     old: {
       propagatedBuildInputs = old.propagatedBuildInputs ++ [
         (pkgs.python3Packages.buildPythonPackage {
           name = "qutelaunch";
-          src = fetchFromGitHub {
-            owner = "Kharacternyk";
-            repo = "qutelaunch";
-            rev = "bd12034d5032aa1640119460ab62cdb4a75eddc2";
-            sha256 = "1yqjfnqswsjqv26fxlj5hrfnd4cxv0x1bg219q1mykz5gmams8xd";
-          };
+          src = inputs.qutelaunch;
           propagatedBuildInputs = with pkgs; [
             python3Packages.flask
           ];

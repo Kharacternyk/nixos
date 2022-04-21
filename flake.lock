@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bspwm-utils": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1639080938,
+        "narHash": "sha256-loWrtURpxibJgoprNYENLNsuLTcv6hsk0xESe4i8ZXc=",
+        "owner": "Kharacternyk",
+        "repo": "bspwm-utils",
+        "rev": "8358f03a8fb15bfa3007e0aa39224b8ac100d9ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kharacternyk",
+        "repo": "bspwm-utils",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1649986882,
@@ -16,9 +32,78 @@
         "type": "github"
       }
     },
+    "qutelaunch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1623838709,
+        "narHash": "sha256-rSNdVX3lT18DTkG8FTrYnZFmXYZF0u6M2FhqrrF1Evs=",
+        "owner": "Kharacternyk",
+        "repo": "qutelaunch",
+        "rev": "bd12034d5032aa1640119460ab62cdb4a75eddc2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kharacternyk",
+        "repo": "qutelaunch",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "bspwm-utils": "bspwm-utils",
+        "nixpkgs": "nixpkgs",
+        "qutelaunch": "qutelaunch",
+        "vim-bullets": "vim-bullets",
+        "vim-gruvbox": "vim-gruvbox",
+        "vim-suda": "vim-suda"
+      }
+    },
+    "vim-bullets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1643523893,
+        "narHash": "sha256-OqVGuf/imrSvj6OFkQw7VmSZ/69WdBx3YBLLv2vrz7U=",
+        "owner": "dkarter",
+        "repo": "bullets.vim",
+        "rev": "f3b4ae71f60b5723077a77cfe9e8776a3ca553ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dkarter",
+        "repo": "bullets.vim",
+        "type": "github"
+      }
+    },
+    "vim-gruvbox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646542453,
+        "narHash": "sha256-76Q3iQGCBhBYK9kaG6Ai+pl86qPwPA0GE0qQskvNGVU=",
+        "owner": "gruvbox-community",
+        "repo": "gruvbox",
+        "rev": "b6f47ae7031f6746a1f1918c17574aa12c474ef0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gruvbox-community",
+        "repo": "gruvbox",
+        "type": "github"
+      }
+    },
+    "vim-suda": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1644512840,
+        "narHash": "sha256-pjRQIrf597U/v1xuwHsDzcSI02mHdEifp4OUd3mg+JA=",
+        "owner": "lambdalisue",
+        "repo": "suda.vim",
+        "rev": "6bffe36862faa601d2de7e54f6e85c1435e832d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lambdalisue",
+        "repo": "suda.vim",
+        "type": "github"
       }
     }
   },
