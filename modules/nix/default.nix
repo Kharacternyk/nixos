@@ -11,11 +11,14 @@
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
-    registry.nixpkgs.to = {
-      owner = "NixOS";
-      repo = "nixpkgs";
-      rev = inputs.nixpkgs.rev;
-      type = "github";
+    registry = {
+      nixpkgs.to = {
+        owner = "NixOS";
+        repo = "nixpkgs";
+        rev = inputs.nixpkgs.rev;
+        type = "github";
+      };
+      shellpkgs.flake = inputs.nixpkgs;
     };
   };
   nixpkgs.config.allowUnfree = true;
