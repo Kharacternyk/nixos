@@ -1,18 +1,38 @@
 {
   "nodes": {
     "bspwm-utils": {
-      "flake": false,
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1639080938,
-        "narHash": "sha256-loWrtURpxibJgoprNYENLNsuLTcv6hsk0xESe4i8ZXc=",
+        "lastModified": 1650640255,
+        "narHash": "sha256-CQn9Q4rXsHl114pCYw0YTJ99bGE6cd9LleM2sYnh1+0=",
         "owner": "Kharacternyk",
         "repo": "bspwm-utils",
-        "rev": "8358f03a8fb15bfa3007e0aa39224b8ac100d9ea",
+        "rev": "013fb07a46f6c435353fec4139b810848b4f4aad",
         "type": "github"
       },
       "original": {
         "owner": "Kharacternyk",
         "repo": "bspwm-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1649676176,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },

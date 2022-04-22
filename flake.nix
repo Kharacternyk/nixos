@@ -3,7 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     bspwm-utils = {
       url = "github:Kharacternyk/bspwm-utils";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     qutelaunch = {
       url = "github:Kharacternyk/qutelaunch";

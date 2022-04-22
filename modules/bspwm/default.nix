@@ -1,10 +1,6 @@
 { inputs, headless, pkgs, ... }: if headless then { } else {
-  environment.systemPackages = with pkgs; [
-    (stdenv.mkDerivation rec {
-      name = "bspwm-utils";
-      installPhase = "install -Dm755 ./ubspc.sh $out/bin/ubspc";
-      src = inputs.bspwm-utils;
-    })
+  environment.systemPackages = [
+    inputs.bspwm-utils.defaultPackage.${pkgs.system}
   ];
   environment.etc = {
     bspwmrc.source = ./bspwmrc;
