@@ -1,5 +1,5 @@
 inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
-  system = "x86_64-linux";
+  system = opts.system or "x86_64-linux";
   modules = import ../modules ++ [
     (./. + "/${hostname}/configuration.nix")
   ];
