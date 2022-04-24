@@ -1,7 +1,13 @@
 { inputs, headless, pkgs, ... }: if headless then { } else
 let
   qb = pkgs.writeShellScriptBin "qb" ''
-    ${pkgs.qutebrowser}/share/qutebrowser/scripts/open_url_in_instance.sh "$@"
+    socket="$XDG_RUNTIME_DIR/qutebrowser/ipc-$(echo -n "$USER" | md5sum | cut -d' ' -f1)"
+    printf \
+    '{"args":["%s"],"target_arg":null,"version":"1.0.4","protocol_version":1,"cwd":"%s"}\n' \
+    "$1" \
+    "$PWD" \
+    | ${pkgs.socat}/bin/socat -lf /dev/null - UNIX-CONNECT:"$socket" \
+    || "${pkgs.qutebrowser}/bin/qutebrowser" -C ${./qutebrowser.py} "$@" &
   '';
   qbDesktop = pkgs.makeDesktopItem {
     name = "qb";
@@ -11,12 +17,8 @@ let
 in
 {
   environment.systemPackages = [
-    pkgs.socat
     pkgs.qutebrowser
     qb
     qbDesktop
   ];
-  environment.etc = {
-    "qutebrowser.py".source = ./qutebrowser.py;
-  };
 }
