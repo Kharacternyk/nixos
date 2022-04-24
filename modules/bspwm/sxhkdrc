@@ -13,7 +13,7 @@ alt + shift + y
     alacritty --config-file /etc/alacritty.yaml -e btm --color default-light
 
 alt + u
-    qb 127.0.0.1:42512/index.html
+    qb
 
 alt + shift + u
     telegram-desktop
