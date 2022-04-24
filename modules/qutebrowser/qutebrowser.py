@@ -1,10 +1,3 @@
-import qutelaunch
-
-qutelaunch.init(config, c, exclude_patterns=[
-    "https?://(www.)?archlinux.org.*",
-    "https?://duckduckgo.com.*",
-])
-
 config.load_autoconfig()
 
 config.bind(",", "download-open")
@@ -14,6 +7,9 @@ config.bind("M", "spawn mpv {url}")
 config.bind("R", "config-source")
 config.bind("d", "edit-url")
 config.bind("u", "set-cmd-text :open !")
+
+c.url.start_pages = "https://online.bonjourr.fr/"
+c.url.default_page = c.url.start_pages
 
 c.content.autoplay = False
 c.content.cookies.accept = "no-3rdparty"

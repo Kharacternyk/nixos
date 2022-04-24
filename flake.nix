@@ -5,10 +5,6 @@
       url = "github:Kharacternyk/bspwm-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    qutelaunch = {
-      url = "github:Kharacternyk/qutelaunch";
-      flake = false;
-    };
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
       flake = false;

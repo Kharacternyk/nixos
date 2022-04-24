@@ -52,27 +52,10 @@
         "type": "github"
       }
     },
-    "qutelaunch": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1623838709,
-        "narHash": "sha256-rSNdVX3lT18DTkG8FTrYnZFmXYZF0u6M2FhqrrF1Evs=",
-        "owner": "Kharacternyk",
-        "repo": "qutelaunch",
-        "rev": "bd12034d5032aa1640119460ab62cdb4a75eddc2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Kharacternyk",
-        "repo": "qutelaunch",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "bspwm-utils": "bspwm-utils",
         "nixpkgs": "nixpkgs",
-        "qutelaunch": "qutelaunch",
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda"
