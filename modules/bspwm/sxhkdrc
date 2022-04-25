@@ -43,10 +43,6 @@ alt + shift + Return
 
 # Reset
 
-alt + BackSpace
-    bspc wm -r; \
-    pkill -USR1 -x sxhkd
-
 ctrl + alt + BackSpace
     bspc quit
 
