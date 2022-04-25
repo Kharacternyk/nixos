@@ -23,7 +23,7 @@ c.downloads.location.directory = "~/new"
 c.downloads.location.prompt = False
 c.downloads.location.remember = False
 
-c.editor.command = ["alacritty", "--config-file", "/etc/alacritty.yaml", "-e", "nvim", "{file}"]
+c.editor.command = ["term", "-e", "nvim", "{file}"]
 
 c.fonts.default_size = "12.5pt"
 
