@@ -1,16 +1,16 @@
 # Launchers
 
 alt + semicolon
-    alacritty --config-file /etc/alacritty.yaml
+    term
 
 alt + shift + semicolon
-    alacritty --config-file /etc/alacritty.yaml -e lf
+    term -e lf
 
 alt + y
-    alacritty --config-file /etc/alacritty.yaml -e pulsemixer
+    term -e pulsemixer
 
 alt + shift + y
-    alacritty --config-file /etc/alacritty.yaml -e btm --color default-light
+    term -e btm --color default-light
 
 alt + u
     qb

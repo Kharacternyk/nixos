@@ -2,14 +2,11 @@
   environment.systemPackages = [
     inputs.bspwm-utils.defaultPackage.${pkgs.system}
   ];
-  environment.etc = {
-    bspwmrc.source = ./bspwmrc;
-    bspwmrc.mode = "0755";
-    sxhkdrc.source = ./sxhkdrc;
-  };
-  services.xserver.windowManager.bspwm = {
+  services.xserver.windowManager.bspwm = with {
+    bspwmrc = pkgs.writeShellScriptBin "bspwmrc" (builtins.readFile ./bspwmrc);
+  }; {
     enable = true;
-    configFile = "/etc/bspwmrc";
-    sxhkd.configFile = "/etc/sxhkdrc";
+    configFile = "${bspwmrc}/bin/bspwmrc";
+    sxhkd.configFile = ./sxhkdrc;
   };
 }

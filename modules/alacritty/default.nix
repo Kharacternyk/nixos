@@ -1,8 +1,10 @@
 { headless, pkgs, ... }: if headless then { } else {
-  environment.systemPackages = with pkgs; [
-    alacritty
+  environment.systemPackages = with {
+    term = pkgs.writeShellScriptBin "term" ''
+      ${pkgs.alacritty}/bin/alacritty --config-file ${./alacritty.yaml} "$@"
+    '';
+  }; [
+    pkgs.alacritty
+    term
   ];
-  environment.etc = {
-    "alacritty.yaml".source = ./alacritty.yaml;
-  };
 }
