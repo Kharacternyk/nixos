@@ -15,6 +15,7 @@
         }
       )
       font-awesome
+      liberation_ttf
       noto-fonts-emoji
       noto-fonts-cjk
     ];
