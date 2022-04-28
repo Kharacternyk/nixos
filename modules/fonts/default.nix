@@ -25,5 +25,13 @@
       sansSerif = [ "IBM Plex Sans" ];
       emoji = [ "Noto Emoji" ];
     };
+    fontconfig.localConf = ''
+      <match target="pattern">
+        <test qual="any" name="family"><string>Arial</string></test>
+        <edit name="family" mode="assign" binding="same">
+          <string>sans-serif</string>
+        </edit>
+      </match>
+    '';
   };
 }
