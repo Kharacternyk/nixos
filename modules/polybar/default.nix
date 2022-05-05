@@ -1,4 +1,4 @@
-{ headless, pkgs, ... }: if headless then { } else {
+{ headless, hardwareAcceleration, pkgs, ... }: if headless then { } else {
   environment.systemPackages = with pkgs; [
     (polybar.override {
       alsaSupport = false;
@@ -6,6 +6,13 @@
     })
   ];
   environment.etc = {
-    "polybar.conf".source = ./polybar.conf;
+    "polybar.conf".text = builtins.readFile ./polybar.conf + (
+      if hardwareAcceleration
+      then ""
+      else ''
+        [settings]
+        pseudo-transparency = true
+      ''
+    );
   };
 }
