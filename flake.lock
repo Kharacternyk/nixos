@@ -2,47 +2,32 @@
   "nodes": {
     "bspwm-utils": {
       "inputs": {
-        "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "utils": "utils"
       },
       "locked": {
-        "lastModified": 1650640255,
-        "narHash": "sha256-CQn9Q4rXsHl114pCYw0YTJ99bGE6cd9LleM2sYnh1+0=",
+        "lastModified": 1650732659,
+        "narHash": "sha256-W2+9sTXv3sziIxTskvgdJ4Ca/2yYGD8zCivMd7ib470=",
         "owner": "Kharacternyk",
         "repo": "bspwm-utils",
-        "rev": "013fb07a46f6c435353fec4139b810848b4f4aad",
+        "rev": "d50eb039b4ecf0d91bbc2f031d822278b8fd6861",
         "type": "github"
       },
       "original": {
         "owner": "Kharacternyk",
         "repo": "bspwm-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1649676176,
-        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1649986882,
-        "narHash": "sha256-cNsInUFq1MbuvaEmv8x6jetWnmAU+osMpnwKumtjksI=",
+        "lastModified": 1652572281,
+        "narHash": "sha256-UEsrB5XBOj0blVe2ldc0lHvlhLYZJDHroELMHlg7XxA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5181d5945eda382ff6a9ca3e072ed6ea9b547fee",
+        "rev": "43ff6cb1c027d13dc938b88eb099462210fea52f",
         "type": "github"
       },
       "original": {
@@ -59,6 +44,21 @@
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1649676176,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     },
     "vim-bullets": {
@@ -80,11 +80,11 @@
     "vim-gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1646542453,
-        "narHash": "sha256-76Q3iQGCBhBYK9kaG6Ai+pl86qPwPA0GE0qQskvNGVU=",
+        "lastModified": 1651270041,
+        "narHash": "sha256-CJsNX3WARtAzvPLitbg+k/Q6/ab5XHd6PglHYQkf94c=",
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "b6f47ae7031f6746a1f1918c17574aa12c474ef0",
+        "rev": "34ad436b234c5095d46bb065c5b32780618df83f",
         "type": "github"
       },
       "original": {
