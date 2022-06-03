@@ -25,6 +25,10 @@
       nixos-laptop-vm = import ./hosts inputs "nixos-laptop-vm" {
         hardwareAcceleration = false;
       };
+      nixos-vps = import ./hosts inputs "nixos-vps" {
+        headless = true;
+        hardwareAcceleration = false;
+      };
     };
   };
 }
