@@ -27,7 +27,6 @@
       };
       nixos-vps = import ./hosts inputs "nixos-vps" {
         headless = true;
-        hardwareAcceleration = false;
       };
     };
   };
