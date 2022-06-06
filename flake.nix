@@ -27,6 +27,7 @@
       };
       nixos-vps = import ./hosts inputs "nixos-vps" {
         headless = true;
+        rootlessDocker = false;
       };
     };
   };
