@@ -8,6 +8,6 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
     inputs = inputs;
     headless = false;
     hardwareAcceleration = true;
-    rootlessDocker = true;
+    dev = true;
   } // opts;
 }
