@@ -14,7 +14,7 @@
         Restart = "no";
       };
       script = ''
-        ${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 7d
+        ${pkgs.nix}/bin/nix-collect-garbage --delete-older-than 3d
       '';
     };
   };
