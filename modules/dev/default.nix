@@ -4,5 +4,6 @@
     yarn
     gnumake
     asciidoctor-with-extensions
+    darkhttpd
   ];
 }
