@@ -3,5 +3,6 @@
     poetry
     yarn
     gnumake
+    asciidoctor-with-extensions
   ];
 }
