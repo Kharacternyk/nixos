@@ -5,5 +5,6 @@
     gnumake
     asciidoctor-with-extensions
     darkhttpd
+    aws-sam-cli
   ];
 }
