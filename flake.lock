@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1657624652,
-        "narHash": "sha256-rFJNM0X/dxekT6EESSh80mlBGqztfN/XOF/oRL6in68=",
+        "lastModified": 1659522808,
+        "narHash": "sha256-HBcM19nGhI3IWwPNVlYb0MZ8VW6iKp4JbAVkeIHVykc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "68c63e60b8413260605efbe1ac5addaa099cdfb3",
+        "rev": "168d1c578909dc143ba52dbed661c36e76b12b36",
         "type": "github"
       },
       "original": {
@@ -80,11 +80,11 @@
     "vim-gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1651270041,
-        "narHash": "sha256-CJsNX3WARtAzvPLitbg+k/Q6/ab5XHd6PglHYQkf94c=",
+        "lastModified": 1659526643,
+        "narHash": "sha256-zAkTbhrNrVkJcn8+KDMly+30oBXqNAgYJYXFq4rcQLg=",
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "34ad436b234c5095d46bb065c5b32780618df83f",
+        "rev": "95b120a15d0765037d2836d04e3360c273caf111",
         "type": "github"
       },
       "original": {
