@@ -9,7 +9,7 @@ set shiftwidth=4
 set shortmess+=I
 set signcolumn=no
 set smartcase
-set spelllang=en,uk,de
+set spelllang=en
 set termguicolors
 set updatetime=300
 
