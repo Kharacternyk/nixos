@@ -7,5 +7,6 @@
     asciidoctor-with-extensions
     darkhttpd
     aws-sam-cli
+    dart
   ];
 }
