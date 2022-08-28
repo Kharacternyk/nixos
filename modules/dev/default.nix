@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     poetry
     yarn
+    yarn-bash-completion
     gnumake
     asciidoctor-with-extensions
     darkhttpd
