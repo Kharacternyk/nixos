@@ -9,6 +9,7 @@
         start = [
           coc-clangd
           coc-css
+          coc-flutter
           coc-nvim
           coc-pyright
           coc-tsserver
