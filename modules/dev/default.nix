@@ -8,5 +8,6 @@
     darkhttpd
     aws-sam-cli
     dart
+    flutter
   ];
 }
