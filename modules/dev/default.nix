@@ -15,4 +15,5 @@
   environment.variables = {
     CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
   };
+  programs.adb.enable = true;
 }

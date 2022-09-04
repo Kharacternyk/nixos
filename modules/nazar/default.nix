@@ -6,6 +6,7 @@
       "wheel"
       "networkmanager"
       "dialout"
+      "adbusers"
     ];
   };
 }
