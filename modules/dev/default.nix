@@ -10,5 +10,6 @@
     dart
     flutter
     google-chrome
+    android-studio
   ];
 }
