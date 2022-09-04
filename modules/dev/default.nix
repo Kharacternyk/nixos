@@ -9,5 +9,6 @@
     aws-sam-cli
     dart
     flutter
+    google-chrome
   ];
 }
