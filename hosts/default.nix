@@ -8,6 +8,11 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
     inputs = inputs;
     headless = false;
     hardwareAcceleration = true;
-    dev = true;
+    dev = {
+      python = true;
+      js = true;
+      flutter = true;
+      android = true;
+    };
   } // opts;
 }

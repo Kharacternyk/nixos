@@ -1,20 +1,33 @@
-{ inputs, dev, pkgs, ... }: if !dev then { } else {
-  environment.systemPackages = with pkgs; [
+{ inputs, dev, pkgs, ... }: if !builtins.isAttrs dev then { } else with {
+  toggle = preference: ifTrue: ifFalse: if dev.${preference} or false then ifTrue else ifFalse;
+}; {
+  environment.systemPackages = with pkgs; ([
+    darkhttpd
+    gnumake
+  ] ++ (toggle "python" [
     poetry
+  ] [ ]) ++ (toggle "js" [
     yarn
     yarn-bash-completion
-    gnumake
+  ] [ ]) ++ (toggle "asciidoctor" [
     asciidoctor-with-extensions
-    darkhttpd
+  ] [ ]) ++ (toggle "aws" [
     aws-sam-cli
+  ] [ ]) ++ (toggle "flutter" [
     dart
     flutter
-    google-chrome
-    android-studio
     hover
-  ];
-  environment.variables = {
-    CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-  };
-  programs.adb.enable = true;
+  ] [ ]) ++ (toggle "chrome" [
+    google-chrome
+  ] [ ]) ++ (toggle "android" [
+    android-studio
+  ] [ ]));
+
+  environment.variables = toggle "chrome"
+    {
+      CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+    }
+    { };
+
+  programs.adb.enable = toggle "android" true false;
 }
