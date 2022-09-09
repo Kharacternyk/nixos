@@ -29,6 +29,10 @@
         headless = true;
         dev = false;
       };
+      nixos-droplet = import ./hosts inputs "nixos-droplet" {
+        headless = true;
+        dev = false;
+      };
     };
   };
 }
