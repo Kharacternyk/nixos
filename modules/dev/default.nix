@@ -21,6 +21,8 @@
     google-chrome
   ] [ ]) ++ (toggle "android" [
     android-studio
+  ] [ ]) ++ (toggle "latex" [
+    texlive.combined.scheme-full
   ] [ ]));
 
   environment.variables = toggle "chrome"
