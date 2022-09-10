@@ -23,6 +23,8 @@
     android-studio
   ] [ ]) ++ (toggle "latex" [
     texlive.combined.scheme-full
+  ] [ ]) ++ (toggle "r" [
+    rstudio
   ] [ ]));
 
   environment.variables = toggle "chrome"

@@ -14,6 +14,7 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
       flutter = true;
       android = true;
       latex = true;
+      r = true;
     };
   } // opts;
 }
