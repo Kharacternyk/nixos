@@ -10,7 +10,6 @@
     pulsemixer
     spotify
     tdesktop
-    thunderbird
     xsel
   ];
   services = {
