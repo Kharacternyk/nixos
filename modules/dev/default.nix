@@ -25,6 +25,8 @@
     texlive.combined.scheme-full
   ] [ ]) ++ (toggle "r" [
     (if headless then R else rstudio)
+  ] [ ]) ++ (toggle "pandoc" [
+    pandoc
   ] [ ]));
 
   environment.variables = toggle "chrome"
