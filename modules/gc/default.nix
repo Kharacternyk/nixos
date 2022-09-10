@@ -5,7 +5,7 @@
       timerConfig = {
         Unit = "collect-garbage.service";
         Persistent = "yes";
-        OnCalendar = "Sat *-*-* 00:00:00";
+        OnCalendar = "daily";
       };
     };
     services.collect-garbage = {
