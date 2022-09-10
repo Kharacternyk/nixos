@@ -1,4 +1,4 @@
-{ inputs, dev, pkgs, ... }: if !builtins.isAttrs dev then { } else with {
+{ inputs, dev, headless, pkgs, ... }: if !builtins.isAttrs dev then { } else with {
   toggle = preference: ifTrue: ifFalse: if dev.${preference} or false then ifTrue else ifFalse;
 }; {
   environment.systemPackages = with pkgs; ([
@@ -24,7 +24,7 @@
   ] [ ]) ++ (toggle "latex" [
     texlive.combined.scheme-full
   ] [ ]) ++ (toggle "r" [
-    rstudio
+    (if headless then R else rstudio)
   ] [ ]));
 
   environment.variables = toggle "chrome"
