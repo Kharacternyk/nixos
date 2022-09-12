@@ -1,4 +1,4 @@
-{ inputs, dev, headless, pkgs, ... }: if !builtins.isAttrs dev then { } else with {
+{ dev, headless, pkgs, ... }: with {
   toggle = preference: ifTrue: ifFalse: if dev.${preference} or false then ifTrue else ifFalse;
 }; {
   environment.systemPackages = with pkgs; ([

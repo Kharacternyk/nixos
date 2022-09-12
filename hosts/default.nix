@@ -8,6 +8,9 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
     inputs = inputs;
     headless = false;
     hardwareAcceleration = true;
+  } // opts // (if (opts.dev or true) == false then {
+    dev = { };
+  } else {
     dev = {
       python = true;
       js = true;
@@ -16,6 +19,6 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
       latex = true;
       r = true;
       pandoc = true;
-    };
-  } // opts;
+    } // (opts.dev or { });
+  });
 }
