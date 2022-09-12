@@ -24,6 +24,9 @@
       nixos-desktop = import ./hosts inputs "nixos-desktop" { };
       nixos-laptop-vm = import ./hosts inputs "nixos-laptop-vm" {
         hardwareAcceleration = false;
+        dev = {
+          android = false;
+        };
       };
       nixos-vps = import ./hosts inputs "nixos-vps" {
         headless = true;
