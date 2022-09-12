@@ -19,6 +19,7 @@ inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
       latex = true;
       r = true;
       pandoc = true;
+      java = true;
     } // (opts.dev or { });
   });
 }

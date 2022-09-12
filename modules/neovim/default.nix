@@ -10,6 +10,7 @@
           coc-clangd
           coc-css
           coc-flutter
+          coc-java
           coc-nvim
           coc-pyright
           coc-tsserver

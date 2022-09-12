@@ -27,6 +27,9 @@
     (if headless then R else rstudio)
   ] [ ]) ++ (toggle "pandoc" [
     pandoc
+  ] [ ]) ++ (toggle "java" [
+    jdk
+    gradle
   ] [ ]));
 
   environment.variables = toggle "chrome"
