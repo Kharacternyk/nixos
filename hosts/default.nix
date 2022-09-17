@@ -3,13 +3,13 @@ inputs: host: opts: inputs.nixpkgs.lib.nixosSystem {
   modules = import ../modules ++ [
     (./. + "/${host}/configuration.nix")
   ];
-  specialArgs = {
+  specialArgs = let headless = opts.headless or false; in {
     hostname = host;
     inputs = inputs;
-    headless = false;
-    usb = !opts.headless or true;
-    gpu = !opts.headless or true;
-    dev = !opts.headless or true;
-    univ = !opts.headless or true;
+    headless = headless;
+    usb = !headless;
+    gpu = !headless;
+    dev = !headless;
+    univ = !headless;
   } // opts;
 }
