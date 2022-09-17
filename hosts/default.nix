@@ -1,25 +1,15 @@
-inputs: hostname: opts: inputs.nixpkgs.lib.nixosSystem {
+inputs: host: opts: inputs.nixpkgs.lib.nixosSystem {
   system = opts.system or "x86_64-linux";
   modules = import ../modules ++ [
-    (./. + "/${hostname}/configuration.nix")
+    (./. + "/${host}/configuration.nix")
   ];
   specialArgs = {
-    hostname = hostname;
+    hostname = host;
     inputs = inputs;
     headless = false;
-    hardwareAcceleration = true;
-  } // opts // (if (opts.dev or true) == false then {
-    dev = { };
-  } else {
-    dev = {
-      python = true;
-      js = true;
-      flutter = true;
-      android = true;
-      latex = true;
-      r = true;
-      pandoc = true;
-      java = true;
-    } // (opts.dev or { });
-  });
+    usb = !opts.headless or true;
+    gpu = !opts.headless or true;
+    dev = !opts.headless or true;
+    univ = !opts.headless or true;
+  } // opts;
 }

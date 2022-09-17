@@ -1,4 +1,4 @@
-{ headless, hardwareAcceleration, pkgs, ... }: if headless then { } else {
+{ headless, gpu, pkgs, ... }: if headless then { } else {
   environment.systemPackages = with pkgs; [
     (polybar.override {
       alsaSupport = false;
@@ -7,7 +7,7 @@
   ];
   environment.etc = {
     "polybar.conf".text = builtins.readFile ./polybar.conf + (
-      if hardwareAcceleration
+      if gpu
       then ""
       else ''
         [settings]

@@ -1,4 +1,4 @@
-{ headless, hardwareAcceleration, pkgs, ... }: if headless then { } else {
+{ headless, gpu, pkgs, ... }: if headless then { } else {
   environment.systemPackages = with pkgs; [
     firefox
     graphviz
@@ -19,7 +19,7 @@
       xkbOptions = "caps:swapescape,grp:ctrls_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
     };
     picom = {
-      enable = hardwareAcceleration;
+      enable = gpu;
       vSync = true;
       backend = "glx";
     };
