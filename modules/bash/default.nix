@@ -17,6 +17,9 @@
     ncdu = "ncdu --color=dark";
     objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
   };
+  environment.etc = {
+    inputrc.source = ./inputrc;
+  };
   programs.bash.promptInit = builtins.readFile ./prompt.sh;
   programs.bash.interactiveShellInit = builtins.readFile ./bashrc;
 }
