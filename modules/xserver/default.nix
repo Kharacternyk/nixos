@@ -6,7 +6,6 @@
     imv
     libreoffice
     mpv
-    plantuml
     pulsemixer
     spotify
     tdesktop
