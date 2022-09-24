@@ -16,6 +16,9 @@
       enable = true;
       layout = "us,ua";
       xkbOptions = "caps:swapescape,grp:ctrls_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
+      displayManager = {
+        lightdm.background = ./wallpaper;
+      };
     };
     picom = {
       enable = gpu;
