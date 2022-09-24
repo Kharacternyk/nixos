@@ -11,5 +11,3 @@ PROMPT_COMMAND='
 '
 PS1='\[$PROMPT_COLOR\]\$ \[$RESET\]'
 PS2='\[$PROMPT_COLOR\]> \[$RESET\]'
-
-eval "$(direnv hook bash)"
