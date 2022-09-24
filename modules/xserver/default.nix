@@ -43,7 +43,4 @@
     image/jpeg=imv.desktop;
     application/pdf=org.pwmt.zathura.desktop
   '';
-  environment.etc.background = {
-    source = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
-  };
 }
