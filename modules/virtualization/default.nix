@@ -1,7 +1,6 @@
 { dev, ... }: {
-  virtualisation.docker.rootless.enable = dev.docker or false;
-  environment.variables =
-    if dev.docker or false then {
-      DOCKER_HOST = "unix:///run/user/1000/docker.sock";
-    } else { };
+  virtualisation.docker.rootless.enable = dev;
+  environment.variables = if !dev then { } else {
+    DOCKER_HOST = "unix:///run/user/1000/docker.sock";
+  };
 }
