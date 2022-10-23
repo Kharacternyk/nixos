@@ -1,5 +1,6 @@
 { dev, usb, pkgs, ... }: if !dev then { } else {
   environment.systemPackages = with pkgs; [
+    clang-tools
     darkhttpd
     gnumake
     poetry
