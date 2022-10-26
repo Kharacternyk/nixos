@@ -16,6 +16,12 @@
         rev = inputs.nixpkgs.rev;
         type = "github";
       };
+      flake-utils.to = {
+        owner = "numtide";
+        repo = "flake-utils";
+        rev = inputs.flake-utils.rev;
+        type = "github";
+      };
       shellpkgs.flake = inputs.nixpkgs;
     };
   };
