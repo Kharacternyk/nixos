@@ -19,3 +19,10 @@ get() {
     done
     nix shell$pkgs
 }
+
+dev() {
+    mkdir -p .nix
+    echo '*' > .nix/.gitignore
+    nix flake update
+    nix develop --profile .nix/profile
+}
