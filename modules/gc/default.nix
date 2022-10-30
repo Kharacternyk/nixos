@@ -27,5 +27,26 @@
         nix store gc
       '';
     };
+    paths.update-shells = {
+      wantedBy = [
+        "paths.target"
+      ];
+      pathConfig = {
+        Unit = "update-shells.service";
+        PathChanged = "/etc/static/nix/registry.json";
+      };
+    };
+    services.update-shells = {
+      serviceConfig = {
+        Type = "oneshot";
+        Restart = "no";
+      };
+      script = ''
+        shopt -s nullglob
+        for profile in /home/*/src/*/.nix/profile*; do
+          unlink $profile
+        done
+      '';
+    };
   };
 }
