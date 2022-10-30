@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   systemd = {
     timers.collect-garbage = {
-      wantedBy = [ "timers.target" ];
+      wantedBy = [
+        "timers.target"
+      ];
       timerConfig = {
         Unit = "collect-garbage.service";
         Persistent = "yes";
