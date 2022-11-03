@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   users.users.nazar = {
     uid = 1000;
     isNormalUser = true;

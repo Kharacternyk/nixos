@@ -10,6 +10,5 @@ inputs: host: opts: inputs.nixpkgs.lib.nixosSystem {
     usb = !headless;
     gpu = !headless;
     dev = !headless;
-    univ = !headless;
   } // opts;
 }

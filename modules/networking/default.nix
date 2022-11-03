@@ -1,8 +1,8 @@
-{ hostname, headless, ... }: {
+{ lib, hostname, headless, ... }: {
   networking = {
     hostName = hostname;
-  } // (if headless then { } else {
+  } // lib.optionalAttrs (!headless) {
     useDHCP = false;
     networkmanager.enable = true;
-  });
+  };
 }

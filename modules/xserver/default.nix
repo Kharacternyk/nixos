@@ -1,4 +1,4 @@
-{ headless, gpu, pkgs, ... }: if headless then { } else {
+{ lib, headless, gpu, pkgs, ... }: lib.optionalAttrs (!headless) {
   environment.systemPackages = with pkgs; [
     firefox
     graphviz

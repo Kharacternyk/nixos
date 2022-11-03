@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, ... }: {
   systemd = {
     timers.collect-garbage = {
       wantedBy = [
@@ -16,7 +16,7 @@
         Restart = "no";
       };
       path = [
-        pkgs.nixFlakes
+        config.nix.package
       ];
       script = ''
         shopt -s nullglob

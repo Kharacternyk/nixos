@@ -1,4 +1,4 @@
-{ lib, dev, usb, pkgs, headless, ... }: if !dev then { } else {
+{ lib, dev, usb, pkgs, headless, ... }: lib.optionalAttrs dev {
   environment.systemPackages = with pkgs; [
     clang-tools
     darkhttpd
@@ -8,7 +8,7 @@
     texlive.combined.scheme-full
     yarn
     yarn-bash-completion
-  ] ++ lib.lists.optionals (!headless) [
+  ] ++ lib.optionals (!headless) [
     pandoc
     rstudio
   ];

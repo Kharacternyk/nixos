@@ -1,4 +1,4 @@
-{ inputs, headless, pkgs, ... }: if headless then { } else
+{ lib, headless, pkgs, ... }:
 let
   qb = pkgs.writeShellScriptBin "qb" ''
     socket="$XDG_RUNTIME_DIR/qutebrowser/ipc-$(echo -n "$USER" | md5sum | cut -d' ' -f1)"
@@ -15,7 +15,7 @@ let
     exec = "${qb}/bin/qb %u";
   };
 in
-{
+lib.optionalAttrs (!headless) {
   environment.systemPackages = [
     pkgs.qutebrowser
     qb

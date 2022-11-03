@@ -1,4 +1,4 @@
-{ inputs, headless, pkgs, ... }: if headless then { } else {
+{ lib, inputs, headless, pkgs, ... }: lib.optionalAttrs (!headless) {
   environment.systemPackages = [
     inputs.bspwm-utils.defaultPackage.${pkgs.system}
   ];
