@@ -1,15 +1,17 @@
-{ dev, usb, pkgs, ... }: if !dev then { } else {
+{ lib, dev, usb, pkgs, headless, ... }: if !dev then { } else {
   environment.systemPackages = with pkgs; [
     clang-tools
     darkhttpd
+    dart
     gnumake
     poetry
+    texlive.combined.scheme-full
     yarn
     yarn-bash-completion
-    dart
-    flutter
-    hover
-  ] ++ (if usb then [ android-studio ] else [ ]);
+  ] ++ lib.lists.optionals (!headless) [
+    pandoc
+    rstudio
+  ];
 
   programs.adb.enable = usb;
 }
