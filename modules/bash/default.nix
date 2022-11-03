@@ -1,7 +1,4 @@
-{ pkgs, ... }: {
-  environment.variables = {
-    NIX_DIRENV = "${pkgs.nix-direnv}/share/nix-direnv/direnvrc";
-  };
+{
   environment.shellAliases = {
     sudo = "sudo ";
     btm = "btm --color=default-light";
