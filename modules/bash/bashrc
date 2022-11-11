@@ -23,6 +23,6 @@ get() {
 dev() {
     mkdir -p .nix
     echo '*' > .nix/.gitignore
-    nix flake update
+    [[ -f .nix/pin ]] || nix flake update
     nix develop --profile .nix/profile
 }

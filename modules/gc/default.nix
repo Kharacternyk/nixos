@@ -43,8 +43,13 @@
       };
       script = ''
         shopt -s nullglob
-        for profile in /home/*/src/*/.nix/profile*; do
-          unlink $profile
+        for dev in /home/*/src/*/.nix/; do
+          cd $dev
+          if ! [[ -f pin ]]; then
+            for profile in profile*; do
+              unlink $profile
+            done
+          fi
         done
       '';
     };
