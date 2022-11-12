@@ -1,10 +1,15 @@
 { lib, headless, pkgs, ... }: lib.optionalAttrs (!headless) {
-  environment.systemPackages = with {
-    term = pkgs.writeShellScriptBin "term" ''
-      ${pkgs.alacritty}/bin/alacritty --config-file ${./alacritty.yaml} "$@"
-    '';
-  }; [
-    pkgs.alacritty
-    term
-  ];
+  environment.systemPackages =
+    let
+      alacritty = "${pkgs.alacritty}/bin/alacritty";
+      term = pkgs.writeShellScriptBin "term" ''
+        if ! ${alacritty} msg create-window "$@"; then
+          ${alacritty} --config-file ${./alacritty.yaml} "$@"
+        fi
+      '';
+    in
+    [
+      pkgs.alacritty
+      term
+    ];
 }
