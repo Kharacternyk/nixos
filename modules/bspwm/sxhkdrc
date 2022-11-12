@@ -6,29 +6,29 @@ alt + semicolon
 alt + shift + semicolon
     term -e lf
 
-alt + y
-    term -e pulsemixer
-
-alt + shift + y
+alt + ctrl + semicolon
     term -e btm --color default-light
 
 alt + u
     qb
 
-alt + shift + u
-    telegram-desktop
-
-alt + ctrl + u
+alt + y
     spotify
 
 alt + i
     zathura
 
 alt + o
-    firefox
+    telegram-desktop
 
 alt + p
+    firefox
+
+alt + [
     rstudio
+
+alt + ]
+    libreoffice
 
 # Screenshots and screencasts
 
