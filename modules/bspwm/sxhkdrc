@@ -24,10 +24,10 @@ alt + o
 alt + p
     firefox
 
-alt + [
+alt + bracketleft
     rstudio
 
-alt + ]
+alt + bracketright
     libreoffice
 
 # Screenshots and screencasts
