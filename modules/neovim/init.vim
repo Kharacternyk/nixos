@@ -15,6 +15,7 @@ set updatetime=300
 
 set iminsert=0
 
+let g:coc_config_home="/etc"
 let g:EasyMotion_smartcase=1
 let g:gruvbox_italic=1
 let g:suda_smart_edit=1

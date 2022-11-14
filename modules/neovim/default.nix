@@ -1,4 +1,5 @@
 { inputs, pkgs, ... }: {
+  environment.etc."coc-settings.json".source = ./coc-settings.json;
   programs.neovim = {
     enable = true;
     viAlias = true;

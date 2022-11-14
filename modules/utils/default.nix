@@ -12,9 +12,13 @@
     ripgrep
     unzip
     (
-      let python-packages = packages: with packages; [
-        pygments
-      ]; in python3.withPackages python-packages
+      let
+        python-packages = packages: with packages; [
+          black
+          pygments
+        ];
+      in
+      python3.withPackages python-packages
     )
   ];
   environment.variables = {
