@@ -80,6 +80,7 @@ au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 au FileType tex map! <buffer> <C-k> <Plug>(vimtex-delim-close)
 au FileType html,xml noremap! <buffer> <C-k> </<C-x><C-o><Esc>==A
 au BufEnter *.asm setlocal filetype=fasm
+au BufWrite * call CocAction('format')
 au TermOpen * startinsert
 
 vnoremap y ygv<Esc>

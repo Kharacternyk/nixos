@@ -16,7 +16,7 @@
         python-packages = packages: with packages; [
           black
           pygments
-        ];
+        ] ++ packages.black.optional-dependencies.d;
       in
       python3.withPackages python-packages
     )
