@@ -13,6 +13,7 @@
           coc-flutter
           coc-java
           coc-nvim
+          coc-prettier
           coc-pyright
           coc-tsserver
           coc-vimtex
