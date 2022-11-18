@@ -36,7 +36,76 @@
         "type": "github"
       }
     },
+    "lowdown-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1633514407,
+        "narHash": "sha256-Dw32tiMjdK9t3ETl5fzGrutQTzh2rufgZV4A/BbxuD4=",
+        "owner": "kristapsdz",
+        "repo": "lowdown",
+        "rev": "d2c2b44ff6c27b936ec27358a2653caaef8f73b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kristapsdz",
+        "repo": "lowdown",
+        "type": "github"
+      }
+    },
+    "nix-lazy-trees": {
+      "inputs": {
+        "lowdown-src": "lowdown-src",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-regression": "nixpkgs-regression"
+      },
+      "locked": {
+        "lastModified": 1668607642,
+        "narHash": "sha256-lNnk5thRq43XPcA+5KwoHgdsKf3urmE4B2xzHokVMbc=",
+        "owner": "edolstra",
+        "repo": "nix",
+        "rev": "561440bd6ddebd53d7b42bced22cb78fd607a6de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "ref": "lazy-trees",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1668766498,
+        "narHash": "sha256-UjZlIrbHGlL3H3HZNPTxPSwJfr49jIfbPWCYxk0EQm4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f42a45c015f28ac3beeb0df360e50cdbf495d44b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.05-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-regression": {
+      "locked": {
+        "lastModified": 1643052045,
+        "narHash": "sha256-uGJ0VXIhWKGXxkeNnq4TvV3CIOkUJ3PAoLZ3HMzNVMw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "215d4d0fd80ca5163643b03a33fde804a29cc1e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "215d4d0fd80ca5163643b03a33fde804a29cc1e2",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1667050928,
         "narHash": "sha256-xOn0ZgjImIyeecEsrjxuvlW7IW5genTwvvnDQRFncB8=",
@@ -56,7 +125,8 @@
       "inputs": {
         "bspwm-utils": "bspwm-utils",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
+        "nix-lazy-trees": "nix-lazy-trees",
+        "nixpkgs": "nixpkgs_2",
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda"

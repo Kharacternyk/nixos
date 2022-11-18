@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }: {
+{ inputs, system, ... }: {
   nix = {
-    package = pkgs.nixFlakes;
+    package = inputs.nix-lazy-trees.packages.${system}.nix;
     extraOptions = ''
       experimental-features = nix-command flakes
       flake-registry = /etc/nixos/registry.json

@@ -1,12 +1,16 @@
-inputs: host: opts: inputs.nixpkgs.lib.nixosSystem {
+inputs: host: opts:
+let
   system = opts.system or "x86_64-linux";
+  headless = opts.headless or false;
+in
+inputs.nixpkgs.lib.nixosSystem {
+  inherit system;
   modules = import ../modules ++ [
     (./. + "/${host}/configuration.nix")
   ];
-  specialArgs = let headless = opts.headless or false; in {
+  specialArgs = {
+    inherit system headless inputs;
     hostname = host;
-    inputs = inputs;
-    headless = headless;
     usb = !headless;
     gpu = !headless;
     dev = !headless;

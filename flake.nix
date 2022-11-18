@@ -18,6 +18,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    nix-lazy-trees = {
+      url = "github:edolstra/nix/lazy-trees";
+    };
     bspwm-utils = {
       url = "github:Kharacternyk/bspwm-utils";
       inputs.nixpkgs.follows = "nixpkgs";
