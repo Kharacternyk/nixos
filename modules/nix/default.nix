@@ -10,19 +10,20 @@
       "nixpkgs=${inputs.nixpkgs}"
     ];
     registry = {
+      nixpkgs-local.flake = inputs.nixpkgs;
       nixpkgs.to = {
         owner = "NixOS";
         repo = "nixpkgs";
         rev = inputs.nixpkgs.rev;
         type = "github";
       };
+      flake-utils-local.flake = inputs.flake-utils;
       flake-utils.to = {
         owner = "numtide";
         repo = "flake-utils";
         rev = inputs.flake-utils.rev;
         type = "github";
       };
-      shellpkgs.flake = inputs.nixpkgs;
     };
   };
   nixpkgs.config.allowUnfree = true;

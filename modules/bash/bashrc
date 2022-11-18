@@ -14,7 +14,7 @@ get() {
         if [[ $pkg == *#* ]]; then
             pkgs+=" $pkg"
         else
-            pkgs+=" shellpkgs#$pkg"
+            pkgs+=" nixpkgs-local#$pkg"
         fi
     done
     nix shell$pkgs
