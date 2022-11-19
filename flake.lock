@@ -96,11 +96,11 @@
     "vim-gruvbox": {
       "flake": false,
       "locked": {
-        "lastModified": 1666626554,
-        "narHash": "sha256-2Ipa70/41hCrTfGd8nEM67bybkT9miGdNH6unCemU9w=",
+        "lastModified": 1668737981,
+        "narHash": "sha256-xsnNqSKA422sbHGJ7M/z5Jl2fEE+KSJqKgfVuRhLu6g=",
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "rev": "ec6ef450645eb6a1af843f57a40bcaf4e278e1ac",
+        "rev": "2b5b1f777f0583ffb39086d6c16f39e6e37459c0",
         "type": "github"
       },
       "original": {
