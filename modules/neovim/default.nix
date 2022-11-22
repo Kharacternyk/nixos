@@ -11,6 +11,7 @@
           coc-clangd
           coc-css
           coc-flutter
+          coc-html
           coc-java
           coc-nvim
           coc-prettier
