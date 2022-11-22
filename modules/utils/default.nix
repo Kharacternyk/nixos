@@ -8,7 +8,6 @@
     mkpasswd
     neofetch
     nixpkgs-fmt
-    nodejs
     ripgrep
     unzip
     (

@@ -5,6 +5,7 @@
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
+    withNodeJs = true;
     configure = {
       packages.myPlugins = with pkgs.vimPlugins; {
         start = [
