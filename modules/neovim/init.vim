@@ -36,6 +36,7 @@ nmap <Leader><Leader> <Plug>(coc-fix-current)
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
+noremap <C-Space> a<C-^><Esc>
 noremap H ^
 noremap L $
 noremap S qq
