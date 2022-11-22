@@ -24,9 +24,6 @@ let g:tex_flavor="latex"
 let g:vim_markdown_math=1
 let g:vim_markdown_folding_disabled=1
 let mapleader=" "
-let $EDITOR="nvr -p"
-let $VISUAL="nvr -p"
-let $GIT_EDITOR="nvr --remote-tab-wait"
 
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>; <Plug>(easymotion-repeat)
@@ -76,13 +73,8 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-au FileType gitcommit setlocal spell
-au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-au FileType tex map! <buffer> <C-k> <Plug>(vimtex-delim-close)
-au FileType html,xml noremap! <buffer> <C-k> </<C-x><C-o><Esc>==A
 au BufEnter *.asm setlocal filetype=fasm
 au BufWrite * silent! call CocAction('format')
-au TermOpen * startinsert
 
 vnoremap y ygv<Esc>
 
