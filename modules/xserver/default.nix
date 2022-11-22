@@ -6,7 +6,7 @@
     imv
     libreoffice
     mpv
-    pulsemixer
+    pavucontrol
     spotify
     tdesktop
     xsel
