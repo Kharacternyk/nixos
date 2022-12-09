@@ -8,6 +8,7 @@
     mkpasswd
     neofetch
     nixpkgs-fmt
+    nix-tree
     ripgrep
     unzip
     (
