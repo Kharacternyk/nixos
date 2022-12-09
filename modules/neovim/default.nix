@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }: {
   environment.etc."coc-settings.json".source = ./coc-settings.json;
+  environment.systemPackages = with pkgs; [
+    rnix-lsp
+  ];
   programs.neovim = {
     enable = true;
     viAlias = true;

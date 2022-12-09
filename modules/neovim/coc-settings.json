@@ -1,4 +1,10 @@
 {
   "suggest.noselect": true,
-  "python.formatting.provider": "blackd"
+  "python.formatting.provider": "blackd",
+  "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    }
+  }
 }
