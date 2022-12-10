@@ -29,10 +29,10 @@ nmap <Leader>y <Plug>(coc-type-definition)
 nmap <Leader>i <Plug>(coc-implementation)
 nmap <Leader>r <Plug>(coc-rename)
 nmap <Leader><Leader> <Plug>(coc-fix-current)
-nmap <Leader>e :CocDiagnostics<CR>
-nmap <Leader>l :CocList<CR>
-nmap <Leader>o :CocOutline<CR>
-nmap <Leader>u :UndotreeToggle<CR>
+nmap <silent><Leader>e :CocDiagnostics<CR>
+nmap <silent><Leader>l :CocList<CR>
+nmap <silent><Leader>o :CocOutline<CR>
+nmap <silent><Leader>u :UndotreeToggle<CR>
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
@@ -49,17 +49,17 @@ noremap! <silent><C-_> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
 
-nnoremap <silent><nowait><expr> <C-f>
+nnoremap <silent><expr> <C-f>
       \ coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b>
+nnoremap <silent><expr> <C-b>
       \ coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-vnoremap <silent><nowait><expr> <C-f>
+vnoremap <silent><expr> <C-f>
       \ coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-vnoremap <silent><nowait><expr> <C-b>
+vnoremap <silent><expr> <C-b>
       \ coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <silent><nowait><expr> <C-f>
+inoremap <silent><expr> <C-f>
       \ coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <C-b>
+inoremap <silent><expr> <C-b>
       \ coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
