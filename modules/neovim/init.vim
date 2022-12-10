@@ -17,16 +17,12 @@ set updatetime=300
 set iminsert=0
 
 let g:coc_config_home="/etc"
-let g:EasyMotion_smartcase=1
 let g:gruvbox_italic=1
 let g:suda_smart_edit=1
 let g:tex_flavor="latex"
 let g:vim_markdown_math=1
 let g:vim_markdown_folding_disabled=1
 let mapleader=" "
-
-map <Leader> <Plug>(easymotion-prefix)
-map <Leader>; <Plug>(easymotion-repeat)
 
 nmap <Leader>d <Plug>(coc-definition)
 nmap <Leader>y <Plug>(coc-type-definition)
