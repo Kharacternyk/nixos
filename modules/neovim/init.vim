@@ -29,6 +29,10 @@ nmap <Leader>y <Plug>(coc-type-definition)
 nmap <Leader>i <Plug>(coc-implementation)
 nmap <Leader>r <Plug>(coc-rename)
 nmap <Leader><Leader> <Plug>(coc-fix-current)
+nmap <Leader>e :CocDiagnostics<CR>
+nmap <Leader>l :CocList<CR>
+nmap <Leader>o :CocOutline<CR>
+nmap <Leader>u :UndotreeToggle<CR>
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
