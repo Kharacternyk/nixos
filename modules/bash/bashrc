@@ -17,7 +17,7 @@ get() {
             pkgs+=" nixpkgs-local#$pkg"
         fi
     done
-    nix shell$pkgs
+    NIXPKGS_ALLOW_UNFREE=1 nix shell$pkgs --impure
 }
 
 dev() {
