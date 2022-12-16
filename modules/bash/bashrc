@@ -9,7 +9,7 @@ bind -m vi '/: "\C-r"'
 source "$(fzf-share)"/key-bindings.bash
 
 get() {
-    pkgs=""
+    local pkgs pkg
     for pkg in "$@"; do
         if [[ $pkg == *#* ]]; then
             pkgs+=" $pkg"
@@ -21,8 +21,19 @@ get() {
 }
 
 dev() {
-    mkdir -p .nix
-    echo '*' > .nix/.gitignore
-    [[ -f .nix/pin ]] || nix flake update
-    nix develop --profile .nix/profile
+    local workdir="$PWD"
+    while [[ ! -f flake.nix ]] && [[ $PWD != / ]]; do
+        cd ..
+    done
+    if [[ -f flake.nix ]]; then
+        local flakedir="$PWD"
+        mkdir -p .nix
+        echo '*' > .nix/.gitignore
+        [[ -f .nix/pin ]] || nix flake update
+        cd $workdir
+        nix develop --profile "$flakedir"/.nix/profile
+    else
+        echo nope
+        cd $workdir
+    fi
 }
