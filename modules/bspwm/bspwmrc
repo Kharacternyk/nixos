@@ -1,5 +1,5 @@
-killall -q polybar
-polybar -c /etc/polybar.conf default & disown
+polybar -c /etc/polybar.conf -r primary &
+polybar -c /etc/polybar.conf -r secondary &
 
 bspc config window_gap 8
 bspc config border_width 4
