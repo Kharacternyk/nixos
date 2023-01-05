@@ -13,7 +13,7 @@ alt + u
     qb
 
 alt + y
-    spotify
+    spotify --no-zygote
 
 alt + i
     zathura
