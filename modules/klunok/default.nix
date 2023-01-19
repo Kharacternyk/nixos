@@ -2,6 +2,9 @@
 let klunok = inputs.klunok.packages.${pkgs.system}.default; in
 {
   systemd.services.klunok = {
+    wantedBy = [
+      "multi-user.target"
+    ];
     restartTriggers = [
       klunok
     ];
