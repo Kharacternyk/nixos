@@ -46,11 +46,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1674241768,
-        "narHash": "sha256-ib4MYR9HqM6lvvp6kqcveb7TfxB0ejHxlTD4yHeO9Bw=",
+        "lastModified": 1674403995,
+        "narHash": "sha256-a00mvduw5DiyzzqsvJa6c2QIsyP7ZrzihaPqJYj1v2U=",
         "owner": "Kharacternyk",
         "repo": "klunok",
-        "rev": "e28ead0e2111d3ae8341f4dcfebe828041a89baf",
+        "rev": "429f0e966e414c990ca57671e2aa66f506bc9a04",
         "type": "github"
       },
       "original": {
