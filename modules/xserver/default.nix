@@ -46,4 +46,26 @@
     image/jpeg=imv.desktop;
     application/pdf=org.pwmt.zathura.desktop
   '';
+  systemd.user = {
+    timers.pomodoro-lockscreen = {
+      wantedBy = [
+        "default.target"
+      ];
+      timerConfig = rec {
+        Unit = "pomodoro-lockscreen.service";
+        OnActiveSec = 30 * 60;
+        OnUnitActiveSec = OnActiveSec;
+      };
+    };
+    services.pomodoro-lockscreen = {
+      serviceConfig = {
+        Type = "oneshot";
+        Restart = "no";
+      };
+      path = [
+        pkgs.xsecurelock
+      ];
+      script = "xsecurelock";
+    };
+  };
 }
