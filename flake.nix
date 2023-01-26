@@ -26,6 +26,7 @@
     bspwm-utils = {
       url = "github:Kharacternyk/bspwm-utils";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
