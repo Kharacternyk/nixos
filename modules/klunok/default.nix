@@ -16,14 +16,8 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
       mkdir -p /klunok
       chown klunok:klunok /klunok
       setfacl -m u:klunok:rx -m mask:rx /home/nazar
-      klunok /etc/klunok/config.lua
+      klunok
     '';
-  };
-  environment.etc."klunok/config.lua" = {
-    mode = "0644";
-    source = ./config.lua;
-    user = "klunok";
-    group = "klunok";
   };
   users.users.klunok = {
     isSystemUser = true;
