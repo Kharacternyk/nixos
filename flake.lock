@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1675274759,
-        "narHash": "sha256-8okFlgqwg/08PGKp0KpqQQouncFK99UmtS8r3zdfs4U=",
+        "lastModified": 1675365294,
+        "narHash": "sha256-R23pXdtdR1fm/tnHAABxA8o67Pqr1z0CASr7vpuouOQ=",
         "owner": "Kharacternyk",
         "repo": "klunok",
-        "rev": "d2c172099e31f437f7dafdcdc595ff77ad8944ce",
+        "rev": "ed651384de7f19e9f68dd3769d6208cbadc2904b",
         "type": "github"
       },
       "original": {
@@ -63,11 +63,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1672262501,
-        "narHash": "sha256-ZNXqX9lwYo1tOFAqrVtKTLcJ2QMKCr3WuIvpN8emp7I=",
+        "lastModified": 1675273418,
+        "narHash": "sha256-tpYc4TEGvDzh9uRf44QemyQ4TpVuUbxb07b2P99XDbM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e182da8622a354d44c39b3d7a542dc12cd7baa5f",
+        "rev": "4d7c2644dbac9cf8282c0afe68fca8f0f3e7b2db",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
     "vim-suda": {
       "flake": false,
       "locked": {
-        "lastModified": 1666141954,
-        "narHash": "sha256-7DdowrqS+OKzhLgnnSlnDVqMWs+c/fLtXmF1cYXoDM0=",
+        "lastModified": 1673323637,
+        "narHash": "sha256-roc1TYyUlnhnMv+ueSlIdItiNlEqNRNaE6CZVzXpO2o=",
         "owner": "lambdalisue",
         "repo": "suda.vim",
-        "rev": "2fc45dc4bcafb245b613ebd6847a244924735cc6",
+        "rev": "08abd39dfe1cee681b8ce3e7321da5fa03e045c1",
         "type": "github"
       },
       "original": {
