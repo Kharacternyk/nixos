@@ -77,6 +77,7 @@ endfunction
 
 au BufEnter *.asm setlocal filetype=fasm
 au BufWrite * silent! call CocAction('format')
+au BufWrite * silent! call CocAction('runCommand', 'editor.action.organizeImport')
 
 vnoremap y ygv<Esc>
 
