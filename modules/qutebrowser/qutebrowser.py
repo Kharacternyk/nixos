@@ -8,7 +8,7 @@ config.bind("R", "config-source")
 config.bind("d", "edit-url")
 config.bind("u", "set-cmd-text :open !")
 
-c.url.start_pages = "https://online.bonjourr.fr/"
+c.url.start_pages = "https://news.ycombinator.com/"
 c.url.default_page = c.url.start_pages
 
 c.content.autoplay = False
