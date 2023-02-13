@@ -21,4 +21,5 @@ lib.optionalAttrs (!headless) {
     qb
     qbDesktop
   ];
+  environment.etc."qb-start.svg".source = ./qb-start.svg;
 }
