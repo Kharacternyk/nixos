@@ -20,7 +20,7 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
         mount --bind $path $path
       done
       setfacl -m u:klunok:rx -m mask:rx /home/nazar
-      klunok -d /klunok -i /
+      klunok -d /klunok -i / -c ${./config.lua}
     '';
   };
   users.users.klunok = {
