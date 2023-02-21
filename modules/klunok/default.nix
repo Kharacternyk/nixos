@@ -19,7 +19,9 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
       for path in /home/nazar /etc/nixos /tmp; do
         mount --bind $path $path
       done
-      setfacl -m u:klunok:rx -m mask:rx /home/nazar
+      for path in /home/nazar /home/nazar/.bash_history; do
+        setfacl -m u:klunok:rx -m mask:rx $path
+      done
       klunok -d /klunok -i / -c ${./config.lua}
     '';
   };
