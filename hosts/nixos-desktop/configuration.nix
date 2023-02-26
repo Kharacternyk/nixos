@@ -15,8 +15,7 @@
         output = "VGA-0";
         monitorConfig = ''
           Option "PreferredMode" "1280x1024"
-          Option "Rotate" "left"
-          Option "LeftOf" "DVI-0"
+          Option "RightOf" "DVI-0"
         '';
       }
       {
