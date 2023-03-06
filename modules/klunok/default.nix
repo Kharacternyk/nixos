@@ -8,23 +8,18 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     restartTriggers = [
       klunok
     ];
-    path = [
-      klunok
-      pkgs.acl
-      pkgs.util-linux
-    ];
-    script = ''
-      mkdir -p /klunok
-      chown klunok:klunok /klunok
-      for path in /home/nazar /etc/nixos /tmp; do
-        mount --bind $path $path
-      done
-      for path in /home/nazar /home/nazar/.bash_history; do
-        setfacl -m u:klunok:rx -m mask:rx $path
-      done
-      klunok -d /klunok -i / -c ${./config.lua}
-    '';
+    script = "${klunok}/bin/klunok -d /klunok -i / -c ${./config.lua}";
   };
+  system.activationScripts.klunok.text = ''
+    mkdir -p /klunok
+    chown klunok:klunok /klunok
+    for path in /home/nazar /etc/nixos /tmp; do
+      ${pkgs.util-linux}/bin/mount --bind $path $path
+    done
+    for path in /home/nazar /home/nazar/.bash_history; do
+      ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx $path
+    done
+  '';
   users.users.klunok = {
     isSystemUser = true;
     group = "klunok";
