@@ -14,7 +14,9 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     mkdir -p /klunok
     chown klunok:klunok /klunok
     for path in /home/nazar /etc/nixos /tmp; do
-      ${pkgs.util-linux}/bin/mount --bind $path $path
+      if ! mountpoint -q $path; then
+        ${pkgs.util-linux}/bin/mount --bind $path $path
+      fi
     done
     for path in /home/nazar /home/nazar/.bash_history; do
       ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx $path
