@@ -7,7 +7,7 @@
       timerConfig = {
         Unit = "collect-garbage.service";
         Persistent = "yes";
-        OnCalendar = "daily";
+        OnCalendar = "weekly";
       };
     };
     services.collect-garbage = {
