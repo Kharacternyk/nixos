@@ -9,6 +9,7 @@
     neofetch
     nixpkgs-fmt
     nix-tree
+    nodePackages.wrangler
     ripgrep
     unzip
     (
