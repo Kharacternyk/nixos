@@ -16,7 +16,6 @@ c.content.cookies.accept = "no-3rdparty"
 c.content.fullscreen.window = True
 c.content.geolocation = False
 c.content.notifications.enabled = False
-c.content.webgl = False
 c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 
 c.downloads.location.directory = "~/new"
