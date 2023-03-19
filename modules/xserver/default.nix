@@ -3,6 +3,7 @@
     firefox
     graphviz
     imagemagick
+    inkscape
     libreoffice
     mpv
     pavucontrol
