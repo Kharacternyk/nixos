@@ -6,6 +6,7 @@
     killall
     man-pages
     mkpasswd
+    ncdu
     neofetch
     nixpkgs-fmt
     nix-tree
