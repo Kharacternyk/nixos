@@ -7,6 +7,7 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     ];
     restartTriggers = [
       klunok
+      ./config.lua
     ];
     script = "${klunok}/bin/klunok -d /klunok -i / -c ${./config.lua}";
   };
