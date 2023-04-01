@@ -1,7 +1,12 @@
 [user]
-	email = nazar@vinnich.uk
-	name = Nazar Vinnichuk
+email=nazar@vinnich.uk
+name=Nazar Vinnichuk
+
 [pull]
-	ff = only
+ff=only
+
 [push]
-	default = current
+default=current
+
+[safe]
+directory=/etc/nixos
