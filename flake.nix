@@ -6,12 +6,6 @@
         gpu = false;
         usb = false;
       };
-      nixos-vps = import ./hosts inputs "nixos-vps" {
-        headless = true;
-      };
-      nixos-droplet = import ./hosts inputs "nixos-droplet" {
-        headless = true;
-      };
     };
   };
 
