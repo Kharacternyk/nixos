@@ -63,6 +63,9 @@ alt + comma
 alt + shift + comma
     bspc desktop -r
 
+alt + ctrl + {_,shift + }comma
+    bspc monitor -f {next,prev}
+
 alt + ctrl + apostrophe
     bspc node -c
 
@@ -95,9 +98,6 @@ alt + {_,shift + }space
 
 alt + ctrl + {_,shift + }space
     bspc desktop -b {next,prev}
-
-alt + {_,shift + }backslash
-    bspc monitor -f {next,prev}
 
 alt + ctrl + period
     bspc node -R 90
