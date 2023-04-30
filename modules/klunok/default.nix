@@ -5,20 +5,13 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     wantedBy = [
       "multi-user.target"
     ];
-    restartTriggers = [
-      klunok
-      ./config.lua
-    ];
-    script = "${klunok}/bin/klunok -d /klunok -i / -c ${./config.lua}";
+    script = ''
+      ${klunok}/bin/klunok -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
+    '';
   };
   system.activationScripts.klunok.text = ''
     mkdir -p /klunok
     chown klunok:klunok /klunok
-    for path in /home/nazar /etc/nixos /tmp; do
-      if ! mountpoint -q $path; then
-        ${pkgs.util-linux}/bin/mount --bind $path $path
-      fi
-    done
     for path in /home/nazar /home/nazar/.bash_history; do
       ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx $path
     done
