@@ -21,4 +21,17 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     group = "klunok";
   };
   users.groups.klunok = { };
+
+  systemd.services.klunok-valgrind = {
+    wantedBy = [
+      "multi-user.target"
+    ];
+    script = ''
+      ${pkgs.valgrind-light}/bin/valgrind ${klunok}/bin/klunok -c ${./config-valgrind.lua} -d /klunok-valgrind -w /home/nazar -w /etc/nixos -e /nix/store
+    '';
+  };
+  system.activationScripts.klunok-valgrind.text = ''
+    mkdir -p /klunok-valgrind
+    chown klunok:klunok /klunok-valgrind
+  '';
 }
