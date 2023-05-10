@@ -27,7 +27,7 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
       "multi-user.target"
     ];
     script = ''
-      ${pkgs.valgrind-light}/bin/valgrind ${klunok}/bin/klunok -c ${./config-valgrind.lua} -d /klunok-valgrind -w /home/nazar -w /etc/nixos -e /nix/store
+      ${pkgs.valgrind-light}/bin/valgrind --leak-check=full -- ${klunok}/bin/klunok -c ${./config-valgrind.lua} -d /klunok-valgrind -w /home/nazar -w /etc/nixos -e /nix/store
     '';
   };
   system.activationScripts.klunok-valgrind.text = ''
