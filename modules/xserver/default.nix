@@ -10,6 +10,7 @@
     spotify
     tdesktop
     xsel
+    yubikey-manager
   ];
   services = {
     xserver = {
@@ -37,6 +38,9 @@
     };
     unclutter-xfixes.enable = true;
     earlyoom.enable = true;
+    udev.packages = [
+      pkgs.yubikey-personalization
+    ];
   };
   security.rtkit.enable = true;
   environment.etc."xdg/mimeapps.list".text = ''
