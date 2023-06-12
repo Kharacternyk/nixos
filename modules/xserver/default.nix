@@ -42,14 +42,7 @@
       pkgs.yubikey-personalization
     ];
   };
-  security = {
-    rtkit.enable = true;
-    pam.u2f = {
-      enable = true;
-      authFile = ./u2f;
-      origin = "nixos";
-    };
-  };
+  security.rtkit.enable = true;
   environment.etc."xdg/mimeapps.list".text = ''
     [Default Applications]
     x-scheme-handler/http=qb.desktop
