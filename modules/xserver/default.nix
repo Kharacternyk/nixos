@@ -37,7 +37,10 @@
       temperature.night = 3500;
     };
     unclutter-xfixes.enable = true;
-    earlyoom.enable = true;
+    earlyoom = {
+      enable = true;
+      freeMemThreshold = 5;
+    };
     udev.packages = [
       pkgs.yubikey-personalization
     ];
