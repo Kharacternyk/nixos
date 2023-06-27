@@ -3,6 +3,7 @@
     clang-tools
     darkhttpd
     dart
+    flutter
     gnumake
     poetry
     texlive.combined.scheme-full
