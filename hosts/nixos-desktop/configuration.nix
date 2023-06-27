@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
   services.xserver = {
     displayManager.setupCommands = ''
-      ${pkgs.xorg.setxkbmap}/bin/setxkbmap
-      ${pkgs.xorg.xset}/bin/xset -dpms
+      ${lib.getExe pkgs.xorg.setxkbmap}
+      ${lib.getExe pkgs.xorg.xset} -dpms
     '';
     xrandrHeads = [
       { output = "DVI-I-1"; primary = true; }
