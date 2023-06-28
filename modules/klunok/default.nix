@@ -1,13 +1,16 @@
-{ inputs, pkgs, ... }:
-let klunok = inputs.klunok.packages.${pkgs.system}.default; in
+{ lib, host, pkgs, ... }:
+let
+  klunok = lib.getExe host.inputs.klunok.packages.${pkgs.system}.default;
+  commandLine = configurationFile: ''
+    ${klunok} -c ${configurationFile} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
+  '';
+in
 {
   systemd.services.klunok = {
     wantedBy = [
       "multi-user.target"
     ];
-    script = ''
-      ${klunok}/bin/klunok -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
-    '';
+    script = commandLine ./config.lua;
   };
   system.activationScripts.klunok.text = ''
     mkdir -p /klunok
@@ -21,13 +24,12 @@ let klunok = inputs.klunok.packages.${pkgs.system}.default; in
     group = "klunok";
   };
   users.groups.klunok = { };
-
   systemd.services.klunok-valgrind = {
-    wantedBy = [
+    wantedBy = lib.optionals (host ? hasEnoughRam && host ? isForDevelopment) [
       "multi-user.target"
     ];
-    script = ''
-      ${pkgs.valgrind-light}/bin/valgrind --leak-check=full -- ${klunok}/bin/klunok -c ${./config-valgrind.lua} -d /klunok-valgrind -w /home/nazar -w /etc/nixos -e /nix/store
+    script = let valgrind = lib.getExe pkgs.valgrind-light; in ''
+      ${valgrind} --leak-check=full -- ${commandLine ./config-valgrind.lua}
     '';
   };
   system.activationScripts.klunok-valgrind.text = ''

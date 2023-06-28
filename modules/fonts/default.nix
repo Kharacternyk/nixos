@@ -1,4 +1,4 @@
-{ lib, headless, pkgs, ... }: lib.optionalAttrs (!headless) {
+{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [

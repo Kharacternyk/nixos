@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ host, pkgs, ... }: {
   environment.etc."coc-settings.json".source = ./coc-settings.json;
   environment.systemPackages = with pkgs; [
     rnix-lsp
@@ -32,15 +32,15 @@
           plantuml-syntax
           (pkgs.vimUtils.buildVimPlugin {
             name = "bullets";
-            src = inputs.vim-bullets;
+            src = host.inputs.vim-bullets;
           })
           (pkgs.vimUtils.buildVimPlugin {
             name = "gruvbox";
-            src = inputs.vim-gruvbox;
+            src = host.inputs.vim-gruvbox;
           })
           (pkgs.vimUtils.buildVimPlugin {
             name = "suda";
-            src = inputs.vim-suda;
+            src = host.inputs.vim-suda;
           })
         ];
       };

@@ -1,4 +1,4 @@
-{ lib, headless, pkgs, ... }:
+{ lib, host, pkgs, ... }:
 let
   qb = pkgs.writeShellScriptBin "qb" ''
     socket="$XDG_RUNTIME_DIR/qutebrowser/ipc-$(echo -n "$USER" | md5sum | cut -d' ' -f1)"
@@ -15,7 +15,7 @@ let
     exec = "${lib.getExe qb} %u";
   };
 in
-lib.optionalAttrs (!headless) {
+lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages = [
     pkgs.qutebrowser
     qb

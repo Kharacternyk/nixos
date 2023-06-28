@@ -1,17 +1,14 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    ansible
     bottom
     entr
     fzf
     killall
     man-pages
-    mkpasswd
     ncdu
     neofetch
     nixpkgs-fmt
     nix-tree
-    nodePackages.wrangler
     ripgrep
     unzip
     (

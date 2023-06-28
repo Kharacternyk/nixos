@@ -1,8 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    lf
+  environment.systemPackages = [
+    pkgs.lf
   ];
-  environment.etc = {
-    "lf/lfrc".source = ./lfrc;
-  };
+  environment.etc."lf/lfrc".source = ./lfrc;
 }

@@ -1,9 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    git
-    gitAndTools.pre-commit
+  environment.systemPackages = [
+    pkgs.git
   ];
-  environment.etc = {
-    gitconfig.source = ./gitconfig;
-  };
+  environment.etc.gitconfig.source = ./gitconfig;
 }

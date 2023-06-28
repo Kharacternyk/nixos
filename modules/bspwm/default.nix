@@ -1,6 +1,6 @@
-{ lib, inputs, headless, pkgs, ... }: lib.optionalAttrs (!headless) {
+{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages = [
-    inputs.bspwm-utils.defaultPackage.${pkgs.system}
+    host.inputs.bspwm-utils.defaultPackage.${pkgs.system}
   ];
   services.xserver.windowManager.bspwm =
     let

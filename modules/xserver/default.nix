@@ -1,12 +1,10 @@
-{ lib, headless, gpu, pkgs, ... }: lib.optionalAttrs (!headless) {
+{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages = with pkgs; [
     firefox
-    graphviz
     imagemagick
     inkscape
     libreoffice
     mpv
-    pavucontrol
     spotify
     tdesktop
     xsel
@@ -27,7 +25,7 @@
       pulse.enable = true;
     };
     picom = {
-      enable = gpu;
+      enable = host ? hasGpu;
       vSync = true;
       backend = "glx";
     };

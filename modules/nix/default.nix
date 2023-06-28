@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ host, pkgs, ... }: {
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -7,21 +7,21 @@
       warn-dirty = false
     '';
     nixPath = [
-      "nixpkgs=${inputs.nixpkgs}"
+      "nixpkgs=${host.inputs.nixpkgs}"
     ];
     registry = {
-      nixpkgs-local.flake = inputs.nixpkgs;
+      nixpkgs-local.flake = host.inputs.nixpkgs;
       nixpkgs.to = {
         owner = "NixOS";
         repo = "nixpkgs";
-        rev = inputs.nixpkgs.rev;
+        rev = host.inputs.nixpkgs.rev;
         type = "github";
       };
-      flake-utils-local.flake = inputs.flake-utils;
+      flake-utils-local.flake = host.inputs.flake-utils;
       flake-utils.to = {
         owner = "numtide";
         repo = "flake-utils";
-        rev = inputs.flake-utils.rev;
+        rev = host.inputs.flake-utils.rev;
         type = "github";
       };
     };

@@ -1,10 +1,21 @@
 {
   outputs = inputs: {
     nixosConfigurations = {
-      nixos-desktop = import ./hosts inputs "nixos-desktop" { };
-      nixos-laptop-vm = import ./hosts inputs "nixos-laptop-vm" {
-        gpu = false;
-        usb = false;
+      nixos-desktop = import ./hosts {
+        inherit inputs;
+        name = "nixos-desktop";
+        hasEnoughStorage = true;
+        hasGpu = true;
+        hasScreen = true;
+        hasWifi = true;
+        isForDevelopment = true;
+      };
+      nixos-laptop-vm = import ./hosts {
+        inherit inputs;
+        name = "nixos-laptop-vm";
+        hasEnoughRam = true;
+        hasScreen = true;
+        isForDevelopment = true;
       };
     };
   };

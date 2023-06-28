@@ -1,4 +1,4 @@
-{ lib, headless, ... }: lib.optionalAttrs (!headless) {
+{ lib, host, ... }: {
   security.pam.u2f = {
     enable = true;
     authFile = ./u2f;
