@@ -10,9 +10,9 @@
     poetry
     yarn
     yarn-bash-completion
-  ] ++ (host ? hasEnoughStorage) [
+  ] ++ lib.optionals (host ? hasEnoughStorage) [
     texlive.combined.scheme-full
-  ] ++ (host ? hasScreen) [
+  ] ++ lib.optionals (host ? hasScreen) [
     pandoc
     rstudio
   ];
