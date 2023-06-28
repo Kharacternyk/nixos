@@ -4,6 +4,7 @@
       nixos-desktop = import ./hosts {
         inherit inputs;
         name = "nixos-desktop";
+        system = inputs.flake-utils.lib.system.x86_64-linux;
         hasEnoughStorage = true;
         hasGpu = true;
         hasScreen = true;
@@ -13,6 +14,7 @@
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
         name = "nixos-laptop-vm";
+        system = inputs.flake-utils.lib.system.x86_64-linux;
         hasEnoughRam = true;
         hasScreen = true;
         isForDevelopment = true;

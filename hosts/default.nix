@@ -1,5 +1,5 @@
 host: host.inputs.nixpkgs.lib.nixosSystem {
-  system = host.system or "x86_64-linux";
+  inherit (host) system;
   modules = import ../modules ++ [
     ./${host.name}/configuration.nix
   ];
