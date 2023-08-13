@@ -9,6 +9,7 @@
     tdesktop
     xsel
     yubikey-manager
+    apple-cursor
   ];
   services = {
     xserver = {
