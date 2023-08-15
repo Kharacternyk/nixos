@@ -6,13 +6,13 @@ let
     '{"args":["%s"],"target_arg":null,"version":"1.0.4","protocol_version":1,"cwd":"%s"}\n' \
     "$1" \
     "$PWD" \
-    | ${lib.getExe pkgs.socat} -lf /dev/null - UNIX-CONNECT:"$socket" \
-    || "${lib.getExe pkgs.qutebrowser}" -C ${./qutebrowser.py} "$@" &
+    | ${pkgs.socat}/bin/socat -lf /dev/null - UNIX-CONNECT:"$socket" \
+    || "${pkgs.qutebrowser}/bin/qutebrowser" -C ${./qutebrowser.py} "$@" &
   '';
   qbDesktop = pkgs.makeDesktopItem {
     name = "qb";
     desktopName = "Qutebrowser";
-    exec = "${lib.getExe qb} %u";
+    exec = "${qb}/bin/qb %u";
   };
 in
 lib.optionalAttrs (host ? hasScreen) {
