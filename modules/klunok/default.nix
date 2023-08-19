@@ -1,6 +1,6 @@
 { lib, host, pkgs, ... }:
 let
-  klunok = lib.getExe host.inputs.klunok.packages.${pkgs.system}.default;
+  klunok = host.inputs.klunok.packages.${pkgs.system}.default + "/bin/klunok";
   commandLine = configurationFile: ''
     ${klunok} -c ${configurationFile} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
   '';
@@ -28,7 +28,7 @@ in
     wantedBy = lib.optionals (host ? hasEnoughRam && host ? isForDevelopment) [
       "multi-user.target"
     ];
-    script = let valgrind = lib.getExe pkgs.valgrind-light; in ''
+    script = let valgrind = "${pkgs.valgrind-light}/bin/valgrind"; in ''
       ${valgrind} --leak-check=full -- ${commandLine ./config-valgrind.lua}
     '';
   };
