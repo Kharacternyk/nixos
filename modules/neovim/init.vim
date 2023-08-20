@@ -76,6 +76,7 @@ function! CheckBackspace() abort
 endfunction
 
 au BufEnter *.asm setlocal filetype=fasm
+au BufEnter *.arb setlocal filetype=json
 au BufWrite * silent! call CocAction('format')
 au BufWrite * silent! call CocAction('runCommand', 'editor.action.organizeImport')
 
