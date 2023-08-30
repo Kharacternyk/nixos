@@ -16,4 +16,6 @@
     pandoc
     rstudio
   ];
+
+  programs.adb.enable = true;
 }
