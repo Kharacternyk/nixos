@@ -16,13 +16,11 @@
           coc-css
           coc-flutter
           coc-html
-          coc-java
           coc-nvim
           coc-prettier
           coc-pyright
           coc-tsserver
           coc-vimtex
-          haskell-vim
           sleuth
           undotree
           vim-jsx-pretty
