@@ -6,7 +6,7 @@ config.bind("K", "scroll-page 0 -1")
 config.bind("M", "spawn mpv {url}")
 config.bind("R", "config-source")
 config.bind("d", "edit-url")
-config.bind("u", "set-cmd-text :open !")
+config.bind("u", "cmd-set-text :open !")
 
 c.url.start_pages = "qute://start"
 c.url.default_page = c.url.start_pages
