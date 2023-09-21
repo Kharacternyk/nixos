@@ -4,11 +4,11 @@
     rnix-lsp
     typst-lsp
   ];
+  environment.sessionVariables.EDITOR = "sudo -u nazar nvim";
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    defaultEditor = true;
     withNodeJs = true;
     configure = {
       packages.myPlugins = with pkgs.vimPlugins; {
