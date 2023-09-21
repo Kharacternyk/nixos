@@ -88,7 +88,8 @@
         "nixpkgs": "nixpkgs",
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
-        "vim-suda": "vim-suda"
+        "vim-suda": "vim-suda",
+        "vim-typst": "vim-typst"
       }
     },
     "systems": {
@@ -151,6 +152,22 @@
       "original": {
         "owner": "lambdalisue",
         "repo": "suda.vim",
+        "type": "github"
+      }
+    },
+    "vim-typst": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695156070,
+        "narHash": "sha256-G5+LX3rg5N9tBBt3i+2phbgfJd97bcxQveVzRegZu+A=",
+        "owner": "kaarmu",
+        "repo": "typst.vim",
+        "rev": "65f9e78c11829a643d1539f3481c0ff875c83603",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kaarmu",
+        "repo": "typst.vim",
         "type": "github"
       }
     }

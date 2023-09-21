@@ -6,6 +6,10 @@
     "nix": {
       "command": "rnix-lsp",
       "filetypes": ["nix"]
+    },
+    "typst": {
+      "command": "typst-lsp",
+      "filetypes": ["typst"]
     }
   }
 }

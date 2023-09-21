@@ -2,6 +2,7 @@
   environment.etc."coc-settings.json".source = ./coc-settings.json;
   environment.systemPackages = with pkgs; [
     rnix-lsp
+    typst-lsp
   ];
   programs.neovim = {
     enable = true;
@@ -39,6 +40,10 @@
           (pkgs.vimUtils.buildVimPlugin {
             name = "suda";
             src = host.inputs.vim-suda;
+          })
+          (pkgs.vimUtils.buildVimPlugin {
+            name = "typst";
+            src = host.inputs.vim-typst;
           })
         ];
       };

@@ -8,6 +8,7 @@
     gnumake
     nodePackages.wrangler
     poetry
+    typst
     yarn
     yarn-bash-completion
   ] ++ lib.optionals (host ? hasEnoughStorage) [

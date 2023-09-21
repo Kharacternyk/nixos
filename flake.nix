@@ -47,5 +47,9 @@
       url = "github:lambdalisue/suda.vim";
       flake = false;
     };
+    vim-typst = {
+      url = "github:kaarmu/typst.vim";
+      flake = false;
+    };
   };
 }
