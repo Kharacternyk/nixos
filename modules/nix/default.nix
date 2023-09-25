@@ -3,8 +3,8 @@
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
-      flake-registry = /etc/nixos/registry.json
       warn-dirty = false
+      flake-registry =
     '';
     nixPath = [
       "nixpkgs=${host.inputs.nixpkgs}"
