@@ -25,9 +25,6 @@ in
   };
   users.groups.klunok = { };
   systemd.services.klunok-valgrind = {
-    wantedBy = lib.optionals (host ? hasEnoughRam && host ? isForDevelopment) [
-      "multi-user.target"
-    ];
     script = let valgrind = "${pkgs.valgrind-light}/bin/valgrind"; in ''
       ${valgrind} --leak-check=full -- ${commandLine ./config-valgrind.lua}
     '';
