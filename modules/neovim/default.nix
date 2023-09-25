@@ -21,13 +21,11 @@
           coc-prettier
           coc-pyright
           coc-tsserver
-          coc-vimtex
           sleuth
           undotree
           vim-jsx-pretty
           vim-markdown
           vim-nix
-          vimtex
           plantuml-syntax
           (pkgs.vimUtils.buildVimPlugin {
             name = "bullets";

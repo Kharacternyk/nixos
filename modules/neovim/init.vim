@@ -19,10 +19,8 @@ set iminsert=0
 let g:coc_config_home="/etc"
 let g:gruvbox_italic=1
 let g:suda_smart_edit=1
-let g:tex_flavor="latex"
 let g:vim_markdown_math=1
 let g:vim_markdown_folding_disabled=1
-let g:vimtex_mappings_enabled=0
 let mapleader=" "
 
 nmap <Leader>d <Plug>(coc-definition)

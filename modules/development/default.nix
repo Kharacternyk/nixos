@@ -11,10 +11,7 @@
     typst
     yarn
     yarn-bash-completion
-  ] ++ lib.optionals (host ? hasEnoughStorage) [
-    texlive.combined.scheme-full
   ] ++ lib.optionals (host ? hasScreen) [
-    pandoc
     rstudio
   ];
 
