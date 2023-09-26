@@ -8,14 +8,12 @@
         hasGpu = true;
         hasScreen = true;
         hasWifi = true;
-        isForDevelopment = true;
       };
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
         name = "nixos-laptop-vm";
         system = inputs.flake-utils.lib.system.x86_64-linux;
         hasScreen = true;
-        isForDevelopment = true;
       };
     };
   };

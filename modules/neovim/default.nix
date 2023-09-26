@@ -1,8 +1,10 @@
-{ host, pkgs, ... }: {
+{ lib, host, pkgs, readAttributes, ... }: {
   environment.etc."coc-settings.json".source = ./coc-settings.json;
-  environment.systemPackages = with pkgs; [
-    rnix-lsp
-    typst-lsp
+  environment.systemPackages = [
+    pkgs.rnix-lsp
+    pkgs.typst-lsp
+  ] ++ lib.optionals (host ? hasScreen) [
+    pkgs.xsel
   ];
   environment.sessionVariables.EDITOR = "sudo -u nazar nvim";
   programs.neovim = {
@@ -11,22 +13,8 @@
     vimAlias = true;
     withNodeJs = true;
     configure = {
-      packages.myPlugins = with pkgs.vimPlugins; {
-        start = [
-          coc-clangd
-          coc-css
-          coc-flutter
-          coc-html
-          coc-nvim
-          coc-prettier
-          coc-pyright
-          coc-tsserver
-          sleuth
-          undotree
-          vim-jsx-pretty
-          vim-markdown
-          vim-nix
-          plantuml-syntax
+      packages.myPlugins = {
+        start = readAttributes ./plugins.txt pkgs.vimPlugins ++ [
           (pkgs.vimUtils.buildVimPlugin {
             name = "bullets";
             src = host.inputs.vim-bullets;

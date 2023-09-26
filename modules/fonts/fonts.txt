@@ -1,0 +1,4 @@
+font-awesome
+liberation_ttf
+noto-fonts-cjk
+noto-fonts-emoji

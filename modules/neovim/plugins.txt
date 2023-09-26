@@ -1,0 +1,14 @@
+coc-clangd
+coc-css
+coc-flutter
+coc-html
+coc-nvim
+coc-prettier
+coc-pyright
+coc-tsserver
+sleuth
+undotree
+vim-jsx-pretty
+vim-markdown
+vim-nix
+plantuml-syntax

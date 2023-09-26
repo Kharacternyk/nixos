@@ -1,10 +1,10 @@
-{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, host, pkgs, readAttributes, ... }: lib.optionalAttrs (host ? hasScreen) {
   fonts = {
     enableDefaultPackages = false;
-    packages = with pkgs; [
+    packages = readAttributes ./fonts.txt pkgs ++ [
       (
         let version = "6.0.0"; in
-        fetchzip {
+        pkgs.fetchzip {
           name = "ibm-plex-ttf-${version}";
           url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
           postFetch = ''
@@ -14,10 +14,6 @@
           sha256 = "I4i/wr901yu7qp6zglBqsUSRVcetr3I0MBh9KqcuiLc=";
         }
       )
-      font-awesome
-      liberation_ttf
-      noto-fonts-emoji
-      noto-fonts-cjk
     ];
     fontconfig.defaultFonts = {
       monospace = [ "IBM Plex Mono" ];

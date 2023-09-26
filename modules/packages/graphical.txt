@@ -1,0 +1,7 @@
+firefox
+inkscape
+libreoffice
+mpv
+rstudio
+spotify
+tdesktop

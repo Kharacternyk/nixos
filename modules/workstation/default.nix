@@ -1,15 +1,6 @@
 { lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
-  environment.systemPackages = with pkgs; [
-    firefox
-    imagemagick
-    inkscape
-    libreoffice
-    mpv
-    spotify
-    tdesktop
-    xsel
-    yubikey-manager
-    apple-cursor
+  environment.systemPackages = [
+    pkgs.apple-cursor
   ];
   services = {
     xserver = {
@@ -17,7 +8,7 @@
       layout = "us,ua";
       xkbOptions = "caps:swapescape,grp:shifts_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
       displayManager = {
-        lightdm.background = ./wallpaper;
+        lightdm.background = ./wallpaper.png;
       };
     };
     pipewire = {
@@ -76,4 +67,5 @@
       script = "xsecurelock";
     };
   };
+  programs.adb.enable = true;
 }
