@@ -1,12 +1,12 @@
 {
   users.users.nazar = {
-    uid = 1000;
-    isNormalUser = true;
     extraGroups = [
       "wheel"
       "networkmanager"
       "dialout"
       "adbusers"
     ];
+    isNormalUser = true;
+    uid = 1000;
   };
 }

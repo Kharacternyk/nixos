@@ -1,71 +1,73 @@
 { lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
-  environment.systemPackages = [
-    pkgs.apple-cursor
-  ];
+  environment = {
+    etc."xdg/mimeapps.list".text = ''
+      [Default Applications]
+      x-scheme-handler/http=qb.desktop
+      x-scheme-handler/https=qb.desktop
+      image/jpeg=qb.desktop
+      image/png=qb.desktop
+      image/svg+xml=qb.desktop
+      application/pdf=org.pwmt.zathura.desktop
+    '';
+    systemPackages = [
+      pkgs.apple-cursor
+    ];
+  };
+  programs.adb.enable = true;
+  security.rtkit.enable = true;
   services = {
-    xserver = {
+    earlyoom = {
       enable = true;
-      layout = "us,ua";
-      xkbOptions = "caps:swapescape,grp:shifts_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
-      displayManager = {
-        lightdm.background = ./wallpaper.png;
-      };
+      freeMemThreshold = 5;
+    };
+    picom = {
+      enable = host ? hasGpu;
+      backend = "glx";
+      vSync = true;
     };
     pipewire = {
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
     };
-    picom = {
-      enable = host ? hasGpu;
-      vSync = true;
-      backend = "glx";
-    };
     redshift = {
       enable = true;
-      temperature.day = 6500;
-      temperature.night = 3500;
-    };
-    unclutter-xfixes.enable = true;
-    earlyoom = {
-      enable = true;
-      freeMemThreshold = 5;
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
     };
     udev.packages = [
       pkgs.yubikey-personalization
     ];
-  };
-  security.rtkit.enable = true;
-  environment.etc."xdg/mimeapps.list".text = ''
-    [Default Applications]
-    x-scheme-handler/http=qb.desktop
-    x-scheme-handler/https=qb.desktop
-    image/jpeg=qb.desktop
-    image/png=qb.desktop
-    image/svg+xml=qb.desktop
-    application/pdf=org.pwmt.zathura.desktop
-  '';
-  systemd.user = {
-    timers.pomodoro-lockscreen = {
-      wantedBy = [
-        "default.target"
-      ];
-      timerConfig = rec {
-        Unit = "pomodoro-lockscreen.service";
-        OnActiveSec = 30 * 60;
-        OnUnitActiveSec = OnActiveSec;
-      };
+    unclutter-xfixes.enable = true;
+    xserver = {
+      enable = true;
+      displayManager.lightdm.background = ./wallpaper.png;
+      layout = "us,ua";
+      xkbOptions = "caps:swapescape,grp:shifts_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
     };
+  };
+  systemd.user = {
     services.pomodoro-lockscreen = {
-      serviceConfig = {
-        Type = "oneshot";
-        Restart = "no";
-      };
       path = [
         pkgs.xsecurelock
       ];
       script = "xsecurelock";
+      serviceConfig = {
+        Restart = "no";
+        Type = "oneshot";
+      };
+    };
+    timers.pomodoro-lockscreen = {
+      timerConfig = rec {
+        OnActiveSec = 30 * 60;
+        OnUnitActiveSec = OnActiveSec;
+        Unit = "pomodoro-lockscreen.service";
+      };
+      wantedBy = [
+        "default.target"
+      ];
     };
   };
-  programs.adb.enable = true;
 }

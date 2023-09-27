@@ -15,33 +15,35 @@
         }
       )
     ];
-    fontconfig.defaultFonts = {
-      monospace = [ "IBM Plex Mono" ];
-      serif = [ "IBM Plex Serif" ];
-      sansSerif = [ "IBM Plex Sans" ];
-      emoji = [ "Noto Emoji" ];
+    fontconfig = {
+      defaultFonts = {
+        emoji = [ "Noto Emoji" ];
+        monospace = [ "IBM Plex Mono" ];
+        sansSerif = [ "IBM Plex Sans" ];
+        serif = [ "IBM Plex Serif" ];
+      };
+      localConf = ''
+        <fontconfig>
+          <match target="pattern">
+            <test qual="any" name="family"><string>Arial</string></test>
+            <edit name="family" mode="assign" binding="same">
+              <string>sans-serif</string>
+            </edit>
+          </match>
+          <match target="pattern">
+            <test qual="any" name="family"><string>Consolas</string></test>
+            <edit name="family" mode="assign" binding="same">
+              <string>monospace</string>
+            </edit>
+          </match>
+          <match target="pattern">
+            <test qual="any" name="family"><string>Times</string></test>
+            <edit name="family" mode="assign" binding="same">
+              <string>serif</string>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
     };
-    fontconfig.localConf = ''
-      <fontconfig>
-        <match target="pattern">
-          <test qual="any" name="family"><string>Arial</string></test>
-          <edit name="family" mode="assign" binding="same">
-            <string>sans-serif</string>
-          </edit>
-        </match>
-        <match target="pattern">
-          <test qual="any" name="family"><string>Consolas</string></test>
-          <edit name="family" mode="assign" binding="same">
-            <string>monospace</string>
-          </edit>
-        </match>
-        <match target="pattern">
-          <test qual="any" name="family"><string>Times</string></test>
-          <edit name="family" mode="assign" binding="same">
-            <string>serif</string>
-          </edit>
-        </match>
-      </fontconfig>
-    '';
   };
 }

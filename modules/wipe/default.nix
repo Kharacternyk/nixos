@@ -1,20 +1,6 @@
 { config, ... }: {
   systemd = {
-    timers.collect-garbage = {
-      wantedBy = [
-        "timers.target"
-      ];
-      timerConfig = {
-        Unit = "collect-garbage.service";
-        Persistent = "yes";
-        OnCalendar = "weekly";
-      };
-    };
     services.collect-garbage = {
-      serviceConfig = {
-        Type = "oneshot";
-        Restart = "no";
-      };
       path = [
         config.nix.package
       ];
@@ -26,6 +12,20 @@
         done
         nix store gc
       '';
+      serviceConfig = {
+        Restart = "no";
+        Type = "oneshot";
+      };
+    };
+    timers.collect-garbage = {
+      timerConfig = {
+        OnCalendar = "weekly";
+        Persistent = "yes";
+        Unit = "collect-garbage.service";
+      };
+      wantedBy = [
+        "timers.target"
+      ];
     };
   };
 }

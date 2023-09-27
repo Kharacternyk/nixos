@@ -1,15 +1,16 @@
 {
   environment = {
+    etc.inputrc.source = ./inputrc;
     shellAliases = {
-      sudo = "sudo ";
       btm = "btm --color=default-light";
-      ls = "ls --color=auto -FA";
-      grep = "grep --color=auto";
-      fgrep = "fgrep --color=auto";
-      egrep = "egrep --color=auto";
       diff = "diff --color=auto";
+      egrep = "egrep --color=auto";
+      fgrep = "fgrep --color=auto";
+      grep = "grep --color=auto";
+      ls = "ls --color=auto -FA";
       ncdu = "ncdu --color=dark";
       objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
+      sudo = "sudo ";
     };
     variables = {
       FZF_DEFAULT_OPTS = ''
@@ -22,8 +23,9 @@
       '';
       LESSHISTFILE = "/dev/null";
     };
-    etc.inputrc.source = ./inputrc;
   };
-  programs.bash.promptInit = builtins.readFile ./prompt.sh;
-  programs.bash.interactiveShellInit = builtins.readFile ./bashrc;
+  programs.bash = {
+    interactiveShellInit = builtins.readFile ./bashrc;
+    promptInit = builtins.readFile ./prompt.sh;
+  };
 }

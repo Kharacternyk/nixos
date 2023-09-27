@@ -1,7 +1,9 @@
 { pkgs, ... }: {
-  environment.systemPackages = [
-    pkgs.git
-    pkgs.diff-so-fancy
-  ];
-  environment.etc.gitconfig.source = ./gitconfig;
+  environment = {
+    etc.gitconfig.source = ./gitconfig;
+    systemPackages = [
+      pkgs.diff-so-fancy
+      pkgs.git
+    ];
+  };
 }
