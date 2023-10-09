@@ -4,7 +4,7 @@
   ];
   security.pam.u2f = lib.optionalAttrs (host ? hasScreen) {
     enable = true;
-    authFile = ./u2f;
+    authFile = ./u2f.txt;
     origin = "nixos";
   };
   users = {
