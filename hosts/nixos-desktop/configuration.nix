@@ -2,7 +2,6 @@
   imports = let hardware = host.inputs.nixos-hardware.nixosModules; in [
     ./hardware-configuration.nix
     hardware.common-gpu-amd-southern-islands
-    hardware.common-pc-ssd
   ];
   boot.loader.grub = {
     enable = true;
