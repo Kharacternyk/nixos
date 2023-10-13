@@ -1,4 +1,4 @@
-{ lib, host, pkgs, readAttributes, ... }: {
+{ lib, functions, host, pkgs, ... }: {
   environment = {
     etc."coc-settings.json".source = ./coc-settings.json;
     sessionVariables.EDITOR = "sudo -u nazar nvim";
@@ -13,7 +13,7 @@
     enable = true;
     configure = {
       customRC = builtins.readFile ./init.vim;
-      packages.plugins.start = readAttributes ./plugins.txt pkgs.vimPlugins ++ [
+      packages.plugins.start = functions.readAttributes ./plugins.txt pkgs.vimPlugins ++ [
         (pkgs.vimUtils.buildVimPlugin {
           name = "bullets";
           src = host.inputs.vim-bullets;

@@ -1,7 +1,7 @@
-{ lib, host, pkgs, readAttributes, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, functions, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   fonts = {
     enableDefaultPackages = false;
-    packages = readAttributes ./fonts.txt pkgs ++ [
+    packages = functions.readAttributes ./fonts.txt pkgs ++ [
       (
         let version = "6.0.0"; in
         pkgs.fetchzip {

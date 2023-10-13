@@ -5,13 +5,6 @@ host: host.inputs.nixpkgs.lib.nixosSystem {
   ];
   specialArgs = {
     inherit host;
-    readAttributes = file: set:
-      builtins.map (attribute: set.${attribute}) (
-        builtins.filter (attribute: builtins.isString attribute && attribute != "") (
-          builtins.split "\n" (
-            builtins.readFile file
-          )
-        )
-      );
+    functions = import ../functions.nix;
   };
 }

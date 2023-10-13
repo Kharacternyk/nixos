@@ -1,4 +1,4 @@
-{ lib, host, pkgs, readAttributes, ... }: {
-  environment.systemPackages = readAttributes ./default.txt pkgs
-    ++ (lib.optionals (host ? hasScreen) (readAttributes ./graphical.txt pkgs));
+{ lib, functions, host, pkgs, ... }: {
+  environment.systemPackages = functions.readAttributes ./default.txt pkgs
+    ++ (lib.optionals (host ? hasScreen) (functions.readAttributes ./graphical.txt pkgs));
 }
