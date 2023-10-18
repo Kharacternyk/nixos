@@ -1,4 +1,4 @@
-{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, host, functions, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]
@@ -9,7 +9,7 @@
       image/svg+xml=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
-    systemPackages = [
+    systemPackages = functions.readAttributes ./packages.txt pkgs ++ [
       pkgs.apple-cursor
     ];
   };

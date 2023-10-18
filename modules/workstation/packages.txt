@@ -1,7 +1,9 @@
+alsaUtils
 firefox
 inkscape
 libreoffice
 mpv
+pavucontrol
 rstudio
 spotify
 tdesktop
