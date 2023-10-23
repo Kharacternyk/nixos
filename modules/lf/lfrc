@@ -7,7 +7,7 @@ set errorfmt "\033[7;31m%s\033[0m"
 set dupfilefmt "%b-%n%e"
 
 map q
-map D delete $fx
+map D delete "$fx"
 
 cmd q quit
 cmd open $xdg-open "$f"

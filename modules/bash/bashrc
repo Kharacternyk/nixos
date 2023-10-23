@@ -38,10 +38,10 @@ dev() {
             nix flake update
         fi
 
-        cd $workdir
+        cd -- "$workdir"
         nix develop --profile "$flakedir"/.nix/profile
     else
         echo nope
-        cd $workdir
+        cd -- "$workdir"
     fi
 }

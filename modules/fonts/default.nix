@@ -8,8 +8,8 @@
           name = "ibm-plex-ttf-${version}";
           url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
           postFetch = ''
-            mkdir -p $out/share/fonts
-            unzip -oj $downloadedFile "TrueType/*/*.ttf" -d $out/share/fonts/truetype
+            mkdir -p "$out/share/fonts"
+            unzip -oj "$downloadedFile" "TrueType/*/*.ttf" -d "$out/share/fonts/truetype"
           '';
           sha256 = "I4i/wr901yu7qp6zglBqsUSRVcetr3I0MBh9KqcuiLc=";
         }
