@@ -8,7 +8,8 @@ PROMPT_COMMAND='
     else
         PROMPT_COLOR="$BOLD$RED"
     fi
-    history -an
+    history -a
+    history -n
 '
 PS1='\[$PROMPT_COLOR\]\$ \[$RESET\]'
 PS2='\[$PROMPT_COLOR\]> \[$RESET\]'
