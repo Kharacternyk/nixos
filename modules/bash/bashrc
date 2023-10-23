@@ -10,6 +10,7 @@ source "$(fzf-share)"/key-bindings.bash
 
 get() {
     local pkgs pkg
+
     for pkg in "$@"; do
         if [[ $pkg == *#* ]]; then
             pkgs+=" $pkg"
@@ -17,19 +18,26 @@ get() {
             pkgs+=" nixpkgs-local#$pkg"
         fi
     done
+
     NIXPKGS_ALLOW_UNFREE=1 nix shell$pkgs --impure
 }
 
 dev() {
     local workdir="$PWD"
+
     while [[ ! -f flake.nix ]] && [[ $PWD != / ]]; do
         cd ..
     done
+
     if [[ -f flake.nix ]]; then
         local flakedir="$PWD"
         mkdir -p .nix
         echo '*' > .nix/.gitignore
-        [[ -f .nix/pin ]] || nix flake update
+
+        if [[ ! -f .nix/pin ]]; then
+            nix flake update
+        fi
+
         cd $workdir
         nix develop --profile "$flakedir"/.nix/profile
     else
