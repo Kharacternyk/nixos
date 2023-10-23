@@ -23,13 +23,13 @@ let g:vim_markdown_math=1
 let g:vim_markdown_folding_disabled=1
 let mapleader=" "
 
+nmap <Leader>a <Plug>(coc-codeaction-selected)
 nmap <Leader>d <Plug>(coc-definition)
 nmap <Leader>y <Plug>(coc-type-definition)
 nmap <Leader>i <Plug>(coc-implementation)
 nmap <Leader>r <Plug>(coc-rename)
 nmap <Leader><Leader> <Plug>(coc-fix-current)
 nmap <silent><Leader>e :CocDiagnostics<CR>
-nmap <silent><Leader>l :CocList<CR>
 nmap <silent><Leader>o :CocOutline<CR>
 nmap <silent><Leader>u :UndotreeToggle<CR>
 

@@ -1,7 +1,7 @@
 {
   "inlayHint.enable": false,
-  "suggest.noselect": true,
-  "python.formatting.provider": "blackd",
+  "flutter.provider.hot-reload": false,
+  "dart.showTodos": false,
   "languageserver": {
     "nix": {
       "command": "rnix-lsp",
@@ -11,5 +11,7 @@
       "command": "typst-lsp",
       "filetypes": ["typst"]
     }
-  }
+  },
+  "python.formatting.provider": "blackd",
+  "suggest.noselect": true
 }
