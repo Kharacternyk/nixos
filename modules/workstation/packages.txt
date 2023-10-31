@@ -4,6 +4,7 @@ inkscape
 libreoffice
 mpv
 pavucontrol
+remmina
 rstudio
 spotify
 tdesktop
