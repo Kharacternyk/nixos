@@ -1,5 +1,6 @@
 alsaUtils
 firefox
+freerdp
 inkscape
 libreoffice
 mpv
