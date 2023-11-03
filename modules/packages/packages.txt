@@ -4,6 +4,7 @@ clang-tools
 darkhttpd
 dart
 entr
+file
 flutter
 fzf
 gnumake
