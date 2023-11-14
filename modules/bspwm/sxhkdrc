@@ -69,9 +69,6 @@ alt + ctrl + {_,shift + }comma
 alt + ctrl + apostrophe
     bspc node -c
 
-alt + ctrl + slash
-    bspc node -g hidden
-
 alt + m
     bspc node -t tiled
 
