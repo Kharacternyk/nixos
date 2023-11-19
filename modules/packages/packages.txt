@@ -17,6 +17,7 @@ nix-tree
 nixpkgs-fmt
 nvd
 poetry
+R
 ripgrep
 typst
 unzip
