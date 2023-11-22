@@ -77,8 +77,6 @@ au BufWrite * silent! call CocAction('runCommand', 'editor.action.organizeImport
 
 vnoremap y ygv<Esc>
 
-ca H tab help
-ca M tab Man
 ca W w
 
 colorscheme gruvbox
