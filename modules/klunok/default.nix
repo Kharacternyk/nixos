@@ -14,10 +14,6 @@ in
         ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx $path
       done
     '';
-    klunok-valgrind.text = ''
-      mkdir -p /klunok-valgrind
-      chown klunok:klunok /klunok-valgrind
-    '';
   };
   systemd.services = {
     klunok = {
