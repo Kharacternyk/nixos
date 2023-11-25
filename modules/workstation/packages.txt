@@ -7,3 +7,4 @@ mpv
 pavucontrol
 spotify
 tdesktop
+wrangler
