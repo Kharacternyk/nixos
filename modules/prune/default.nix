@@ -1,6 +1,6 @@
 { config, ... }: {
   systemd = {
-    services.collect-garbage = {
+    services.prune = {
       path = [
         config.nix.package
       ];
@@ -38,11 +38,11 @@
         Type = "oneshot";
       };
     };
-    timers.collect-garbage = {
+    timers.prune = {
       timerConfig = {
         OnCalendar = "weekly";
         Persistent = "yes";
-        Unit = "collect-garbage.service";
+        Unit = "prune.service";
       };
       wantedBy = [
         "timers.target"
