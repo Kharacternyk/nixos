@@ -7,8 +7,5 @@
     authFile = ./u2f.txt;
     origin = "nixos";
   };
-  users = {
-    allowNoPasswordLogin = true;
-    mutableUsers = false;
-  };
+  users.allowNoPasswordLogin = true;
 }
