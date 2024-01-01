@@ -33,7 +33,7 @@
 
         nix store gc
 
-        /nix/var/nix/profiles/system/bin/switch-to-configuration switch
+        nixos-rebuild switch
       '';
       serviceConfig = {
         Restart = "no";
@@ -42,7 +42,7 @@
     };
     timers.prune = {
       timerConfig = {
-        OnCalendar = "weekly";
+        OnCalendar = "Sat *-*-* 08:00:00";
         Persistent = "yes";
         Unit = "prune.service";
       };
