@@ -33,7 +33,7 @@
 
         nix store gc
 
-        nixos-rebuild switch
+        /nix/var/nix/profiles/system/bin/switch-to-configuration switch
       '';
       serviceConfig = {
         Restart = "no";
