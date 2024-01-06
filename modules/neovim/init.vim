@@ -35,6 +35,8 @@ nmap <silent><Leader>u :UndotreeToggle<CR>
 
 noremap <silent><C-_> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
+noremap <silent><C-y> :set eventignore=BufWrite<CR>
+noremap <silent><C-t> :set eventignore=<CR>
 noremap <C-Space> a<C-^><Esc>
 noremap H ^
 noremap L $
