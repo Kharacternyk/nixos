@@ -7,5 +7,8 @@
     authFile = pkgs.writeText "u2f.txt" (builtins.readFile ./u2f.txt);
     origin = "nixos";
   };
-  users.allowNoPasswordLogin = true;
+  users = {
+    allowNoPasswordLogin = true;
+    mutableUsers = false;
+  };
 }
