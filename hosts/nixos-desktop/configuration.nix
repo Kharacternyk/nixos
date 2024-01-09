@@ -18,6 +18,13 @@
         output = "DVI-I-1";
         primary = true;
       }
+      {
+        output = "HDMI-1";
+        monitorConfig = ''
+          Option "Rotate" "left"
+          Option "LeftOf" "DVI-I-1"
+        '';
+      }
     ];
   };
   system.stateVersion = "20.09";
