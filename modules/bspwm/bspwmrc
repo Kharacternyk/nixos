@@ -4,9 +4,6 @@ polybar -c /etc/polybar.conf -r secondary &
 bspc config window_gap 8
 bspc config border_width 4
 bspc config pointer_modifier mod1
-bspc config split_ratio 0.5
-bspc config borderless_monocle true
-bspc config gapless_monocle true
 
 bspc rule -a Zathura state=tiled
 bspc rule -a zoom state=tiled
