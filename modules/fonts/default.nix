@@ -3,15 +3,15 @@
     enableDefaultPackages = false;
     packages = functions.readAttributes ./fonts.txt pkgs ++ [
       (
-        let version = "6.0.0"; in
+        let version = "6.4.0"; in
         pkgs.fetchzip {
           name = "ibm-plex-ttf-${version}";
           url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
           postFetch = ''
             mkdir -p "$out/share/fonts"
-            unzip -oj "$downloadedFile" "TrueType/*/*.ttf" -d "$out/share/fonts/truetype"
+            unzip -oj /build/TrueType.zip "TrueType/*/*.ttf" -d "$out/share/fonts/truetype"
           '';
-          sha256 = "I4i/wr901yu7qp6zglBqsUSRVcetr3I0MBh9KqcuiLc=";
+          hash = "sha256-PJxgCnYqSCRF3DfPddVWwMgt1QCoKpJ/wg4w0xTZ8Mw=";
         }
       )
     ];
