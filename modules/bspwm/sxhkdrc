@@ -24,6 +24,9 @@ alt + o
 alt + p
     firefox
 
+alt + bracketleft
+    inkscape
+
 alt + bracketright
     soffice
 
