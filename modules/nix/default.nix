@@ -1,4 +1,4 @@
-{ host, pkgs, ... }: {
+{ lib, host, pkgs, ... }: {
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -16,15 +16,15 @@
         rev = host.inputs.flake-utils.rev;
         type = "github";
       };
-      flake-utils-local.flake = host.inputs.flake-utils;
       nixpkgs.to = {
         owner = "NixOS";
         repo = "nixpkgs";
         rev = host.inputs.nixpkgs.rev;
         type = "github";
       };
-      nixpkgs-local.flake = host.inputs.nixpkgs;
-    };
+    } // lib.attrsets.mapAttrs'
+      (name: value: { name = "${name}-local"; value.flake = value; })
+      host.inputs;
   };
   nixpkgs.config.allowUnfree = true;
 }
