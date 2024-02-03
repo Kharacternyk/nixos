@@ -81,6 +81,9 @@ alt + ctrl + m
 alt + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}.local
 
+alt + {_,shift + }Tab
+    bspc node -f {older,newer}.local
+
 alt + ctrl + shift + {h,j,k,l}
     bspc node -p {west,south,north,east}
 
