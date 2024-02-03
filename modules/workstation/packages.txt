@@ -8,3 +8,4 @@ pavucontrol
 spotify
 tdesktop
 wrangler
+xcolor
