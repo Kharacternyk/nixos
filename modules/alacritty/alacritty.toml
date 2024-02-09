@@ -1,0 +1,29 @@
+[colors.bright]
+black = "#3c3836"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#fbf1c7"
+yellow = "#af3a03"
+
+[colors.normal]
+black = "#3c3836"
+blue = "#076678"
+cyan = "#427b58"
+green = "#79740e"
+magenta = "#8f3f71"
+red = "#9d0006"
+white = "#fbf1c7"
+yellow = "#af3a03"
+
+[colors.primary]
+background = "#fbf1c7"
+foreground = "#3c3836"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 12.5
