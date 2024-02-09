@@ -44,8 +44,10 @@
     xserver = {
       enable = true;
       displayManager.lightdm.background = ./wallpaper.png;
-      layout = "us,ua";
-      xkbOptions = "caps:swapescape,grp:shifts_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
+      xkb = {
+        layout = "us,ua";
+        options = "caps:swapescape,grp:shifts_toggle,compose:lctrl,ctrl:swap_lwin_lctl";
+      };
     };
   };
   systemd.user = {
