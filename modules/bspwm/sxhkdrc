@@ -34,6 +34,9 @@ alt + Return
 alt + shift + Return
     simplescreenrecorder
 
+alt + ctrl + Return
+    xcolor-clutter
+
 alt + ctrl + BackSpace
     bspc quit
 
