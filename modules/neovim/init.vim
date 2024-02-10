@@ -33,7 +33,7 @@ nmap <silent><Leader>e :CocDiagnostics<CR>
 nmap <silent><Leader>o :CocOutline<CR>
 nmap <silent><Leader>u :UndotreeToggle<CR>
 
-noremap <silent><C-_> :nohlsearch<CR>
+noremap <silent><C-/> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
 noremap <silent><C-y> :set eventignore=BufWrite<CR>
 noremap <silent><C-t> :set eventignore=<CR>
@@ -43,7 +43,7 @@ noremap L $
 noremap S qq
 noremap s @q
 
-noremap! <silent><C-_> <C-o>:nohlsearch<CR>
+noremap! <silent><C-/> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
 noremap! <C-Space> <C-^>
 
