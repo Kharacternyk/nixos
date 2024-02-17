@@ -11,8 +11,5 @@ default=current
 [safe]
 directory=/etc/nixos
 
-[core]
-pager=diff-so-fancy | less -RFX
-
-[interactive]
-diffFilter=diff-so-fancy --patch
+[diff]
+external=difft --display inline
