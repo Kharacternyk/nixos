@@ -1,5 +1,3 @@
-config.load_autoconfig()
-
 config.bind(",", "download-open")
 config.bind("J", "scroll-page 0 1")
 config.bind("K", "scroll-page 0 -1")
