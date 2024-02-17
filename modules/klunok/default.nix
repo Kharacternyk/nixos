@@ -1,11 +1,4 @@
-{ lib, host, pkgs, ... }:
-let
-  klunok = host.inputs.klunok.packages.${pkgs.system}.default + "/bin/klunok";
-  commandLine = configurationFile: ''
-    ${klunok} -c ${configurationFile} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
-  '';
-in
-{
+{ lib, host, pkgs, ... }: {
   system.activationScripts = {
     klunok.text = ''
       mkdir -p /klunok
@@ -15,17 +8,25 @@ in
       done
     '';
   };
-  systemd.services = {
-    klunok = {
-      script = commandLine ./config.lua;
-      wantedBy = [
-        "multi-user.target"
-      ];
+  systemd.services =
+    let
+      script = ''
+        ${host.inputs.klunok.packages.${pkgs.system}.default}/bin/klunok \
+        -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
+      '';
+    in
+    {
+      klunok = {
+        inherit script;
+        wantedBy = [
+          "multi-user.target"
+        ];
+      };
+      klunok-valgrind = {
+        environment.KLUNOK_PREFIX = "klunok/valgrind";
+        script = "${pkgs.valgrind-light}/bin/valgrind --leak-check=full -- ${script}";
+      };
     };
-    klunok-valgrind.script = let valgrind = "${pkgs.valgrind-light}/bin/valgrind"; in ''
-      ${valgrind} --leak-check=full -- ${commandLine ./config-valgrind.lua}
-    '';
-  };
   users = {
     groups.klunok = { };
     users.klunok = {
