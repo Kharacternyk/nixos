@@ -8,6 +8,10 @@ bind -m vi '/: "\C-r"'
 
 source "$(fzf-share)"/key-bindings.bash
 
+lk() {
+    lf /klunok/store"$(realpath ${1:-.})"
+}
+
 get() {
     local pkgs pkg
 

@@ -8,6 +8,7 @@ set dupfilefmt "%b-%n%e"
 
 map q
 map D delete "$fx"
+map t $difft --color always $fs | less -R
 
 cmd q quit
 cmd open $xdg-open "$f"
