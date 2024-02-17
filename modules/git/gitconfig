@@ -12,4 +12,4 @@ default=current
 directory=/etc/nixos
 
 [diff]
-external=difft --display inline
+external=difft
