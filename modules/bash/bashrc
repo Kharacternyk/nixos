@@ -12,6 +12,10 @@ lk() {
     lf /klunok/store"$(realpath ${1:-.})"
 }
 
+lkp() {
+    lf /klunok/projects/"$1"
+}
+
 get() {
     local pkgs pkg
 
