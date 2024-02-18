@@ -13,3 +13,6 @@ directory=/etc/nixos
 
 [diff]
 external=difft
+
+[help]
+autoCorrect=prompt
