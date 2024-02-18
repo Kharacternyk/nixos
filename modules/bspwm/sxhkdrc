@@ -77,10 +77,10 @@ alt + ctrl + m
     bspc node -t floating
 
 alt + {h,j,k,l}
-    bspc node -f {west,south,north,east}.local
+    bspc node -f {west,south,north,east}
 
 alt + shift + {h,j,k,l}
-    bspc node -s {west,south,north,east}.local
+    bspc node -s {west,south,north,east} --follow
 
 alt + shift + ctrl + {h,j,k,l}
     bspc node -p {west,south,north,east}
@@ -89,10 +89,10 @@ alt + ctrl + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 alt + Tab
-    bspc node -f older.local
+    bspc node -f older
 
 alt + shift + Tab
-    bspc node -f newer.local
+    bspc node -f newer
 
 alt + slash
     bspc node -f @parent
