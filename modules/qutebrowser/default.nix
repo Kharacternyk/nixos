@@ -7,7 +7,7 @@ let
     "$1" \
     "$PWD" \
     | ${pkgs.socat}/bin/socat -lf /dev/null - UNIX-CONNECT:"$socket" \
-    || "${pkgs.qutebrowser}/bin/qutebrowser" -C ${./qutebrowser.py} "$@" &
+    || "${pkgs.qutebrowser}/bin/qutebrowser" -C ${./config.py} "$@" &
   '';
   qbDesktop = pkgs.makeDesktopItem {
     name = "qb";
