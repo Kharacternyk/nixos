@@ -22,6 +22,7 @@
         --reverse
       '';
       LESSHISTFILE = "/dev/null";
+      _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=on";
     };
   };
   programs.bash = {
