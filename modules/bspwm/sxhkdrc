@@ -89,10 +89,10 @@ alt + ctrl + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 alt + Tab
-    bspc node -f older
+    bspc node -f older.local
 
 alt + shift + Tab
-    bspc node -f newer
+    bspc node -f newer.local
 
 alt + slash
     bspc node -f @parent
