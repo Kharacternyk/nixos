@@ -43,6 +43,8 @@
     unclutter-xfixes.enable = true;
     xserver = {
       enable = true;
+      # CC BY-SA 4.0 by MultisampledNight
+      # https://creativecommons.org/licenses/by-sa/4.0/
       displayManager.lightdm.background = ./wallpaper.png;
       xkb = {
         layout = "us,ua";
