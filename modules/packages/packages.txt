@@ -16,11 +16,10 @@ ncdu
 neofetch
 nix-tree
 nixpkgs-fmt
+nodePackages.pnpm
 nvd
 poetry
 R
 ripgrep
 typst
 unzip
-yarn
-yarn-bash-completion

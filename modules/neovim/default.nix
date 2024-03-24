@@ -13,7 +13,7 @@
     enable = true;
     configure = {
       customRC = builtins.readFile ./init.vim;
-      packages.plugins.start = functions.readAttributes ./plugins.txt pkgs.vimPlugins ++ [
+      packages.plugins.start = functions.readAttributes lib ./plugins.txt pkgs.vimPlugins ++ [
         (pkgs.vimUtils.buildVimPlugin {
           name = "bullets";
           src = host.inputs.vim-bullets;

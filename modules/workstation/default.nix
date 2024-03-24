@@ -9,7 +9,7 @@
       image/svg+xml=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
-    systemPackages = functions.readAttributes ./packages.txt pkgs ++ [
+    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ [
       pkgs.apple-cursor
     ];
   };

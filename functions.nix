@@ -1,8 +1,9 @@
-let inherit (builtins) filter isString map readFile split; in {
-  readAttributes = file: set:
-    map (attribute: set.${attribute}) (
+{
+  readAttributes = lib: file: set:
+    let inherit (lib) filter isString readFile splitString getAttrFromPath; in
+    map (attribute: getAttrFromPath (splitString "." attribute) set) (
       filter (attribute: isString attribute && attribute != "") (
-        split "\n" (
+        splitString "\n" (
           readFile file
         )
       )
