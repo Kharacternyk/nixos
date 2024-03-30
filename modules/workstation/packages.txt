@@ -1,6 +1,7 @@
 alsaUtils
 firefox
 freerdp
+gthumb
 inkscape
 libreoffice
 mpv

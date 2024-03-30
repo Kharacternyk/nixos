@@ -28,6 +28,9 @@ alt + bracketleft
 alt + bracketright
     soffice
 
+alt + backslash
+    gthumb
+
 alt + Return
     import screenshot.png
 
