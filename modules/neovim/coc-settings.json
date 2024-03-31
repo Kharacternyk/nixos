@@ -12,6 +12,14 @@
       "filetypes": ["typst"]
     }
   },
+  "diagnostic-languageserver.formatFiletypes": {
+    "typst": "typstfmt"
+  },
+  "diagnostic-languageserver.formatters": {
+    "typstfmt": {
+      "command": "typstfmt"
+    }
+  },
   "python.formatting.provider": "blackd",
   "suggest.noselect": true
 }

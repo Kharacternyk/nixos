@@ -1,5 +1,6 @@
 coc-clangd
 coc-css
+coc-diagnostic
 coc-flutter
 coc-html
 coc-nvim
