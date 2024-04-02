@@ -10,3 +10,4 @@ spotify
 tdesktop
 wrangler
 xcolor
+xfce.thunar
