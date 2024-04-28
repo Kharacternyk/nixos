@@ -6,7 +6,7 @@ shopt -s histappend
 
 bind -m vi '/: "\C-r"'
 
-source "$(fzf-share)"/key-bindings.bash
+eval "$(fzf --bash)"
 
 lk() {
     lf /klunok/store"$(realpath ${1:-.})"
