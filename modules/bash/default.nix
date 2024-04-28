@@ -20,6 +20,7 @@
         --color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1
         --color prompt:4,spinner:4,marker:4,pointer:4
         --reverse
+        --no-separator
       '';
       LESSHISTFILE = "/dev/null";
       _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=on";
