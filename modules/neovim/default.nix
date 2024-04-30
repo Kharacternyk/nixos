@@ -13,24 +13,21 @@
     enable = true;
     configure = {
       customRC = builtins.readFile ./init.vim;
-      packages.plugins.start = functions.readAttributes lib ./plugins.txt pkgs.vimPlugins ++ [
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "bullets";
-          src = host.inputs.vim-bullets;
-        })
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "gruvbox";
-          src = host.inputs.vim-gruvbox;
-        })
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "suda";
-          src = host.inputs.vim-suda;
-        })
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "typst";
-          src = host.inputs.vim-typst;
-        })
-      ];
+      packages.plugins.start = functions.readAttributes lib ./plugins.txt pkgs.vimPlugins ++
+        (
+          let
+            buildPlugin = name: pkgs.vimUtils.buildVimPlugin {
+              inherit name;
+              src = host.inputs."vim-${name}";
+            };
+          in
+          map buildPlugin [
+            "bullets"
+            "gruvbox"
+            "suda"
+            "typst"
+          ]
+        );
     };
     viAlias = true;
     vimAlias = true;
