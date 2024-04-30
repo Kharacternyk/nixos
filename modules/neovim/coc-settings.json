@@ -3,6 +3,10 @@
   "flutter.provider.hot-reload": false,
   "dart.showTodos": false,
   "languageserver": {
+    "nix": {
+      "command": "nixd",
+      "filetypes": ["nix"]
+    },
     "typst": {
       "command": "typst-lsp",
       "filetypes": ["typst"]

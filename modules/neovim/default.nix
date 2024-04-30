@@ -3,6 +3,7 @@
     etc."coc-settings.json".source = ./coc-settings.json;
     sessionVariables.EDITOR = "sudo -u nazar nvim";
     systemPackages = [
+      pkgs.nixd
       pkgs.typst-lsp
     ] ++ lib.optionals (host ? hasScreen) [
       pkgs.xsel
