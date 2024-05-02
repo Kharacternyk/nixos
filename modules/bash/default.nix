@@ -13,6 +13,7 @@
       sudo = "sudo ";
     };
     variables = {
+      DFT_SYNTAX_HIGHLIGHT = "off";
       FZF_DEFAULT_OPTS = ''
         --bind=change:top
         --prompt='/ '
