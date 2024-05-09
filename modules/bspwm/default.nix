@@ -1,15 +1,17 @@
 { lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages =
     let
-      xcolor-clutter = pkgs.writeShellScriptBin "xcolor-clutter" ''
-        systemctl --user stop unclutter-xfixes.service
-        xcolor -s
-        systemctl --user start unclutter-xfixes.service
+      clutter = name: command: pkgs.writeShellScriptBin name ''
+        clutter() { systemctl --user $1 unclutter-xfixes; }
+        clutter stop 
+        ${command}
+        clutter start
       '';
     in
     [
       host.inputs.bspwm-utils.defaultPackage.${pkgs.system}
-      xcolor-clutter
+      (clutter "crosshair" "xcolor -s")
+      (clutter "screenshot" "import screenshot.png")
     ];
   services.xserver.windowManager.bspwm =
     let

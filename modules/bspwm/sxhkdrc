@@ -32,13 +32,13 @@ alt + backslash
     gthumb
 
 alt + Return
-    import screenshot.png
+    screenshot
 
 alt + shift + Return
     simplescreenrecorder
 
 alt + ctrl + Return
-    xcolor-clutter
+    crosshair
 
 alt + ctrl + BackSpace
     bspc quit
