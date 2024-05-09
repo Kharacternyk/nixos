@@ -3,7 +3,7 @@
     let
       clutter = name: command: pkgs.writeShellScriptBin name ''
         clutter() { systemctl --user $1 unclutter-xfixes; }
-        clutter stop 
+        clutter stop
         ${command}
         clutter start
       '';
