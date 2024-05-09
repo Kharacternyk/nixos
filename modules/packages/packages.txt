@@ -22,5 +22,4 @@ poetry
 R
 ripgrep
 typst
-typstfmt
 unzip

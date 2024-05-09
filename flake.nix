@@ -32,6 +32,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    typstfmt = {
+      url = "github:jeffa5/typstfmt";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.crate2nix.follows = "crate2nix";
+      inputs.rust-overlay.follows = "rust-overlay";
+    };
+    crate2nix = {
+      url = "github:jeffa5/crate2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
       flake = false;

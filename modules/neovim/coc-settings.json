@@ -17,7 +17,9 @@
   },
   "diagnostic-languageserver.formatters": {
     "typstfmt": {
-      "command": "typstfmt"
+      "command": "typstfmt",
+      "args": ["%tempfile"],
+      "doesWriteToFile": true
     }
   },
   "python.formatting.provider": "blackd",

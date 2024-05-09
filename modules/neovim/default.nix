@@ -5,6 +5,7 @@
     systemPackages = [
       pkgs.nixd
       pkgs.typst-lsp
+      host.inputs.typstfmt.packages.${pkgs.system}.default
     ] ++ lib.optionals (host ? hasScreen) [
       pkgs.xsel
     ];
