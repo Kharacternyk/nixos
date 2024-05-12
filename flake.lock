@@ -23,26 +23,6 @@
         "type": "github"
       }
     },
-    "crate2nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1695973508,
-        "narHash": "sha256-qfSKp8s3hRMp/W3jKOjDOEZkhnulAL8/Oxa5v+CcZx8=",
-        "owner": "jeffa5",
-        "repo": "crate2nix",
-        "rev": "4657d316dc9b6b2a6f89cdb8c7797eb0a2b275d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jeffa5",
-        "repo": "crate2nix",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -118,40 +98,14 @@
     "root": {
       "inputs": {
         "bspwm-utils": "bspwm-utils",
-        "crate2nix": "crate2nix",
         "flake-utils": "flake-utils",
         "klunok": "klunok",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay",
-        "typstfmt": "typstfmt",
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda",
         "vim-typst": "vim-typst"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715221036,
-        "narHash": "sha256-81EKOdlmT/4hZpImRlvMVPgmCcJYZjwlWbJese/XqUw=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "5c4bc8a0a70093a31a12509c5653c147f2310bd2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "systems": {
@@ -166,35 +120,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "typstfmt": {
-      "inputs": {
-        "crate2nix": [
-          "crate2nix"
-        ],
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": [
-          "rust-overlay"
-        ]
-      },
-      "locked": {
-        "lastModified": 1699689932,
-        "narHash": "sha256-oSgbA26ks7w71HoKb86Fgnjx8qCnDamFsMmOCVx9mq4=",
-        "owner": "jeffa5",
-        "repo": "typstfmt",
-        "rev": "c6dbff07d06c59ea1f70e71481c535b0b050c5d1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jeffa5",
-        "repo": "typstfmt",
         "type": "github"
       }
     },

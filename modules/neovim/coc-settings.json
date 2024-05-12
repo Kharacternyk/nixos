@@ -12,16 +12,6 @@
       "filetypes": ["typst"]
     }
   },
-  "diagnostic-languageserver.formatFiletypes": {
-    "typst": "typstfmt"
-  },
-  "diagnostic-languageserver.formatters": {
-    "typstfmt": {
-      "command": "typstfmt",
-      "args": ["%tempfile"],
-      "doesWriteToFile": true
-    }
-  },
   "python.formatting.provider": "blackd",
   "suggest.noselect": true
 }

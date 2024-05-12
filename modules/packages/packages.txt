@@ -19,6 +19,7 @@ nixpkgs-fmt
 nodePackages.pnpm
 nvd
 poetry
+prettypst
 R
 ripgrep
 typst
