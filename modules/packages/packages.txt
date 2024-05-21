@@ -2,7 +2,6 @@ ansible
 bottom
 clang-tools
 darkhttpd
-dart
 difftastic
 entr
 file
