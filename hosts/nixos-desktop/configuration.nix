@@ -1,7 +1,6 @@
 { host, pkgs, ... }: {
-  imports = let hardware = host.inputs.nixos-hardware.nixosModules; in [
+  imports = [
     ./hardware-configuration.nix
-    hardware.common-gpu-amd-southern-islands
   ];
   boot.loader.grub = {
     enable = true;
