@@ -6,7 +6,7 @@ config.bind("R", "config-source")
 config.bind("d", "edit-url")
 config.bind("u", "cmd-set-text :open !")
 
-c.url.start_pages = "qute://start"
+c.url.start_pages = "https://wortschatz.link"
 c.url.default_page = c.url.start_pages
 
 c.content.autoplay = False
