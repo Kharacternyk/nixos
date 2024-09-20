@@ -2,7 +2,7 @@
   environment = {
     etc.inputrc.source = ./inputrc;
     shellAliases = {
-      btm = "btm --color=default-light";
+      btm = "btm --theme=default-light";
       diff = "diff --color=auto";
       egrep = "egrep --color=auto";
       fgrep = "fgrep --color=auto";

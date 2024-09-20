@@ -5,7 +5,7 @@ alt + shift + semicolon
     term -e lf
 
 alt + ctrl + semicolon
-    term -e btm --color default-light
+    term -e btm --theme default-light
 
 alt + u
     qb
