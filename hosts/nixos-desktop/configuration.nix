@@ -20,7 +20,7 @@
         '';
       }
       {
-        output = "DVI-I-1";
+        output = "DVI-D-1";
         primary = true;
       }
     ];
