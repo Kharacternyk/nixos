@@ -23,6 +23,12 @@
         output = "DVI-D-1";
         primary = true;
       }
+      {
+        output = "HDMI-2";
+        monitorConfig = ''
+          Option "RightOf" "DVI-D-1"
+        '';
+      }
     ];
   };
   system.stateVersion = "20.09";

@@ -1,5 +1,6 @@
 polybar -c /etc/polybar.conf -r primary &
 polybar -c /etc/polybar.conf -r secondary &
+polybar -c /etc/polybar.conf -r tertiary &
 
 bspc config window_gap 8
 bspc config border_width 4
