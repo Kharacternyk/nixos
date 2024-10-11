@@ -132,3 +132,6 @@ alt + shift + n
 
 alt + ctrl + n
     bspc node -m next
+
+alt + shift + ctrl + n
+    bspc node -m prev
