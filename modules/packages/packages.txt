@@ -15,8 +15,9 @@ ncdu
 neofetch
 nix-tree
 nixpkgs-fmt
-nodePackages.pnpm
+nodejs
 nvd
+pnpm
 poetry
 prettypst
 R
