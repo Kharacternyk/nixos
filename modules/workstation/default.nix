@@ -9,9 +9,7 @@
       image/svg+xml=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
-    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ [
-      pkgs.apple-cursor
-    ];
+    systemPackages = functions.readAttributes lib ./packages.txt pkgs;
   };
   programs.adb.enable = true;
   security.rtkit.enable = true;
