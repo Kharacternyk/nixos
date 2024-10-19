@@ -1,5 +1,4 @@
 alsaUtils
-apple-cursor
 firefox
 freerdp
 gthumb
