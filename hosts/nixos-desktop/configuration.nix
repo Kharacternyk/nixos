@@ -2,10 +2,16 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader.grub = {
+      enable = true;
+      device = "/dev/sda";
+    };
   };
+  environment.systemPackages = [
+    pkgs.alsa-scarlett-gui
+  ];
   services.xserver = {
     displayManager.setupCommands = ''
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap
