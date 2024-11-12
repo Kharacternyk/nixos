@@ -1,4 +1,4 @@
 font-awesome
 liberation_ttf
-noto-fonts-cjk
+noto-fonts-cjk-sans
 noto-fonts-emoji

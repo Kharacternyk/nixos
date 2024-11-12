@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1718814526,
-        "narHash": "sha256-2P80p9QizNJYhIy+AvSa7PutClpAPNXYYVMLQp7l8QI=",
+        "lastModified": 1727599065,
+        "narHash": "sha256-KwS7TH7xXHhNtjJZUv7Gy/GrjjLK7GQVzWaJzjyPMqY=",
         "owner": "Kharacternyk",
         "repo": "klunok",
-        "rev": "dc1795eb9c37d2fbea21d271d52580eddd0381df",
+        "rev": "0c5dfe059bb4d464af27ef38dda5ecd785bedee6",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1726642912,
-        "narHash": "sha256-wiZzKGHRAhItEuoE599Wm3ic+Lg/NykuBvhb+awf7N8=",
+        "lastModified": 1731139594,
+        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "395c52d142ec1df377acd67db6d4a22950b02a98",
+        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
         "type": "github"
       },
       "original": {
@@ -158,11 +158,11 @@
     "vim-typst": {
       "flake": false,
       "locked": {
-        "lastModified": 1719833317,
-        "narHash": "sha256-YujkzuojPDzA8MVKXXinLaEu0n73nrAsuks87IReMwQ=",
+        "lastModified": 1730506968,
+        "narHash": "sha256-dfxwl1Yw0EyN9h1OjZsrOeiTLYrdZ6DA3CUxNCX+DpQ=",
         "owner": "kaarmu",
         "repo": "typst.vim",
-        "rev": "4d18ced62599ffe5b3c0e5e49566d5456121bc02",
+        "rev": "50e89f481102d5c9ef6990b9f8086c0c7d64bff6",
         "type": "github"
       },
       "original": {

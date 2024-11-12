@@ -8,7 +8,6 @@
     nixPath = [
       "nixpkgs=${host.inputs.nixpkgs}"
     ];
-    package = pkgs.nixFlakes;
     registry = {
       flake-utils.to = {
         owner = "numtide";

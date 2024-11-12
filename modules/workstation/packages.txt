@@ -1,4 +1,4 @@
-alsaUtils
+alsa-utils
 firefox
 freerdp
 gthumb
