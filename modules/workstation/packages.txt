@@ -7,7 +7,6 @@ libreoffice
 mpv
 pavucontrol
 reaper
-spotify
 tdesktop
 wrangler
 xcolor

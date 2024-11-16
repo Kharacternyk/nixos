@@ -11,7 +11,13 @@ alt + u
     qb
 
 alt + y
-    spotify --no-zygote
+    reaper
+
+alt + shift + y
+    alsa-scarlett-gui
+
+alt + ctrl + y
+    pavucontrol
 
 alt + i
     zathura
