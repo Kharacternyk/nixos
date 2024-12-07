@@ -5,6 +5,7 @@ gthumb
 inkscape
 libreoffice
 mpv
+ncspot
 pavucontrol
 reaper
 tdesktop
