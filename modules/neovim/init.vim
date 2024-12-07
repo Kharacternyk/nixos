@@ -19,6 +19,7 @@ set iminsert=0
 let g:coc_config_home="/etc"
 let g:gruvbox_italic=1
 let g:suda_smart_edit=1
+let g:suda#noninteractive = 1
 let g:vim_markdown_math=1
 let g:vim_markdown_folding_disabled=1
 let mapleader=" "
