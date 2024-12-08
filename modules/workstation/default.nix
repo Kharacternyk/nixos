@@ -25,6 +25,7 @@
     };
     pipewire = {
       enable = true;
+      extraConfig.pipewire.overrides."context.properties"."default.clock.rate" = 44100;
       jack.enable = true;
     };
     redshift = {
