@@ -24,3 +24,4 @@ R
 ripgrep
 typst
 unzip
+vulnix
