@@ -9,6 +9,7 @@ cluded_paths[home('src')] = true
 history_paths[home('.bash_history')] = true
 history_paths[home('.Rhistory')] = true
 included_paths[home('.config/qutebrowser/bookmarks')] = true
+included_paths[home('.config/REAPER/reaper.ini')] = true
 included_paths['/etc/nixos'] = true
 project_parents[home('src')] = true
 project_roots['/etc/nixos'] = true
