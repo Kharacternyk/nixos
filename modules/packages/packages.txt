@@ -21,7 +21,6 @@ pciutils
 pnpm
 poetry
 prettypst
-R
 ripgrep
 typst
 unzip
