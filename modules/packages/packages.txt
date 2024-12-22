@@ -17,6 +17,7 @@ nix-tree
 nixpkgs-fmt
 nodejs
 nvd
+pciutils
 pnpm
 poetry
 prettypst
