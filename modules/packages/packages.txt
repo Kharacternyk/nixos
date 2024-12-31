@@ -4,6 +4,7 @@ clang-tools
 darkhttpd
 difftastic
 entr
+fd
 file
 flutter
 fzf
