@@ -1,4 +1,3 @@
-ansible
 bottom
 clang-tools
 darkhttpd
@@ -8,7 +7,6 @@ fd
 file
 flutter
 fzf
-gnumake
 imagemagick
 killall
 man-pages
