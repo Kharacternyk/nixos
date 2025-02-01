@@ -1,14 +1,23 @@
+{ pkgs, ... }:
+let
+  script = pkgs.writeShellScriptBin "backup" ''
+    if [[ -n $1 ]]; then
+      mkdir -p "$1/klunok/var"
+      cp -Tnr /klunok/store "$1/klunok/store"
+      cp /klunok/var/journal "$1/klunok/var/journal"
+    fi
+  '';
+in
 {
+  environment.systemPackages = [
+    script
+  ];
   systemd = {
     services.backup = {
       requires = [
         "backup.mount"
       ];
-      script = ''
-        mkdir -p /backup/klunok/var
-        cp -Tnr /klunok/store /backup/klunok/store
-        cp /klunok/var/journal /backup/klunok/var/journal
-      '';
+      script = "${script}/bin/backup /backup";
       serviceConfig.Type = "oneshot";
     };
     timers.backup = {
