@@ -35,10 +35,7 @@
 
         /nix/var/nix/profiles/system/bin/switch-to-configuration switch
       '';
-      serviceConfig = {
-        Restart = "no";
-        Type = "oneshot";
-      };
+      serviceConfig.Type = "oneshot";
     };
     timers.prune = {
       timerConfig = {
