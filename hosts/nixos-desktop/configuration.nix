@@ -17,6 +17,10 @@
   environment.systemPackages = [
     pkgs.alsa-scarlett-gui
   ];
+  fileSystems = {
+    "/".label = "nixos";
+    "/backup".label = "backup";
+  };
   services.xserver = {
     displayManager.setupCommands = ''
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap
