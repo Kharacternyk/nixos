@@ -1,20 +1,12 @@
 {
   outputs = inputs: {
-    nixosConfigurations = {
-      nixos-desktop = import ./hosts {
-        inherit inputs;
-        name = "nixos-desktop";
-        system = inputs.flake-utils.lib.system.x86_64-linux;
-        hasGpu = true;
-        hasScreen = true;
-        hasWifi = true;
-      };
-      nixos-laptop-vm = import ./hosts {
-        inherit inputs;
-        name = "nixos-laptop-vm";
-        system = inputs.flake-utils.lib.system.x86_64-linux;
-        hasScreen = true;
-      };
+    nixosConfigurations.nixos-desktop = import ./hosts {
+      inherit inputs;
+      name = "nixos-desktop";
+      system = inputs.flake-utils.lib.system.x86_64-linux;
+      hasGpu = true;
+      hasScreen = true;
+      hasWifi = true;
     };
   };
 
