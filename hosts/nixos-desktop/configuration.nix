@@ -1,8 +1,13 @@
 { host, pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
   boot = {
+    initrd.availableKernelModules = [
+      "uhci_hcd"
+      "ehci_pci"
+      "ata_piix"
+      "xhci_pci"
+      "usbhid"
+      "sd_mod"
+    ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader.grub = {
       enable = true;
