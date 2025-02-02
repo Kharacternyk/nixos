@@ -9,10 +9,7 @@
       "sd_mod"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
-    loader.grub = {
-      enable = true;
-      device = "/dev/sda";
-    };
+    loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_250GB_S4BFNG0MB26329K";
   };
   environment.systemPackages = [
     pkgs.alsa-scarlett-gui
