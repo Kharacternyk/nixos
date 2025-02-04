@@ -4,7 +4,7 @@
     sessionVariables.EDITOR = "sudo -u nazar nvim";
     systemPackages = [
       pkgs.nixd
-      pkgs.typst-lsp
+      pkgs.tinymist
     ] ++ lib.optionals (host ? hasScreen) [
       pkgs.xsel
     ];
