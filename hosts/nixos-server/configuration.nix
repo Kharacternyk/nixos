@@ -10,4 +10,5 @@
     services.sudo.rssh = true;
   };
   services.amazon-ssm-agent.enable = lib.mkForce false;
+  system.stateVersion = "22.05";
 }
