@@ -7,6 +7,9 @@
       "adbusers"
     ];
     isNormalUser = true;
+    openssh.authorizedKeys.keyFiles = [
+      ./authorized_keys;
+    ];
     uid = 1000;
   };
 }
