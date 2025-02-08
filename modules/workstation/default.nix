@@ -11,6 +11,7 @@
     '';
     systemPackages = functions.readAttributes lib ./packages.txt pkgs;
   };
+  hardware.enableAllFirmware = true;
   programs.adb.enable = true;
   security.rtkit.enable = true;
   services = {
