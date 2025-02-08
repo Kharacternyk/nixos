@@ -1,3 +1,0 @@
-{
-  security.sudo.execWheelOnly = true;
-}
