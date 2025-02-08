@@ -1,10 +1,14 @@
 BOLD="$(tput bold)"
 RED="$(tput setaf 1)"
+GREEN="$(tput setaf 2)"
 CYAN="$(tput setaf 6)"
 RESET="$(tput sgr0)"
 PROMPT_COMMAND='
     if [[ $? = 0 ]]; then
-        PROMPT_COLOR="$BOLD$CYAN"
+        case $HOSTNAME in
+            *server*) PROMPT_COLOR="$BOLD$GREEN" ;;
+            *) PROMPT_COLOR="$BOLD$CYAN" ;;
+        esac
     else
         PROMPT_COLOR="$BOLD$RED"
     fi
