@@ -11,6 +11,7 @@
   };
   programs.ssh = {
     agentTimeout = null;
+    enableAskPassword = false;
     startAgent = true;
   };
   security.sudo = {
