@@ -1,12 +1,14 @@
-{ pkgs, ... }: {
+{ lib, host, pkgs, ... }: {
   environment.systemPackages = [
     (
       let
-        python-packages = packages: [
+        packages = packages: [
           packages.black
-        ] ++ packages.black.optional-dependencies.d;
+        ] ++ packages.black.optional-dependencies.d ++ (lib.optionals (host ? hasCuda) [
+          packages.torchWithCuda
+        ]);
       in
-      pkgs.python3.withPackages python-packages
+      pkgs.python3.withPackages packages
     )
   ];
 }

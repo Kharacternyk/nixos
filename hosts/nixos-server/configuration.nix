@@ -2,6 +2,12 @@
   imports = [
     "${modulesPath}/virtualisation/amazon-image.nix"
   ];
-  services.amazon-ssm-agent.enable = lib.mkForce false;
+  hardware.graphics.enable = true;
+  services = {
+    amazon-ssm-agent.enable = lib.mkForce false;
+    xserver.videoDrivers = [
+      "nvidia"
+    ];
+  };
   system.stateVersion = "22.05";
 }
