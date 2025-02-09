@@ -8,6 +8,7 @@
         hasGpu = true;
         hasScreen = true;
         hasWifi = true;
+        hasBackup = true;
       };
       nixos-server = import ./hosts {
         inherit inputs;

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ host, pkgs, ... }:
 let
   script = pkgs.writeShellScriptBin "backup" ''
     if [[ -n $1 ]]; then
@@ -21,6 +21,7 @@ in
       serviceConfig.Type = "oneshot";
     };
     timers.backup = {
+      enable = host ? hasBackup;
       timerConfig = {
         OnCalendar = "*:00/15";
         Unit = "backup.service";
