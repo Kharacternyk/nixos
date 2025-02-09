@@ -1,5 +1,6 @@
 { lib, host, pkgs, ... }: {
   nix = {
+    channel.enable = true;
     extraOptions = ''
       experimental-features = nix-command flakes
       flake-registry =
