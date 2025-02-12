@@ -16,6 +16,7 @@
     {
       klunok = {
         inherit script;
+        environment.KLUNOK_SUFFIX = host.klunokSuffix;
         wantedBy = [
           "multi-user.target"
         ];

@@ -5,6 +5,7 @@
         inherit inputs;
         name = "nixos-desktop";
         system = inputs.flake-utils.lib.system.x86_64-linux;
+        klunokSuffix = "";
         hasGpu = true;
         hasScreen = true;
         hasWifi = true;
@@ -14,6 +15,7 @@
         inherit inputs;
         name = "nixos-server";
         system = inputs.flake-utils.lib.system.x86_64-linux;
+        klunokSuffix = "-s";
         hasCuda = true;
       };
     };

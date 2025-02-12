@@ -1,4 +1,7 @@
 prefix = os.getenv("KLUNOK_PREFIX") or prefix
+suffix = os.getenv("KLUNOK_SUFFIX") or ""
+
+journal_timestamp_pattern = journal_timestamp_pattern .. suffix
 
 excluded_paths['/home/nazar'] = true
 cluded_paths['/home/nazar/src'] = true
