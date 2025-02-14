@@ -142,16 +142,16 @@
     "vim-suda": {
       "flake": false,
       "locked": {
-        "lastModified": 1733630017,
-        "narHash": "sha256-46sy3rAdOCULVt1RkIoGdweoV3MqQaB33Et9MrxI6Lk=",
-        "owner": "lambdalisue",
-        "repo": "suda.vim",
-        "rev": "9adda7d195222d4e2854efb2a88005a120296c47",
+        "lastModified": 1739558513,
+        "narHash": "sha256-Dt/WfcfbGskaGZ1BG+D7rTYAI7eyLFVZlwMEP+Fmn/k=",
+        "owner": "Kharacternyk",
+        "repo": "vim-suda",
+        "rev": "b1803abec1fd53eb82bc898202da10f1e06722ae",
         "type": "github"
       },
       "original": {
-        "owner": "lambdalisue",
-        "repo": "suda.vim",
+        "owner": "Kharacternyk",
+        "repo": "vim-suda",
         "type": "github"
       }
     },

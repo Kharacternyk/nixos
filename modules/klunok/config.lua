@@ -9,5 +9,5 @@ project_parents['/home/nazar/src'] = true
 
 history_paths['/home/nazar/.bash_history'] = true
 
-included_paths['/etc/nixos'] = true
+editors["uutils-coreutils"] = true
 project_roots['/etc/nixos'] = true

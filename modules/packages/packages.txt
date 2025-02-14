@@ -21,4 +21,5 @@ prettypst
 ripgrep
 typst
 unzip
+uutils-coreutils
 vulnix

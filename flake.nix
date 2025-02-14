@@ -43,7 +43,7 @@
       flake = false;
     };
     vim-suda = {
-      url = "github:lambdalisue/suda.vim";
+      url = "github:Kharacternyk/vim-suda";
       flake = false;
     };
     vim-typst = {
