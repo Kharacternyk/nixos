@@ -27,10 +27,11 @@
       };
     };
   users = {
-    groups.klunok = { };
+    groups.klunok.gid = 500;
     users.klunok = {
       isSystemUser = true;
       group = "klunok";
+      uid = 500;
     };
   };
 }
