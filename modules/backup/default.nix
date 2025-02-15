@@ -1,15 +1,15 @@
 { host, pkgs, ... }:
 let
   script = pkgs.writeShellScriptBin "backup" ''
-    if [[ -n $1 ]]; then
-      mkdir -p "$1/klunok/var"
-      cp -Tnr /klunok/store "$1/klunok/store"
-      cp /klunok/var/journal "$1/klunok/var/journal"
-    fi
+    ${pkgs.rsync}/bin/rsync -vba "$2/klunok/store/" "$1/klunok/store/"
+  '';
+  check = pkgs.writeShellScriptBin "check" ''
+    diff --color=always -r "$2/klunok/store" "$1/klunok/store"
   '';
 in
 {
   environment.systemPackages = [
+    check
     script
   ];
   systemd = {
