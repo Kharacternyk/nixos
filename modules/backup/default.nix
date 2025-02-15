@@ -1,7 +1,7 @@
 { host, pkgs, ... }:
 let
   script = pkgs.writeShellScriptBin "backup" ''
-    ${pkgs.rsync}/bin/rsync -vba "$2/klunok/store/" "$1/klunok/store/"
+    ${pkgs.rsync}/bin/rsync -vba --exclude='*~' "$2/klunok/store/" "$1/klunok/store/"
   '';
   check = pkgs.writeShellScriptBin "check" ''
     diff --color=always -r "$2/klunok/store" "$1/klunok/store"
