@@ -1,5 +1,6 @@
 black
 fire
+matplotlib
 numpy
 pandas
 plotly
