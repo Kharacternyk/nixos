@@ -12,6 +12,7 @@
       "filetypes": ["typst"]
     }
   },
-  "python.formatting.provider": "blackd",
+  "pyright.organizeimports.provider": "ruff",
+  "python.formatting.provider": "ruff",
   "suggest.noselect": true
 }

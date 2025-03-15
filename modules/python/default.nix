@@ -4,7 +4,7 @@
       let
         packages = packages: (
           functions.readAttributes lib ./packages.txt packages
-        ) ++ packages.black.optional-dependencies.d ++ (lib.optionals (host ? hasCuda) [
+        ) ++  (lib.optionals (host ? hasCuda) [
           packages.torchWithCuda
           (
             packages.torchvision.override {

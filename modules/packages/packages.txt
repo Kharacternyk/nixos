@@ -19,6 +19,7 @@ pciutils
 pnpm
 prettypst
 ripgrep
+ruff
 typst
 unzip
 uutils-coreutils
