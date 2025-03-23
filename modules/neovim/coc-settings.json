@@ -8,8 +8,13 @@
       "filetypes": ["nix"]
     },
     "typst": {
-      "command": "typst-lsp",
-      "filetypes": ["typst"]
+      "command": "tinymist",
+      "filetypes": ["typst"],
+      "settings": {
+        "formatterMode": "typstyle",
+        "exportPdf": "onSave",
+        "formatterPrintWidth": 88
+      }
     }
   },
   "pyright.organizeimports.provider": "ruff",

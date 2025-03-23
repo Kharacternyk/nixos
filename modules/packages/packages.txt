@@ -17,10 +17,10 @@ nodejs
 nvd
 pciutils
 pnpm
-prettypst
 ripgrep
 ruff
 typst
+typstyle
 unzip
 uutils-coreutils
 vulnix
