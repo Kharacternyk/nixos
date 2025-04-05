@@ -5,6 +5,7 @@ difftastic
 entr
 fd
 file
+ffmpeg
 fzf
 imagemagick
 killall

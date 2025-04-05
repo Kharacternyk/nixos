@@ -5,6 +5,8 @@
       btm = "btm --theme=default-light";
       diff = "diff --color=auto";
       egrep = "egrep --color=auto";
+      ffmpeg = "ffmpeg -hide_banner";
+      ffprobe = "ffprobe -hide_banner";
       fgrep = "fgrep --color=auto";
       grep = "grep --color=auto";
       ls = "ls --color=auto -FA";
