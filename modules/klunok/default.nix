@@ -17,6 +17,11 @@
       klunok = {
         inherit script;
         environment.KLUNOK_SUFFIX = host.klunokSuffix;
+        serviceConfig = {
+          restart = "on-failure";
+          restartSteps = 5;
+          restartMaxDelaySec = 5;
+        };
         wantedBy = [
           "multi-user.target"
         ];
