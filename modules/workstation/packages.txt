@@ -8,6 +8,5 @@ mpv
 pavucontrol
 reaper
 tdesktop
-wrangler
 xcolor
 xfce.thunar
