@@ -24,4 +24,5 @@ typst
 typstyle
 unzip
 uutils-coreutils
+uv
 vulnix
