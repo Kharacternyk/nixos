@@ -18,6 +18,13 @@
         klunokSuffix = "s";
         hasCuda = true;
       };
+      nixos-laptop-vm = import ./hosts {
+        inherit inputs;
+        name = "nixos-laptop-vm";
+        system = inputs.flake-utils.lib.system.x86_64-linux;
+        klunokSuffix = "lvm";
+        hasScreen = true;
+      };
     };
   };
 
