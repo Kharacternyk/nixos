@@ -21,13 +21,19 @@
       device = "portal";
     };
   };
-  services.xserver.xrandrHeads = [
-    {
-      output = "Virtual-1";
-      monitorConfig = ''
-        Option "PreferredMode" "1920x1080"
-      '';
-    }
-  ];
+  services = {
+    libinput = {
+      mouse.disableWhileTyping = true;
+      touchpad.disableWhileTyping = true;
+    };
+    xserver.xrandrHeads = [
+      {
+        output = "Virtual-1";
+        monitorConfig = ''
+          Option "PreferredMode" "1920x1080"
+        '';
+      }
+    ];
+  };
   system.stateVersion = "25.11";
 }
