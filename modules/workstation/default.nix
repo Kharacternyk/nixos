@@ -47,7 +47,7 @@
       displayManager.lightdm.background = ./wallpaper.png;
       xkb = {
         layout = "us,ua";
-        options = "caps:swapescape,grp:shifts_toggle,compose:ins,ctrl:swap_lwin_lctl";
+        options = "grp:shifts_toggle,compose:ins,ctrl:swap_lwin_lctl";
       };
     };
   };

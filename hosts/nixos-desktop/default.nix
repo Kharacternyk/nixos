@@ -20,7 +20,7 @@
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap
       ${pkgs.xorg.xset}/bin/xset -dpms
     '';
-    xkb.options = "ctrl:swap_rwin_rctl";
+    xkb.options = "caps:swapescape,ctrl:swap_rwin_rctl";
     xrandrHeads = [
       {
         output = "HDMI-1";
