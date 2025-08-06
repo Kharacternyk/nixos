@@ -14,7 +14,13 @@
     kernelPackages = pkgs.linuxPackages_latest;
     loader.grub.device = "/dev/vda";
   };
-  fileSystems."/".label = "nixos";
+  fileSystems = {
+    "/".label = "nixos";
+    "/home/nazar/portal" = {
+      fsType = "virtiofs";
+      device = "portal";
+    };
+  };
   services.xserver.xrandrHeads = [
     {
       output = "Virtual-1";
