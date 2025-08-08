@@ -32,6 +32,7 @@
       mouse.disableWhileTyping = true;
       touchpad.disableWhileTyping = true;
     };
+    qemuGuest.enable = true;
     xserver.xrandrHeads = [
       {
         output = "Virtual-1";
