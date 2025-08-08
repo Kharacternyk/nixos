@@ -16,9 +16,15 @@
   };
   fileSystems = {
     "/".label = "nixos";
+    "/home/nazar" /* so that klunok doesn't shadow the portal */ = {
+      device = "/home/nazar";
+      options = [
+        "bind"
+      ];
+    };
     "/home/nazar/portal" = {
-      fsType = "virtiofs";
       device = "portal";
+      fsType = "virtiofs";
     };
   };
   services = {
