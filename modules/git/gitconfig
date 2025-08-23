@@ -16,4 +16,4 @@ directory=/etc/nixos
 external=difft
 
 [help]
-autoCorrect=prompt
+autoCorrect=immediate
