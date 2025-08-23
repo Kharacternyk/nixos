@@ -20,6 +20,7 @@ pciutils
 pnpm
 ripgrep
 ruff
+sad
 typst
 typstyle
 unzip
