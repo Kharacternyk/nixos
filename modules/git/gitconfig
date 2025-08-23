@@ -6,6 +6,7 @@ name=Nazar Vinnichuk
 ff=only
 
 [push]
+autoSetupRemote=true
 default=current
 
 [safe]
