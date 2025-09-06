@@ -27,3 +27,4 @@ unzip
 uutils-coreutils
 uv
 vulnix
+wrangler
