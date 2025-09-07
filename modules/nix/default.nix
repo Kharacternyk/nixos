@@ -24,7 +24,9 @@
         "flakes"
         "nix-command"
       ];
-      flake-registry = [ ];
+      flake-registry = [
+        "/etc/nix/registry.json"
+      ];
       warn-dirty = false;
     } // lib.optionalAttrs (host ? hasCuda) {
       extra-substituters = [
