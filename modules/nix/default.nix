@@ -1,6 +1,5 @@
 { lib, host, pkgs, ... }: {
   nix = {
-    channel.enable = true;
     nixPath = [
       "nixpkgs=${host.inputs.nixpkgs}"
     ];
