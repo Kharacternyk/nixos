@@ -17,6 +17,7 @@ in
       python
     ];
     variables = {
+      PYTHON_BASIC_REPL = "1";
       UV_PYTHON = python;
       UV_PYTHON_PREFERENCE = "only-system";
     };
