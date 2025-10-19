@@ -4,6 +4,7 @@
   ];
   hardware = {
     graphics.enable = true;
+    nvidia.open = true;
     nvidia-container-toolkit.enable = true;
   };
   services = {
