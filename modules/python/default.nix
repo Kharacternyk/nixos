@@ -3,6 +3,11 @@ let
   python = pkgs.python3.withPackages (packages: (
     functions.readAttributes lib ./packages.txt packages
   ) ++ (lib.optionals (host ? hasCuda) [
+    (
+      packages.gymnasium.overridePythonAttrs {
+        doCheck = false;
+      }
+    )
     packages.torchWithCuda
     (
       packages.torchvision.override {
