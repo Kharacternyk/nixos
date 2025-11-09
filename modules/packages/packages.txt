@@ -18,6 +18,7 @@ nodejs
 nvd
 pciutils
 pnpm
+rethinkdb
 ripgrep
 ruff
 sad
