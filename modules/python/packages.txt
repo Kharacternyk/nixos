@@ -1,7 +1,9 @@
 fire
 matplotlib
+moviepy
 numpy
 pandas
 plotly
 rethinkdb
+pygame
 tqdm
