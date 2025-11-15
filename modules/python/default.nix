@@ -14,6 +14,11 @@ let
         torch = packages.torchWithCuda;
       }
     )
+    (
+      packages.torchmetrics.override {
+        torch = packages.torchWithCuda;
+      }
+    )
   ]));
 in
 {
