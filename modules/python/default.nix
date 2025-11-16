@@ -10,12 +10,17 @@ let
     )
     packages.torchWithCuda
     (
-      packages.torchvision.override {
+      packages.einops.override {
         torch = packages.torchWithCuda;
       }
     )
     (
       packages.torchmetrics.override {
+        torch = packages.torchWithCuda;
+      }
+    )
+    (
+      packages.torchvision.override {
         torch = packages.torchWithCuda;
       }
     )
