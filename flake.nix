@@ -24,6 +24,7 @@
         system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "lvm";
         hasScreen = true;
+        usesDantooine = true;
       };
     };
   };

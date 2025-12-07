@@ -11,7 +11,16 @@
     u2f = lib.optionalAttrs (host ? hasScreen) {
       enable = true;
       settings = {
-        authfile = pkgs.writeText "u2f.txt" (builtins.readFile ./u2f.txt);
+        authfile = pkgs.writeText "u2f.txt" (
+          let
+            readKey = file: "*,${lib.strings.trim (builtins.readFile file)},es256,+presense";
+            dantooine = readKey ./keys/dantooine.txt;
+            hoth = readKey ./keys/hoth.txt;
+            keyList = if host ? usesDantooine then [ dantooine hoth ] else [ hoth dantooine ];
+            keyString = builtins.concatStringsSep ":" keyList;
+          in
+          "nazar:${keyString}\n"
+        );
         origin = "nixos";
       };
     };
