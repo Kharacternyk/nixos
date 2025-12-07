@@ -2,38 +2,27 @@
 let
   python = pkgs.python3.withPackages (packages: (
     functions.readAttributes lib ./packages.txt packages
-  ) ++ (lib.optionals (host ? hasCuda) (
-    let
-      gymnasium =
-        packages.gymnasium.overridePythonAttrs {
-          doCheck = false;
-        };
-    in
-    [
-      gymnasium
-      (
-        packages.ale-py.override {
-          inherit gymnasium;
-        }
-      )
-      packages.torchWithCuda
-      (
-        packages.einops.override {
-          torch = packages.torchWithCuda;
-        }
-      )
-      (
-        packages.torchmetrics.override {
-          torch = packages.torchWithCuda;
-        }
-      )
-      (
-        packages.torchvision.override {
-          torch = packages.torchWithCuda;
-        }
-      )
-    ]
-  )));
+  ) ++ (if host ? hasCuda then
+    (
+      [
+        packages.torchWithCuda
+        (
+          packages.torchmetrics.override {
+            torch = packages.torchWithCuda;
+          }
+        )
+        (
+          packages.torchvision.override {
+            torch = packages.torchWithCuda;
+          }
+        )
+      ]
+    ) else [
+    packages.torch
+    packages.torchmetrics
+    packages.torchvision
+  ]
+  ));
 in
 {
   environment = {
