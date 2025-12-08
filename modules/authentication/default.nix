@@ -15,8 +15,18 @@
           let
             readKey = file: "*,${lib.strings.trim (builtins.readFile file)},es256,+presense";
             dantooine = readKey ./keys/dantooine.txt;
+            yavin = readKey ./keys/yavin.txt;
             hoth = readKey ./keys/hoth.txt;
-            keyList = if host ? usesDantooine then [ dantooine hoth ] else [ hoth dantooine ];
+            keyList =
+              if host ? usesDantooine then [
+                dantooine
+                hoth
+                yavin
+              ] else [
+                hoth
+                dantooine
+                yavin
+              ];
             keyString = builtins.concatStringsSep ":" keyList;
           in
           "nazar:${keyString}\n"
