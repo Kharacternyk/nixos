@@ -8,8 +8,9 @@
   '';
   systemd.services =
     let
+      klunok = host.inputs.klunok.packages.${pkgs.stdenv.hostPlatform.system}.default;
       script = ''
-        ${host.inputs.klunok.packages.${pkgs.system}.default}/bin/klunok \
+        ${klunok}/bin/klunok \
         -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
       '';
     in
