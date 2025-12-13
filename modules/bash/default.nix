@@ -19,9 +19,11 @@
       FZF_DEFAULT_OPTS = ''
         --bind=change:top
         --prompt='/ '
+        --pointer='>'
         --info=hidden
         --color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1
         --color prompt:4,spinner:4,marker:4,pointer:4
+        --color gutter:7
         --reverse
         --no-separator
       '';
