@@ -6,6 +6,7 @@ gthumb
 inkscape
 libreoffice
 mpv
+ocenaudio
 pavucontrol
 reaper
 telegram-desktop
