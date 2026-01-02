@@ -14,8 +14,4 @@
     ];
   };
   system.stateVersion = "22.05";
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 }
