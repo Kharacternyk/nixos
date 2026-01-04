@@ -4,6 +4,5 @@ moviepy
 numpy
 pandas
 plotly
-rethinkdb
 pygame
 tqdm
