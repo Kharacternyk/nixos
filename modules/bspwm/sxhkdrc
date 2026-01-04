@@ -19,6 +19,9 @@ alt + shift + y
 alt + ctrl + y
     pavucontrol
 
+alt + ctrl + shift + y
+    ocenaudio
+
 alt + i
     zathura
 
