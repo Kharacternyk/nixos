@@ -7,7 +7,12 @@ let
       [
         packages.torchWithCuda
         (
-          packages.torchmetrics.override {
+          packages.pytorch-lightning.override {
+            torch = packages.torchWithCuda;
+          }
+        )
+        (
+          packages.torchaudio.override {
             torch = packages.torchWithCuda;
           }
         )
@@ -18,8 +23,9 @@ let
         )
       ]
     ) else [
+    packages.pytorch-lightning
     packages.torch
-    packages.torchmetrics
+    packages.torchaudio
     packages.torchvision
   ]
   ));
