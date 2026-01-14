@@ -11,4 +11,4 @@ pavucontrol
 reaper
 telegram-desktop
 xcolor
-xfce.thunar
+thunar
