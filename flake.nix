@@ -30,7 +30,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:flox/nixpkgs/unstable";
     flake-utils.url = "github:numtide/flake-utils";
     klunok = {
       url = "github:Kharacternyk/klunok";
