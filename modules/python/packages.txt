@@ -7,3 +7,4 @@ plotly
 pygame
 soundfile
 tqdm
+wandb
