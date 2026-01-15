@@ -17,6 +17,12 @@ let
           }
         )
         (
+          packages.torchcodec.override {
+            cudaSupport = true;
+            torch = packages.torchWithCuda;
+          }
+        )
+        (
           packages.torchvision.override {
             torch = packages.torchWithCuda;
           }
@@ -26,6 +32,7 @@ let
     packages.pytorch-lightning
     packages.torch
     packages.torchaudio
+    packages.torchcodec
     packages.torchvision
   ]
   ));
