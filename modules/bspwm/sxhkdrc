@@ -11,7 +11,7 @@ alt + u
     qb
 
 alt + y
-    reaper
+    PIPEWIRE_QUANTUM=1024/44100 reaper
 
 alt + shift + y
     alsa-scarlett-gui
