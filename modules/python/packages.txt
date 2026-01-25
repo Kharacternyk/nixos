@@ -1,10 +1,12 @@
 fire
+hypothesis
 matplotlib
 moviepy
 numpy
 pandas
 plotly
 pygame
+pytest
 soundfile
 tqdm
 wandb
