@@ -11,4 +11,4 @@ map D delete "$fx"
 map t $difft --color always $fs | less -R
 
 cmd q quit
-cmd open $xdg-open "$f"
+cmd open $rifle "$f"
