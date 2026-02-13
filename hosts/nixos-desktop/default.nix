@@ -15,6 +15,7 @@
     "/".label = "nixos";
     "/backup".label = "backup";
   };
+  hardware.amdgpu.initrd.enable = true;
   services.xserver = {
     displayManager.setupCommands = ''
       ${pkgs.xorg.setxkbmap}/bin/setxkbmap
