@@ -5,9 +5,9 @@ coc-nvim
 coc-prettier
 coc-pyright
 coc-tsserver
-sleuth
+plantuml-syntax
 undotree
 vim-jsx-pretty
 vim-markdown
 vim-nix
-plantuml-syntax
+vim-sleuth

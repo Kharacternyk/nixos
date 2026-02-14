@@ -18,8 +18,8 @@
   hardware.amdgpu.initrd.enable = true;
   services.xserver = {
     displayManager.setupCommands = ''
-      ${pkgs.xorg.setxkbmap}/bin/setxkbmap
-      ${pkgs.xorg.xset}/bin/xset -dpms
+      ${pkgs.setxkbmap}/bin/setxkbmap
+      ${pkgs.xset}/bin/xset -dpms
     '';
     xkb.options = "caps:swapescape,ctrl:swap_rwin_rctl";
     xrandrHeads = [
