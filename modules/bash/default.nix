@@ -10,6 +10,7 @@
       fgrep = "fgrep --color=auto";
       grep = "grep --color=auto";
       ls = "ls --color=auto -FA";
+      modal = "~/.local/bin/modal";
       ncdu = "ncdu --color=dark";
       objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
       rsync = "rsync -u";
