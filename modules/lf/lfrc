@@ -1,10 +1,10 @@
+set dircounts
+set dupfilefmt "%b-%n%e"
+set errorfmt "\033[7;31m%s\033[0m"
 set hidden
 set incsearch
-set dircounts
 set info size
 set scrolloff 100
-set errorfmt "\033[7;31m%s\033[0m"
-set dupfilefmt "%b-%n%e"
 
 map q
 map D delete "$fx"
