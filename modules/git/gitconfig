@@ -2,6 +2,9 @@
 email=nazar@vinnich.uk
 name=Nazar Vinnichuk
 
+[init]
+defaultBranch=main
+
 [pull]
 ff=only
 
