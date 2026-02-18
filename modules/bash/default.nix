@@ -8,11 +8,13 @@
       ffmpeg = "ffmpeg -hide_banner";
       ffprobe = "ffprobe -hide_banner";
       fgrep = "fgrep --color=auto";
+      gi = "git";
       grep = "grep --color=auto";
       ls = "ls --color=auto -FA";
       modal = "~/.local/bin/modal";
       ncdu = "ncdu --color=dark";
       objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
+      rg = "rg -i";
       rsync = "rsync -u";
       sudo = "sudo ";
     };
