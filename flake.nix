@@ -30,18 +30,18 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:flox/nixpkgs/unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    klunok = {
-      url = "github:Kharacternyk/klunok";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     bspwm-utils = {
       url = "github:Kharacternyk/bspwm-utils";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    klunok = {
+      url = "github:Kharacternyk/klunok";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    nixpkgs.url = "github:flox/nixpkgs/unstable";
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
       flake = false;
