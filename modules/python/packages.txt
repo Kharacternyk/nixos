@@ -9,5 +9,6 @@ plotly
 pygame
 pytest
 soundfile
+streamlit
 tqdm
 wandb
