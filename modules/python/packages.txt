@@ -3,6 +3,7 @@ hypothesis
 matplotlib
 moviepy
 numpy
+openai
 pandas
 plotly
 pygame
