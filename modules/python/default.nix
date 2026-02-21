@@ -58,6 +58,7 @@ let
         preBuild = ''
           patchShebangs protoc_plugin/plugin.py
           inv protoc
+          inv type-stubs
         '';
         build-system = [
           (
@@ -69,7 +70,11 @@ let
           packages.grpcio-tools
           packages.grpclib
           packages.invoke
+          packages.ipython
           packages.mypy-protobuf
+          packages.ruff
+          packages.sigtools
+          synchronicity
         ];
         dependencies = [
           packages.aiohttp
