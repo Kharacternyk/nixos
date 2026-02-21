@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "modal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771634538,
+        "narHash": "sha256-rEY9Jo1WaU4oXPvaYGxi/fWBv8aSklrhdX23/G5a64c=",
+        "owner": "modal-labs",
+        "repo": "modal-client",
+        "rev": "aee3a3bf2a22aa0277134b48bfe7679bbd09e0fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "modal-labs",
+        "repo": "modal-client",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1770841267,
@@ -85,11 +101,47 @@
         "bspwm-utils": "bspwm-utils",
         "flake-utils": "flake-utils",
         "klunok": "klunok",
+        "modal": "modal",
         "nixpkgs": "nixpkgs",
+        "setuptools-77": "setuptools-77",
+        "synchronicity": "synchronicity",
         "vim-bullets": "vim-bullets",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda",
         "vim-typst": "vim-typst"
+      }
+    },
+    "setuptools-77": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742479599,
+        "narHash": "sha256-vbkDi9Yvw9UlkTWVCbHl79bEBow1nZq+Nqc6PHMf8/8=",
+        "owner": "pypa",
+        "repo": "setuptools",
+        "rev": "7c859e017368360ba66c8cc591279d8964c031bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pypa",
+        "ref": "v77.0.3",
+        "repo": "setuptools",
+        "type": "github"
+      }
+    },
+    "synchronicity": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766168742,
+        "narHash": "sha256-Uyn4apHILBwjHoMkr52IkcFlaX7jx3WzuzZfvdxcDFo=",
+        "owner": "modal-labs",
+        "repo": "synchronicity",
+        "rev": "49880663e4a239496ea402b2e06405e4ab68a308",
+        "type": "github"
+      },
+      "original": {
+        "owner": "modal-labs",
+        "repo": "synchronicity",
+        "type": "github"
       }
     },
     "systems": {

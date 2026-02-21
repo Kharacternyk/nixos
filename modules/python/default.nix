@@ -35,6 +35,61 @@ let
     packages.torchcodec
     packages.torchvision
   ]
+  ) ++ (
+    let
+      synchronicity = packages.buildPythonPackage {
+        pname = "synchronicity";
+        version = "rolling";
+        pyproject = true;
+        src = host.inputs.synchronicity;
+        build-system = [
+          packages.hatchling
+        ];
+        dependencies = [
+          packages.typing-extensions
+        ];
+      };
+      modal = packages.buildPythonPackage {
+        pname = "modal";
+        version = "rolling";
+        pyproject = true;
+        src = host.inputs.modal;
+        dontCheckRuntimeDeps = true;
+        preBuild = ''
+          patchShebangs protoc_plugin/plugin.py
+          inv protoc
+        '';
+        build-system = [
+          (
+            packages.setuptools.overridePythonAttrs {
+              version = "77.0.3";
+              src = host.inputs.setuptools-77;
+            }
+          )
+          packages.grpcio-tools
+          packages.grpclib
+          packages.invoke
+          packages.mypy-protobuf
+        ];
+        dependencies = [
+          packages.aiohttp
+          packages.cbor2
+          packages.certifi
+          packages.click
+          packages.grpclib
+          packages.protobuf
+          packages.rich
+          packages.toml
+          packages.typer
+          packages.types-toml
+          packages.watchfiles
+          synchronicity
+        ];
+      };
+    in
+    [
+      modal
+    ]
   ));
 in
 {

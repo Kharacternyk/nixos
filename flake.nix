@@ -41,7 +41,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    modal = {
+      url = "github:modal-labs/modal-client";
+      flake = false;
+    };
     nixpkgs.url = "github:flox/nixpkgs/unstable";
+    setuptools-77 = {
+      url = "github:pypa/setuptools/v77.0.3";
+      flake = false;
+    };
+    synchronicity = {
+      url = "github:modal-labs/synchronicity";
+      flake = false;
+    };
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
       flake = false;
