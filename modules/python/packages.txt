@@ -2,6 +2,11 @@ fire
 hypothesis
 numpy
 openai
+pytorch-lightning
 streamlit
+torch
+torchaudio
+torchvision
 tqdm
+transformers
 wandb
