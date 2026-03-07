@@ -3,6 +3,7 @@ clang-tools
 darkhttpd
 difftastic
 entr
+fastfetch
 fd
 file
 ffmpeg
@@ -11,7 +12,6 @@ imagemagick
 killall
 man-pages
 ncdu
-neofetch
 nix-tree
 nixpkgs-fmt
 nodejs

@@ -4,7 +4,6 @@ coc-html
 coc-nvim
 coc-prettier
 coc-pyright
-coc-tsserver
 plantuml-syntax
 undotree
 vim-jsx-pretty
