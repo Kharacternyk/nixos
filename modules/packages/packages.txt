@@ -18,7 +18,6 @@ nodejs
 nvd
 pciutils
 pnpm
-rethinkdb
 ripgrep
 ruff
 sad
@@ -27,4 +26,3 @@ typstyle
 unzip
 uutils-coreutils
 uv
-vulnix

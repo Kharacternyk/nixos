@@ -1,14 +1,7 @@
 fire
 hypothesis
-matplotlib
-moviepy
 numpy
 openai
-pandas
-plotly
-pygame
-pytest
-soundfile
 streamlit
 tqdm
 wandb

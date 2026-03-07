@@ -1,7 +1,6 @@
 alsa-scarlett-gui
 alsa-utils
 firefox
-freerdp
 gthumb
 inkscape
 libreoffice
