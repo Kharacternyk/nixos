@@ -47,7 +47,7 @@ dev() {
         fi
 
         cd -- "$workdir"
-        nix develop --profile "$flakedir"/.nix/profile
+        NIXPKGS_ALLOW_UNFREE=1 nix develop --profile "$flakedir"/.nix/profile "$@"
     else
         echo nope
         cd -- "$workdir"
