@@ -42,6 +42,14 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs.url = "github:flox/nixpkgs/unstable";
+    qutebrowser-mypy = {
+      url = "https://raw.githubusercontent.com/qutebrowser/qutebrowser/refs/heads/main/.mypy.ini";
+      flake = false;
+    };
+    qutebrowser-patch = {
+      url = "https://patch-diff.githubusercontent.com/raw/qutebrowser/qutebrowser/pull/8642.patch";
+      flake = false;
+    };
     vim-bullets = {
       url = "github:dkarter/bullets.vim";
       flake = false;

@@ -1,5 +1,14 @@
 { lib, host, pkgs, ... }:
 let
+  qutebrowser = pkgs.qutebrowser.overrideAttrs (attrs: {
+    prePatch = ''
+      cp ${host.inputs.qutebrowser-mypy} .mypy.ini
+      chmod +w .mypy.ini
+    '';
+    patches = attrs.patches ++ [
+      host.inputs.qutebrowser-patch
+    ];
+  });
   qb = pkgs.writeShellScriptBin "qb" ''
     socket="$XDG_RUNTIME_DIR/qutebrowser/ipc-$(echo -n $USER | md5sum | cut -d' ' -f1)"
     printf \
@@ -7,7 +16,7 @@ let
     "$1" \
     "$PWD" \
     | ${pkgs.socat}/bin/socat -lf /dev/null - UNIX-CONNECT:"$socket" \
-    || "${pkgs.qutebrowser}/bin/qutebrowser" -C ${./config.py} "$@" &
+    || "${qutebrowser}/bin/qutebrowser" -C ${./config.py} "$@" &
   '';
   qbDesktop = pkgs.makeDesktopItem {
     name = "qb";
@@ -17,8 +26,8 @@ let
 in
 lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages = [
-    pkgs.qutebrowser
     qb
     qbDesktop
+    qutebrowser
   ];
 }
