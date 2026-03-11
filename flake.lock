@@ -168,11 +168,11 @@
     "vim-suda": {
       "flake": false,
       "locked": {
-        "lastModified": 1771622032,
-        "narHash": "sha256-saackf2+r5X52jA9bkHR0BYKvpq13Pf2HHuNx1VP97Q=",
+        "lastModified": 1773258165,
+        "narHash": "sha256-hq7q+koJ+o2aH+/ZmBZqdP0FdEvMhVlY5lHUmwhq1iE=",
         "owner": "Kharacternyk",
         "repo": "vim-suda",
-        "rev": "54ca63e6a664ff314244d37a4610eaf0420257ea",
+        "rev": "3ad5fa5a3924390d6ebf1f7c2c95a720745bfb51",
         "type": "github"
       },
       "original": {
