@@ -54,6 +54,10 @@ vim.lsp.enable({
     "nixd",
 })
 
+vim.diagnostic.config({
+    virtual_text = true,
+})
+
 require("blink.cmp").setup({
     completion = {
         list = {
