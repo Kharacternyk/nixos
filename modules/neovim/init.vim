@@ -49,10 +49,10 @@ ca W w
 colorscheme gruvbox
 
 lua << LUA
-vim.lsp.enable(
+vim.lsp.enable({
     "ty",
-    "nixd"
-)
+    "nixd",
+})
 
 require("blink.cmp").setup({
     completion = {
