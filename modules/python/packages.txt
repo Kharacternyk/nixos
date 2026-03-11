@@ -2,6 +2,7 @@ fire
 hypothesis
 numpy
 openai
+python-dotenv
 pytorch-lightning
 streamlit
 torch
