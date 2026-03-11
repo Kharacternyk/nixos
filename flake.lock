@@ -113,6 +113,7 @@
         "qutebrowser-mypy": "qutebrowser-mypy",
         "qutebrowser-patch": "qutebrowser-patch",
         "vim-bullets": "vim-bullets",
+        "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
         "vim-suda": "vim-suda",
         "vim-typst": "vim-typst"
@@ -146,6 +147,22 @@
       "original": {
         "owner": "dkarter",
         "repo": "bullets.vim",
+        "type": "github"
+      }
+    },
+    "vim-conform": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773119871,
+        "narHash": "sha256-aJIUkAcFdaOWBQ3HNLLvhqALzch0BqPUZPtb2cmIeCE=",
+        "owner": "stevearc",
+        "repo": "conform.nvim",
+        "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stevearc",
+        "repo": "conform.nvim",
         "type": "github"
       }
     },

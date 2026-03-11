@@ -1,9 +1,5 @@
-coc-clangd
-coc-css
-coc-html
-coc-nvim
-coc-prettier
-coc-pyright
+blink-cmp
+nvim-lspconfig
 plantuml-syntax
 undotree
 vim-jsx-pretty

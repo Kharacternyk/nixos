@@ -54,6 +54,10 @@
       url = "github:dkarter/bullets.vim";
       flake = false;
     };
+    vim-conform = {
+      url = "github:stevearc/conform.nvim";
+      flake = false;
+    };
     vim-gruvbox = {
       url = "github:gruvbox-community/gruvbox";
       flake = false;

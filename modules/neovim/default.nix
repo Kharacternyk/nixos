@@ -1,13 +1,11 @@
 { lib, functions, host, pkgs, ... }: {
   environment = {
-    etc."coc-settings.json".source = ./coc-settings.json;
     sessionVariables.EDITOR = "sudo -u nazar nvim";
-    systemPackages = [
-      pkgs.nixd
-      pkgs.tinymist
-    ] ++ lib.optionals (host ? hasScreen) [
-      pkgs.xsel
-    ];
+    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ (
+      lib.optionals (host ? hasScreen) [
+        pkgs.xsel
+      ]
+    );
   };
   programs.neovim = {
     enable = true;
@@ -23,6 +21,7 @@
           in
           map buildPlugin [
             "bullets"
+            "conform"
             "gruvbox"
             "suda"
             "typst"
@@ -31,6 +30,5 @@
     };
     viAlias = true;
     vimAlias = true;
-    withNodeJs = true;
   };
 }
