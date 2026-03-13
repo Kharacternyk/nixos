@@ -78,6 +78,9 @@ require("blink.cmp").setup({
             "fallback",
         },
     },
+    signature = {
+        enabled = true,
+    },
 })
 
 require("conform").setup({
