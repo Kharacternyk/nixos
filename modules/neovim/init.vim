@@ -67,7 +67,6 @@ require("blink.cmp").setup({
         },
     },
     keymap = {
-        preset = "enter",
         ["<Tab>"] = {
             "select_next",
             "snippet_forward",
