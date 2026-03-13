@@ -74,7 +74,7 @@ require("blink.cmp").setup({
             "fallback",
         },
         ["<S-Tab>"] = {
-            "select_next",
+            "select_prev",
             "snippet_backward",
             "fallback",
         },
