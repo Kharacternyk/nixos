@@ -1,4 +1,5 @@
 font-awesome_6
 liberation_ttf
+nerd-fonts.symbols-only
 noto-fonts-cjk-sans
 noto-fonts-color-emoji
