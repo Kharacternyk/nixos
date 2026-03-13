@@ -29,7 +29,7 @@ noremap <silent><C-/> :nohlsearch<CR>
 noremap <silent><C-s> :set spell!<CR>
 noremap <silent><C-y> :set eventignore=BufWrite<CR>
 noremap <silent><C-t> :set eventignore=<CR>
-noremap <C-Space> a<C-^><Esc>
+noremap <C-l> a<C-^><Esc>
 noremap H ^
 noremap L $
 noremap S qq
@@ -37,7 +37,7 @@ noremap s @q
 
 noremap! <silent><C-/> <C-o>:nohlsearch<CR>
 noremap! <silent><C-s> <C-o>:set spell!<CR>
-noremap! <C-Space> <C-^>
+noremap! <C-l> <C-^>
 
 au BufEnter *.asm setlocal filetype=fasm
 au BufEnter *.arb setlocal filetype=json
