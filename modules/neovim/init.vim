@@ -68,6 +68,32 @@ require("blink.cmp").setup({
                 preselect = false,
             },
         },
+        menu = {
+            draw = {
+                columns = {
+                    {
+                        "label",
+                        "kind",
+                        gap = 2,
+                    },
+                    {
+                        "source_name",
+                    },
+                },
+                components = {
+                    label = {
+                        width = {
+                            max = 48,
+                        },
+                    },
+                },
+                treesitter = {
+                    "lsp",
+                },
+            },
+            max_height = 11,
+            scrolloff = 100,
+        },
     },
     keymap = {
         preset = "none",
