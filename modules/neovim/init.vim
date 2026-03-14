@@ -60,6 +60,9 @@ vim.diagnostic.config({
 
 require("blink.cmp").setup({
     completion = {
+        documentation = {
+            auto_show = true,
+        },
         list = {
             selection = {
                 preselect = false,
@@ -67,6 +70,27 @@ require("blink.cmp").setup({
         },
     },
     keymap = {
+        preset = "none",
+        ["<C-h>"] = {
+            "cancel",
+            "fallback",
+        },
+        ["<C-k>"] = {
+            "show_signature",
+            "hide_signature",
+            "fallback",
+        },
+        ["<C-l>"] = {
+            "show",
+            "select_and_accept",
+            "fallback",
+        },
+        ["<C-n>"] = {
+            "scroll_documentation_down",
+        },
+        ["<C-p>"] = {
+            "scroll_documentation_up",
+        },
         ["<Tab>"] = {
             "select_next",
             "snippet_forward",
