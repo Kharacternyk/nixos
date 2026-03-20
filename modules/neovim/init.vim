@@ -41,6 +41,7 @@ noremap! <C-Space> <C-^>
 
 au BufEnter *.asm setlocal filetype=fasm
 au BufEnter *.arb setlocal filetype=json
+au BufEnter *.h setlocal filetype=c
 
 vnoremap y ygv<Esc>
 
@@ -49,13 +50,31 @@ ca W w
 colorscheme gruvbox
 
 lua << LUA
+vim.diagnostic.config({
+    virtual_text = true,
+})
+
 vim.lsp.enable({
+    "clangd",
     "ty",
     "nixd",
 })
 
-vim.diagnostic.config({
-    virtual_text = true,
+require("conform").setup({
+    format_on_save = {},
+    formatters_by_ft = {
+        c = {
+            "clang-format",
+        },
+        python = {
+            "ruff_format",
+            "ruff_fix",
+            "ruff_organize_imports",
+        },
+        nix = {
+            "nixpkgs_fmt",
+        },
+    },
 })
 
 require("blink.cmp").setup({
@@ -130,20 +149,6 @@ require("blink.cmp").setup({
     },
     signature = {
         enabled = true,
-    },
-})
-
-require("conform").setup({
-    format_on_save = {},
-    formatters_by_ft = {
-        python = {
-            "ruff_format",
-            "ruff_fix",
-            "ruff_organize_imports",
-        },
-        nix = {
-            "nixpkgs_fmt",
-        },
     },
 })
 LUA
