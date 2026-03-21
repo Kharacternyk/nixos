@@ -6,6 +6,7 @@ set hidden
 set incsearch
 set info size
 set mergeindicators
+set previewer pistol
 set scrolloff 100
 
 map q
