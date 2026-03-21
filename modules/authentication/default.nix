@@ -13,7 +13,7 @@
       settings = {
         authfile = pkgs.writeText "u2f.txt" (
           let
-            readKey = file: "*,${lib.strings.trim (builtins.readFile file)},es256,+presense";
+            readKey = file: "*,${lib.strings.trim (builtins.readFile file)},es256,+presence";
             dantooine = readKey ./keys/dantooine.txt;
             yavin = readKey ./keys/yavin.txt;
             hoth = readKey ./keys/hoth.txt;
