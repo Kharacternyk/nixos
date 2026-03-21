@@ -17,6 +17,9 @@ in
   ];
   systemd = {
     services.backup = {
+      after = [
+        "backup.mount"
+      ];
       requires = [
         "backup.mount"
       ];
