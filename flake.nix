@@ -6,10 +6,10 @@
         name = "nixos-desktop";
         system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "";
+        hasBackup = true;
         hasGpu = true;
         hasScreen = true;
         hasWifi = true;
-        hasBackup = true;
       };
       nixos-server = import ./hosts {
         inherit inputs;
