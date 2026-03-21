@@ -9,7 +9,22 @@
       image/svg+xml=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
-    systemPackages = functions.readAttributes lib ./packages.txt pkgs;
+    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ [
+      (
+        pkgs.ocenaudio.overrideAttrs (finalAttrs: {
+          autoPatchelfIgnoreMissingDeps = [
+            "libqtocenai.so.3.15"
+            "libqtocencore.so.3.15"
+          ];
+          src = pkgs.fetchurl {
+            name = "ocenaudio.deb";
+            url = "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb?version=v${finalAttrs.version}";
+            hash = "sha256-NqQLYeX+QRXmZfFMmpuGc1EHm6IZMUJNY0/WiBnNdCw=";
+          };
+          version = "3.17.1";
+        })
+      )
+    ];
   };
   hardware.enableAllFirmware = true;
   security.rtkit.enable = true;
