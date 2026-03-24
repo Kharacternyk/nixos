@@ -3,6 +3,8 @@ suffix = os.getenv("KLUNOK_SUFFIX") or ""
 
 journal_timestamp_pattern = journal_timestamp_pattern .. suffix
 
+working_copy_link_name = 'wip'
+
 excluded_paths['/home/nazar'] = true
 cluded_paths['/home/nazar/src'] = true
 project_parents['/home/nazar/src'] = true
