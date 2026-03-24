@@ -11,6 +11,7 @@
       gi = "git";
       grep = "grep --color=auto";
       ls = "ls --color=auto -FA";
+      lq = "lf /klunok/var/queue";
       ncdu = "ncdu --color=dark";
       objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
       rg = "rg -i";
