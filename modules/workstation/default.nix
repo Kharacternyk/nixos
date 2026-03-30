@@ -85,7 +85,7 @@
     };
     timers.pomodoro-lockscreen = {
       timerConfig = rec {
-        OnActiveSec = 15 * 60;
+        OnActiveSec = "15m";
         OnUnitActiveSec = OnActiveSec;
         Unit = "pomodoro-lockscreen.service";
       };
