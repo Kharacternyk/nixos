@@ -1,5 +1,8 @@
 { lib, host, pkgs, ... }: (lib.optionalAttrs (host ? lacksSensibility) {
-  environment.systemPackages = [
-    pkgs.codex
-  ];
+  environment = {
+    shellAliases.codex = "XDG_RUNTIME_DIR=/tmp codex";
+    systemPackages = [
+      pkgs.codex
+    ];
+  };
 })
