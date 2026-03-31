@@ -5,4 +5,8 @@
       pkgs.codex
     ];
   };
+  system.activationScripts.codex.text = ''
+    mkdir -p /home/nazar/.codex
+    ln -s ${./AGENTS.md} /home/nazar/.codex/AGENTS.md
+  '';
 })
