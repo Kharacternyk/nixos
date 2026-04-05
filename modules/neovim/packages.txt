@@ -1,3 +1,4 @@
 nixd
+stylua
 tinymist
 ty
