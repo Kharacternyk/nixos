@@ -10,6 +10,7 @@
   programs.neovim = {
     enable = true;
     configure = {
+      customLuaRC = builtins.readFile ./init.lua;
       customRC = builtins.readFile ./init.vim;
       packages.plugins.start = functions.readAttributes lib ./plugins.txt pkgs.vimPlugins ++
         (
