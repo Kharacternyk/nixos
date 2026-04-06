@@ -1,3 +1,4 @@
+lua-language-server
 nixd
 stylua
 tinymist

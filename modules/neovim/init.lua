@@ -5,6 +5,7 @@ vim.diagnostic.config({
 vim.lsp.enable({
   "clangd",
   "ty",
+  "lua_ls",
   "nixd",
 })
 
