@@ -13,7 +13,13 @@
   };
   fileSystems = {
     "/".label = "nixos";
-    "/backup".label = "backup";
+    "/backup" = {
+      label = "backup";
+      options = [
+        "nofail"
+        "x-systemd.device-timeout=30s"
+      ];
+    };
   };
   hardware.amdgpu.initrd.enable = true;
   services.xserver = {
