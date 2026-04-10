@@ -4,9 +4,6 @@
       [Default Applications]
       x-scheme-handler/http=qb.desktop
       x-scheme-handler/https=qb.desktop
-      image/jpeg=qb.desktop
-      image/png=qb.desktop
-      image/svg+xml=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
     systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ [
