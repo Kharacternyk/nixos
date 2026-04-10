@@ -4,7 +4,6 @@ firefox
 gthumb
 inkscape
 libreoffice
-mpv
 pavucontrol
 reaper
 telegram-desktop
