@@ -6,7 +6,7 @@ let
   '';
   backup = makeBackupScript "backup" "";
   check = pkgs.writeShellScriptBin "check" ''
-    diff --color=always -r "$2/klunok/store" "$1/klunok/store"
+    diff --color=always -r --no-dereference "$2/klunok/store" "$1/klunok/store"
   '';
 in
 {
