@@ -4,7 +4,6 @@ clang-tools
 darkhttpd
 difftastic
 entr
-fastfetch
 fd
 file
 ffmpeg
