@@ -1,7 +1,3 @@
-vim.diagnostic.config({
-  virtual_text = true,
-})
-
 vim.lsp.enable({
   "clangd",
   "lua_ls",
@@ -32,6 +28,8 @@ require("conform").setup({
     },
   },
 })
+
+require("diagflow").setup()
 
 require("blink.cmp").setup({
   completion = {

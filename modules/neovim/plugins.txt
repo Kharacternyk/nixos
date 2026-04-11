@@ -1,4 +1,5 @@
 blink-cmp
+diagflow-nvim
 nvim-lspconfig
 plantuml-syntax
 undotree
