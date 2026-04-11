@@ -1,3 +1,31 @@
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      cachePriming = {
+        enable = false,
+      },
+      cargo = {
+        allTargets = false,
+        extraEnv = {
+          CARGO_NET_OFFLINE = "true",
+        },
+        buildScripts = {
+          enable = false,
+        },
+      },
+      check = {
+        allTargets = false,
+        extraEnv = {
+          CARGO_NET_OFFLINE = "true",
+        },
+      },
+      procMacro = {
+        enable = false,
+      },
+    },
+  },
+})
+
 vim.lsp.enable({
   "clangd",
   "lua_ls",
