@@ -11,6 +11,7 @@ fzf
 imagemagick
 killall
 man-pages
+mmv-go
 ncdu
 nix-tree
 nixpkgs-fmt
