@@ -4,9 +4,10 @@ vim.diagnostic.config({
 
 vim.lsp.enable({
   "clangd",
-  "ty",
   "lua_ls",
   "nixd",
+  "rust_analyzer",
+  "ty",
 })
 
 require("conform").setup({
@@ -25,6 +26,9 @@ require("conform").setup({
       "ruff_format",
       "ruff_fix",
       "ruff_organize_imports",
+    },
+    rust = {
+      "rustfmt",
     },
   },
 })
