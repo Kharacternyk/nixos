@@ -1,3 +1,4 @@
+biome
 lua-language-server
 nixd
 rust-analyzer

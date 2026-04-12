@@ -34,12 +34,31 @@ vim.lsp.enable({
   "ty",
 })
 
+biome = {
+  "biome",
+  "biome-organize-imports",
+}
+
 require("conform").setup({
   format_on_save = {},
+  formatters = {
+    biome = {
+      append_args = {
+        "--expand",
+        "always",
+      },
+    },
+  },
   formatters_by_ft = {
     c = {
       "clang-format",
     },
+    css = biome,
+    javascript = biome,
+    javascriptreact = biome,
+    json = biome,
+    jsonc = biome,
+    html = biome,
     lua = {
       "stylua",
     },
@@ -54,6 +73,8 @@ require("conform").setup({
     rust = {
       "rustfmt",
     },
+    typescript = biome,
+    typescriptreact = biome,
   },
 })
 
