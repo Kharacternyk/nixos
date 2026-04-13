@@ -21,12 +21,10 @@
         pkgs.systemd
       ];
       script = ''
-        set -eu
-
         [[ -n $(loginctl list-sessions --no-legend) ]] && exit
         pgrep tmux >/dev/null && exit
 
-        logout_line="$(journalctl --unit=systemd-logind --grep='Removed session' -n 1 -o short-unix || true)"
+        logout_line="$(journalctl -u systemd-logind -g 'Removed session' -n 1 -o short-unix)"
 
         [[ -z "$logout_line" ]] && exit
 
