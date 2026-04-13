@@ -1,5 +1,6 @@
 fire
 hypothesis
+modal
 numpy
 openai
 python-dotenv
