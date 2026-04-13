@@ -42,7 +42,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nixpkgs.url = "github:flox/nixpkgs/unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     qutebrowser-mypy = {
       url = "https://raw.githubusercontent.com/qutebrowser/qutebrowser/refs/heads/main/.mypy.ini";
       flake = false;
