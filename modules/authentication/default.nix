@@ -40,12 +40,9 @@
     enableAskPassword = false;
     startAgent = true;
   };
-  security.sudo = {
-    execWheelOnly = true;
-    extraConfig = ''
-      Defaults env_keep+=SSH_AUTH_SOCK
-    '';
-  };
+  security.sudo.extraConfig = ''
+    Defaults env_keep+=SSH_AUTH_SOCK
+  '';
   users = {
     allowNoPasswordLogin = true;
     mutableUsers = false;

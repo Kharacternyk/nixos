@@ -2,12 +2,7 @@
   system.activationScripts.klunok.text = ''
     mkdir -p /klunok
     chown klunok:klunok /klunok
-    chmod go-rx /klunok
-    ${pkgs.acl}/bin/setfacl -m u:nazar:rx -m mask:rx /klunok
-
-    for path in /home/nazar /home/nazar/.bash_history; do
-      ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx $path
-    done
+    ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx /home/nazar{,/.bash_history}
   '';
   systemd.services =
     let
