@@ -1,4 +1,4 @@
-{ host, pkgs, ... }: {
+{ lib, host, pkgs, ... }: {
   boot = {
     initrd.availableKernelModules = [
       "uhci_hcd"
@@ -12,8 +12,13 @@
     loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_250GB_S4BFNG0MB26329K";
   };
   fileSystems = {
-    "/".label = "nixos";
+    "/" = {
+      # Try removing after upgrading
+      fsType = "auto";
+      label = "nixos";
+    };
     "/backup" = {
+      fsType = "auto";
       label = "backup";
       options = [
         "nofail"
