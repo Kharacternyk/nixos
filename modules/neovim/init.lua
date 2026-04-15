@@ -95,8 +95,9 @@ require("blink.cmp").setup({
         columns = {
           {
             "label",
+          },
+          {
             "kind",
-            gap = 2,
           },
           {
             "source_name",
