@@ -1,6 +1,7 @@
 bottom
 cargo
 clang-tools
+clippy
 darkhttpd
 difftastic
 entr
