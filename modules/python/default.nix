@@ -3,13 +3,21 @@ let
   packages = if host ? hasCuda then pkgs.pkgsCuda else pkgs;
   python = packages.python3.withPackages (packages: (
     functions.readAttributes lib ./packages.txt packages
-  ) ++ (lib.optionals (host ? hasCuda) [
-    (
-      packages.torchaudio.overridePythonAttrs {
+  ) ++ (lib.optionals (host ? hasCuda) (
+    let
+      torchaudio = packages.torchaudio.overridePythonAttrs {
         doCheck = false;
-      }
-    )
-  ]));
+      };
+    in
+    [
+      torchaudio
+      (
+        packages.encodec.override {
+          inherit torchaudio;
+        }
+      )
+    ]
+  )));
 in
 {
   environment = {
