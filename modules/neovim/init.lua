@@ -15,11 +15,18 @@ vim.lsp.config("rust_analyzer", {
   },
 })
 
+vim.lsp.config("tinymist", {
+  settings = {
+    exportPdf = "onSave",
+  },
+})
+
 vim.lsp.enable({
   "clangd",
   "lua_ls",
   "nixd",
   "rust_analyzer",
+  "tinymist",
   "ty",
 })
 
