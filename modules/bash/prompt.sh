@@ -6,7 +6,7 @@ CYAN="$(tput setaf 6)"
 RESET="$(tput sgr0)"
 PROMPT_COMMAND='
     if [[ $? = 0 ]]; then
-        if [[ -z $f ]]; then
+        if [[ -z $lf ]]; then
             case $HOSTNAME in
                 *server*) PROMPT_COLOR="$GREEN" ;;
                 *) PROMPT_COLOR="$CYAN" ;;
