@@ -16,9 +16,9 @@
           src = pkgs.fetchurl {
             name = "ocenaudio.deb";
             url = "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb?version=v${finalAttrs.version}";
-            hash = "sha256-NqQLYeX+QRXmZfFMmpuGc1EHm6IZMUJNY0/WiBnNdCw=";
+            hash = "sha256-oDOAPusm5Siiokcl8UkOy5FhhT1y5nd4qcFfmF9yTF4=";
           };
-          version = "3.17.1";
+          version = "3.18.2";
         })
       )
     ];

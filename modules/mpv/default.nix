@@ -2,7 +2,7 @@
   environment = {
     etc."mpv/mpv.conf".source = ./mpv.conf;
     systemPackages = [
-      pkgs.mpv
+      pkgs.mpv-unwrapped
     ];
   };
 }

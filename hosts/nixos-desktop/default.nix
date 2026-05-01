@@ -14,7 +14,8 @@
   fileSystems = {
     "/" = {
       # Try removing after upgrading
-      fsType = "auto";
+      # Fails to boot with auto!?
+      fsType = "ext4";
       label = "nixos";
     };
     "/backup" = {
