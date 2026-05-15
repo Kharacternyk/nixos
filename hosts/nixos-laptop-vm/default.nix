@@ -15,9 +15,13 @@
     loader.grub.device = "/dev/vda";
   };
   fileSystems = {
-    "/".label = "nixos";
+    "/" = {
+      fsType = "ext4";
+      label = "nixos";
+    };
     "/home/nazar" /* so that klunok doesn't shadow the portal */ = {
       device = "/home/nazar";
+      fsType = "auto";
       options = [
         "bind"
       ];
