@@ -1,3 +1,23 @@
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    local event = vim.v.event
+
+    if event.operator ~= "y" then
+      return
+    end
+
+    local reg = event.regname
+
+    if reg == "" then
+      reg = '"'
+    elseif reg == "_" then
+      return
+    end
+
+    vim.fn.setreg("+", vim.fn.getreg(reg), vim.fn.getregtype(reg))
+  end,
+})
+
 vim.lsp.config("rust_analyzer", {
   settings = {
     ["rust-analyzer"] = {

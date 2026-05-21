@@ -1,5 +1,4 @@
 set background=light
-set clipboard+=unnamedplus
 set expandtab
 set ignorecase
 set keymap=ukrainian-jcuken
