@@ -1,7 +1,7 @@
-{ lib, functions, host, pkgs, ... }: {
+{ lib, fretwire, host, pkgs, ... }: {
   environment = {
     sessionVariables.EDITOR = "sudo -u nazar nvim";
-    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ (
+    systemPackages = fretwire.lib.import pkgs ./packages.few ++ (
       lib.optionals (host ? hasScreen) [
         pkgs.xsel
       ]
@@ -12,7 +12,7 @@
     configure = {
       customLuaRC = builtins.readFile ./init.lua;
       customRC = builtins.readFile ./init.vim;
-      packages.plugins.start = functions.readAttributes lib ./plugins.txt pkgs.vimPlugins ++
+      packages.plugins.start = fretwire.lib.import pkgs.vimPlugins ./plugins.few ++
         (
           let
             buildPlugin = name: pkgs.vimUtils.buildVimPlugin {

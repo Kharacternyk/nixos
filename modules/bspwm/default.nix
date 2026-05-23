@@ -1,4 +1,4 @@
-{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, bspwm-utils, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages =
     let
       clutter = name: command: pkgs.writeShellScriptBin name ''
@@ -9,7 +9,7 @@
       '';
     in
     [
-      host.inputs.bspwm-utils.defaultPackage.${pkgs.stdenv.hostPlatform.system}
+      bspwm-utils.defaultPackage.${pkgs.stdenv.hostPlatform.system}
       (clutter "crosshair" "xcolor -s")
       (clutter "screenshot" "import screenshot.png")
     ];

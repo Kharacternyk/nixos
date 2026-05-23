@@ -5,6 +5,5 @@ host: host.inputs.nixpkgs.lib.nixosSystem {
   ];
   specialArgs = {
     inherit host;
-    functions = import ../functions.nix;
-  };
+  } // host.inputs;
 }

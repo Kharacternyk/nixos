@@ -1,4 +1,4 @@
-{ lib, host, functions, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, fretwire, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]
@@ -6,7 +6,7 @@
       x-scheme-handler/https=qb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
-    systemPackages = functions.readAttributes lib ./packages.txt pkgs ++ [
+    systemPackages = fretwire.lib.import pkgs ./packages.few ++ [
       (
         pkgs.ocenaudio.overrideAttrs (finalAttrs: {
           autoPatchelfIgnoreMissingDeps = [

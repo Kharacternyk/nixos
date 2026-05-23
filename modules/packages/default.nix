@@ -1,3 +1,3 @@
-{ lib, functions, pkgs, ... }: {
-  environment.systemPackages = functions.readAttributes lib ./packages.txt pkgs;
+{ lib, fretwire, pkgs, ... }: {
+  environment.systemPackages = fretwire.lib.import pkgs ./packages.few;
 }

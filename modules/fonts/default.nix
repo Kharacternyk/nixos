@@ -1,7 +1,7 @@
-{ lib, functions, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ lib, fretwire, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   fonts = {
     enableDefaultPackages = false;
-    packages = functions.readAttributes lib ./packages.txt pkgs ++ [
+    packages = fretwire.lib.import pkgs ./packages.few ++ [
       (
         let version = "6.4.0"; in
         pkgs.fetchzip {

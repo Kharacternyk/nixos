@@ -1,4 +1,4 @@
-{ lib, host, pkgs, ... }: {
+{ lib, host, klunok, pkgs, ... }: {
   system.activationScripts.klunok.text = ''
     mkdir -p /klunok
     chown klunok:klunok /klunok
@@ -6,9 +6,9 @@
   '';
   systemd.services =
     let
-      klunok = host.inputs.klunok.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = klunok.packages.${pkgs.stdenv.hostPlatform.system}.default;
       script = ''
-        ${klunok}/bin/klunok \
+        ${package}/bin/klunok \
         -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
       '';
     in

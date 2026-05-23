@@ -37,6 +37,11 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    fretwire = {
+      url = "github:Kharacternyk/fretwire";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     klunok = {
       url = "github:Kharacternyk/klunok";
       inputs.nixpkgs.follows = "nixpkgs";

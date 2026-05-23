@@ -1,8 +1,8 @@
-{ lib, functions, host, pkgs, ... }:
+{ lib, fretwire, host, pkgs, ... }:
 let
   packages = if host ? hasCuda then pkgs.pkgsCuda else pkgs;
   python = packages.python3.withPackages (packages: (
-    functions.readAttributes lib ./packages.txt packages
+    fretwire.lib.import packages ./packages.few
   ) ++ (lib.optionals (host ? hasCuda) (
     let
       torchaudio = packages.torchaudio.overridePythonAttrs {

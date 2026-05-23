@@ -1,19 +1,19 @@
-{ lib, host, pkgs, ... }: {
+{ lib, flake-utils, host, nixpkgs, pkgs, ... }: {
   nix = {
     nixPath = [
-      "nixpkgs=${host.inputs.nixpkgs}"
+      "nixpkgs=${nixpkgs}"
     ];
     registry = {
       flake-utils.to = {
+        inherit (flake-utils) rev;
         owner = "numtide";
         repo = "flake-utils";
-        rev = host.inputs.flake-utils.rev;
         type = "github";
       };
       nixpkgs.to = {
+        inherit (nixpkgs) rev;
         owner = "NixOS";
         repo = "nixpkgs";
-        rev = host.inputs.nixpkgs.rev;
         type = "github";
       };
     } // lib.attrsets.mapAttrs'

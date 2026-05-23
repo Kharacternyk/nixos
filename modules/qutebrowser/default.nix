@@ -1,12 +1,12 @@
-{ lib, host, pkgs, ... }:
+{ lib, host, pkgs, qutebrowser-mypy, qutebrowser-patch, ... }:
 let
   qutebrowser = pkgs.qutebrowser.overrideAttrs (attrs: {
     prePatch = ''
-      cp ${host.inputs.qutebrowser-mypy} .mypy.ini
+      cp ${qutebrowser-mypy} .mypy.ini
       chmod +w .mypy.ini
     '';
     patches = attrs.patches ++ [
-      host.inputs.qutebrowser-patch
+      qutebrowser-patch
     ];
   });
   qb = pkgs.writeShellScriptBin "qb" ''
