@@ -40,6 +40,7 @@ noremap! <C-Space> <C-^>
 
 au BufEnter *.asm setlocal filetype=fasm
 au BufEnter *.arb setlocal filetype=json
+au BufEnter *.few setlocal filetype=fretwire
 au BufEnter *.h setlocal filetype=c
 
 vnoremap y ygv<Esc>

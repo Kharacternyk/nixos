@@ -6,7 +6,7 @@
   '';
   systemd.services =
     let
-      package = klunok.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = klunok.packages.${host.system}.default;
       script = ''
         ${package}/bin/klunok \
         -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store

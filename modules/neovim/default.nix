@@ -5,7 +5,9 @@
       lib.optionals (host ? hasScreen) [
         pkgs.xsel
       ]
-    );
+    ) ++ [
+      fretwire.packages.${host.system}.default
+    ];
   };
   programs.neovim = {
     enable = true;

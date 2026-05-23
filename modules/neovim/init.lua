@@ -64,12 +64,19 @@ require("conform").setup({
         "always",
       },
     },
+    fretwire = {
+      command = "fretwire",
+      stdin = true,
+    },
   },
   formatters_by_ft = {
     c = {
       "clang-format",
     },
     css = biome,
+    fretwire = {
+      "fretwire",
+    },
     javascript = biome,
     javascriptreact = biome,
     json = biome,

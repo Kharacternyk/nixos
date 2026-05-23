@@ -9,7 +9,7 @@
       '';
     in
     [
-      bspwm-utils.defaultPackage.${pkgs.stdenv.hostPlatform.system}
+      bspwm-utils.defaultPackage.${host.system}
       (clutter "crosshair" "xcolor -s")
       (clutter "screenshot" "import screenshot.png")
     ];
