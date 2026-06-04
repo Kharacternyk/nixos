@@ -23,7 +23,6 @@
             };
           in
           map buildPlugin [
-            "bullets"
             "conform"
             "gruvbox"
             "suda"

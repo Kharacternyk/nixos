@@ -56,10 +56,6 @@
       url = "https://patch-diff.githubusercontent.com/raw/qutebrowser/qutebrowser/pull/8642.patch";
       flake = false;
     };
-    vim-bullets = {
-      url = "github:dkarter/bullets.vim";
-      flake = false;
-    };
     vim-conform = {
       url = "github:stevearc/conform.nvim";
       flake = false;
