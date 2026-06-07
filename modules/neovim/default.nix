@@ -28,7 +28,9 @@
             "suda"
             "typst"
           ]
-        );
+        ) ++ [
+        fretwire.packages.${host.system}.vim
+      ];
     };
     viAlias = true;
     vimAlias = true;

@@ -67,6 +67,9 @@ require("conform").setup({
     fretwire = {
       command = "fretwire",
       stdin = true,
+      args = {
+        "-w",
+      },
     },
   },
   formatters_by_ft = {
