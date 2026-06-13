@@ -3,6 +3,7 @@ set expandtab
 set ignorecase
 set keymap=ukrainian-jcuken
 set laststatus=0
+set nomodeline
 set scrolloff=100
 set shiftwidth=4
 set shortmess+=I
