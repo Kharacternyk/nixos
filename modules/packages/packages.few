@@ -1,6 +1,7 @@
 bottom
 cargo
 cargo-nextest
+cargo-sort
 clang-tools
 clippy
 darkhttpd
