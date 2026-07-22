@@ -68,7 +68,7 @@ require("conform").setup({
       command = "fretwire",
       stdin = true,
       args = {
-        "-w",
+        "-dw",
       },
     },
   },
