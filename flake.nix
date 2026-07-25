@@ -17,7 +17,6 @@
         system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "s";
         lacksSensibility = true;
-        hasCuda = true;
       };
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
