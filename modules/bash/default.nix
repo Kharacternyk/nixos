@@ -15,7 +15,7 @@
       ncdu = "ncdu --color=dark";
       objdump = "objdump -M intel-mnemonic --visualize-jumps=color";
       rg = "rg -i";
-      rsync = "rsync -au --info=progress2 --mkpath";
+      rsync = "rsync -au --info=progress2 --mkpath --safe-links";
       sudo = "sudo ";
     };
     variables = {
