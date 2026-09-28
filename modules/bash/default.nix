@@ -19,6 +19,7 @@
       sudo = "sudo ";
     };
     variables = {
+      DFT_SKIP_UNCHANGED = "true";
       DFT_SYNTAX_HIGHLIGHT = "off";
       FZF_DEFAULT_OPTS = ''
         --bind=change:top
