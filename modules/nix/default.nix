@@ -1,8 +1,5 @@
 { lib, flake-utils, host, nixpkgs, pkgs, ... }: {
   nix = {
-    nixPath = [
-      "nixpkgs=${nixpkgs}"
-    ];
     registry = {
       flake-utils.to = {
         inherit (flake-utils) rev;
@@ -26,6 +23,9 @@
       ];
       flake-registry = [
         "/etc/nix/registry.json"
+      ];
+      nix-path = [
+        "nixpkgs=${nixpkgs}"
       ];
       warn-dirty = false;
     } // lib.optionalAttrs (host ? hasCuda) {
