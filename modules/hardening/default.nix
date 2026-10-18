@@ -5,6 +5,9 @@
     enableWrappers = false;
     polkit.extraConfig = ''
       polkit.addRule(function(action, subject) {
+        if (subject.user !== "root" && subject.user !== "wheel") {
+          return polkit.Result.NO;
+        }
         if (action.id === "org.freedesktop.systemd1.manage-units") {
           return polkit.Result.AUTH_ADMIN;
         }

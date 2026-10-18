@@ -17,7 +17,7 @@
 
           [[ $permitted =~ ^0+$ ]] || exit 22
 
-          exec ${lib.getExe pkgs.neovim} "$@"
+          exec /run/current-system/sw/bin/nvim "$@"
         '';
       in
       "${package}/bin/editor";
