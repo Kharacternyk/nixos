@@ -18,6 +18,7 @@
       rsync = "rsync -au --info=progress2 --mkpath --safe-links";
     };
     variables = {
+      DFT_COLOR = "always";
       DFT_SKIP_UNCHANGED = "true";
       DFT_SYNTAX_HIGHLIGHT = "off";
       FZF_DEFAULT_OPTS = ''
