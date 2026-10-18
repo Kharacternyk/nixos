@@ -2,8 +2,22 @@
   environment = {
     sessionVariables.EDITOR =
       let
-        package = pkgs.writeShellScriptBin "editor" ''
-          [[ $EUID == 1000 ]] && exec nvim "$@" || exit 22
+        package = pkgs.writeScriptBin "editor" ''
+          #!${lib.getExe pkgs.bash} -p
+
+          [[ $UID == 1000 && $EUID == 1000 ]] || exit 22
+
+          permitted=
+          while read -r key value _; do
+            if [[ $key == CapPrm: ]]; then
+              permitted="$value"
+              break
+            fi
+          done < /proc/self/status
+
+          [[ $permitted =~ ^0+$ ]] || exit 22
+
+          exec ${lib.getExe pkgs.neovim} "$@"
         '';
       in
       "${package}/bin/editor";
