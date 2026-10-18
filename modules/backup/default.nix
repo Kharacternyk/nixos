@@ -13,7 +13,7 @@ in
   environment.systemPackages = [
     check
     backup
-    (makeBackupScript "backup-rsudo" "-e 'ssh -A' --rsync-path='sudo rsync'")
+    (makeBackupScript "backup-run0" "-e 'ssh -A' --rsync-path='run0 rsync'")
   ];
   systemd = {
     services.backup = {

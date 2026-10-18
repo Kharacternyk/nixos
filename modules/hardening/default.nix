@@ -1,5 +1,18 @@
 { lib, host, pkgs, ... }: {
-  security.sudo.execWheelOnly = true;
+  boot.initrd.systemd.settings.Manager.NoNewPrivileges = true;
+  security = {
+    account-utils.enable = true;
+    enableWrappers = false;
+    polkit.extraConfig = ''
+      polkit.addRule(function(action, subject) {
+        if (action.id === "org.freedesktop.systemd1.manage-units") {
+          return polkit.Result.AUTH_ADMIN;
+        }
+      });
+    '';
+    run0.enable = true;
+    sudo.enable = false;
+  };
   system.activationScripts.hardening = {
     deps = [
       "klunok"

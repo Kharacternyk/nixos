@@ -184,7 +184,6 @@
         "qutebrowser-patch": "qutebrowser-patch",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
-        "vim-suda": "vim-suda",
         "vim-typst": "vim-typst"
       }
     },
@@ -249,22 +248,6 @@
       "original": {
         "owner": "gruvbox-community",
         "repo": "gruvbox",
-        "type": "github"
-      }
-    },
-    "vim-suda": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1773258165,
-        "narHash": "sha256-hq7q+koJ+o2aH+/ZmBZqdP0FdEvMhVlY5lHUmwhq1iE=",
-        "owner": "Kharacternyk",
-        "repo": "vim-suda",
-        "rev": "3ad5fa5a3924390d6ebf1f7c2c95a720745bfb51",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Kharacternyk",
-        "repo": "vim-suda",
         "type": "github"
       }
     },

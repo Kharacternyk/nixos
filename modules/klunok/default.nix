@@ -9,7 +9,7 @@
       package = klunok.packages.${host.system}.default;
       script = ''
         ${package}/bin/klunok \
-        -c ${./config.lua} -d /klunok -w /home/nazar -w /etc/nixos -e /nix/store
+        -c ${./config.lua} -d /klunok -w /home/nazar -e /nix/store
       '';
     in
     {

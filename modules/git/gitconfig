@@ -12,9 +12,6 @@ ff=only
 autoSetupRemote=true
 default=current
 
-[safe]
-directory=/etc/nixos
-
 [diff]
 external=difft
 

@@ -63,10 +63,6 @@
       url = "github:gruvbox-community/gruvbox";
       flake = false;
     };
-    vim-suda = {
-      url = "github:Kharacternyk/vim-suda";
-      flake = false;
-    };
     vim-typst = {
       url = "github:kaarmu/typst.vim";
       flake = false;

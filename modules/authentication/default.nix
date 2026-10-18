@@ -1,13 +1,17 @@
 { lib, host, pkgs, ... }: {
-  environment.systemPackages = lib.optionals (host ? hasScreen) [
-    pkgs.yubikey-manager
-  ];
+  environment = {
+    sessionVariables.SSH_AUTH_SOCK = lib.optionalString (!host ? hasScreen)
+      "/run/user/1000/ssh-agent";
+    systemPackages = lib.optionals (host ? hasScreen) [
+      pkgs.yubikey-manager
+    ];
+  };
   security.pam = {
     rssh = lib.optionalAttrs (!host ? hasScreen) {
       enable = true;
       settings.auth_key_file = "${../nazar/authorized_keys}";
     };
-    services.sudo.rssh = !host ? hasScreen;
+    services.systemd-run0.rssh = !host ? hasScreen;
     u2f = lib.optionalAttrs (host ? hasScreen) {
       enable = true;
       settings = {
@@ -40,9 +44,6 @@
     enableAskPassword = false;
     startAgent = true;
   };
-  security.sudo.extraConfig = ''
-    Defaults env_keep+=SSH_AUTH_SOCK
-  '';
   users = {
     allowNoPasswordLogin = true;
     mutableUsers = false;

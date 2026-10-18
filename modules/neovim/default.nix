@@ -1,6 +1,12 @@
 { lib, fretwire, host, pkgs, ... }: {
   environment = {
-    sessionVariables.EDITOR = "sudo -u nazar nvim";
+    sessionVariables.EDITOR =
+      let
+        package = pkgs.writeShellScriptBin "editor" ''
+          [[ $EUID == 1000 ]] && exec nvim "$@" || exit 22
+        '';
+      in
+      "${package}/bin/editor";
     systemPackages = fretwire.lib.import pkgs ./packages.few ++ (
       lib.optionals (host ? hasScreen) [
         pkgs.xsel
@@ -25,14 +31,12 @@
           map buildPlugin [
             "conform"
             "gruvbox"
-            "suda"
             "typst"
           ]
         ) ++ [
         fretwire.packages.${host.system}.vim
       ];
     };
-    viAlias = true;
     vimAlias = true;
   };
 }
