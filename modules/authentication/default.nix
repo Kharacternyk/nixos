@@ -43,6 +43,15 @@
     enableAskPassword = false;
     startAgent = true;
   };
+  services.openssh = {
+    authorizedKeysInHomedir = false;
+    settings = {
+      # The EC2 profile explicitly enables root login with SSH keys.
+      PermitRootLogin = lib.mkForce "no";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
   users = {
     allowNoPasswordLogin = true;
     mutableUsers = false;
