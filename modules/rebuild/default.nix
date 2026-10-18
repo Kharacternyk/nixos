@@ -20,9 +20,9 @@
           #!${lib.getExe pkgs.bash} -p
           set -euo pipefail
 
-          next="$(${pkgs.coreutils}/bin/readlink /tmp/nixos-next)"
-
-          [[ $next =~ ^/nix/store/ ]]
+          next="$(${pkgs.coreutils}/bin/readlink -e -- /tmp/nixos-next)"
+          [[ $next =~ ^/nix/store/[^/]+$ && -d $next ]]
+          ${pkgs.nix}/bin/nix-store --check-validity "$next"
 
           ${pkgs.systemd}/bin/run0 ${pkgs.coreutils}/bin/ln -sfT \
             "$next" /nix/var/nix/gcroots/nixos-next
