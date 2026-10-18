@@ -1,17 +1,16 @@
 { lib, host, pkgs, ... }: {
-  environment = {
-    sessionVariables.SSH_AUTH_SOCK = lib.optionalString (!host ? hasScreen)
-      "/run/user/2000/ssh-agent";
-    systemPackages = lib.optionals (host ? hasScreen) [
-      pkgs.yubikey-manager
-    ];
-  };
+  environment.systemPackages = lib.optionals (host ? hasScreen) [
+    pkgs.yubikey-manager
+  ];
   security.pam = {
     rssh = lib.optionalAttrs (!host ? hasScreen) {
       enable = true;
-      settings.auth_key_file = "${../users/authorized_keys}";
+      settings = {
+        ssh_agent_addr = "/run/user/2000/ssh-agent-fw";
+        auth_key_file = "${../users/authorized_keys}";
+      };
     };
-    services.systemd-run0.rssh = !host ? hasScreen;
+    services.polkit-1.rssh = !host ? hasScreen;
     u2f = lib.optionalAttrs (host ? hasScreen) {
       enable = true;
       settings = {

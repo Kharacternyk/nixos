@@ -29,4 +29,9 @@
         ${pkgs.acl}/bin/setfacl -m u:nazar:rx -m mask:rx /klunok ${maybeBackup}
       '';
   };
+  systemd.services."polkit-agent-helper@".serviceConfig = lib.optionalAttrs
+    (!host ? hasScreen)
+    {
+      ProtectHome = "read-only";
+    };
 }
