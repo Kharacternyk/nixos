@@ -3,8 +3,6 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "dialout"
-      "adbusers"
     ];
     isNormalUser = true;
     openssh.authorizedKeys.keyFiles = [
