@@ -3,17 +3,8 @@
   security = {
     account-utils.enable = true;
     enableWrappers = false;
-    polkit.extraConfig = ''
-      polkit.addRule(function(action, subject) {
-        if (subject.user !== "root" && subject.user !== "wheel") {
-          return polkit.Result.NO;
-        }
-        // Unit-file authorization also implies permission to manage units.
-        if (action.id.indexOf("org.freedesktop.systemd1.") === 0) {
-          return polkit.Result.AUTH_ADMIN;
-        }
-      });
-    '';
+    polkit.extraConfig = builtins.readFile ./polkit.js;
+    protectKernelImage = true;
     run0.enable = true;
     sudo.enable = false;
   };
