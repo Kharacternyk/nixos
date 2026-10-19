@@ -1,12 +1,20 @@
-{ lib, host, pkgs, ... }: (lib.optionalAttrs (host ? lacksSensibility) {
+{ host, lib, pkgs, ... }: (lib.optionalAttrs (host ? lacksSensibility) {
   environment = {
     shellAliases.codex = "XDG_RUNTIME_DIR=/tmp codex";
     systemPackages = [
       pkgs.codex
     ];
   };
-  system.activationScripts.codex.text = ''
-    mkdir -p /home/nazar/.codex
-    cp ${./AGENTS.md} /home/nazar/.codex/AGENTS.md
-  '';
+  systemd.tmpfiles.settings.codex = {
+    "/home/nazar/.codex".d = {
+      group = "users";
+      mode = "0700";
+      user = "nazar";
+    };
+    "/home/nazar/.codex/AGENTS.md"."L+" = {
+      argument = "${./AGENTS.md}";
+      group = "users";
+      user = "nazar";
+    };
+  };
 })
