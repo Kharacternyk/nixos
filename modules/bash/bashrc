@@ -10,7 +10,7 @@ eval "$(fzf --bash)"
 
 lk() {
     local path="$(realpath ${1:-.})"
-    lf /klunok/store"${path#/*/*/}"
+    lf /klunok/store/"${path#/*/*/}"
 }
 
 lkp() {
