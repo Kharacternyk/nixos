@@ -9,7 +9,8 @@ bind -m vi '/: "\C-r"'
 eval "$(fzf --bash)"
 
 lk() {
-    lf /klunok/store"$(realpath ${1:-.})"
+    local path="$(realpath ${1:-.})"
+    lf /klunok/store"${path#/*/*/}"
 }
 
 lkp() {
