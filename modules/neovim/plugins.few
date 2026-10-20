@@ -1,7 +1,7 @@
 blink-cmp
-diagflow-nvim
 nvim-lspconfig
 plantuml-syntax
+tiny-inline-diagnostic-nvim
 undotree
 vim-jsx-pretty
 vim-markdown

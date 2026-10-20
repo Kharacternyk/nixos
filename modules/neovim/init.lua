@@ -1,3 +1,5 @@
+-- https://github.com/rachartier/tiny-code-action.nvim
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     local event = vim.v.event
@@ -104,7 +106,24 @@ require("conform").setup({
   },
 })
 
-require("diagflow").setup()
+require("tiny-inline-diagnostic").setup({
+  signs = {
+    left = "",
+    right = "",
+    diag = "",
+    arrow = "",
+    up_arrow = "",
+    vertical = "",
+    vertical_end = "",
+  },
+  blend = {
+    factor = 0.22,
+  },
+  options = {
+    show_code = false,
+    show_diags_only_under_cursor = true,
+  },
+})
 
 require("blink.cmp").setup({
   completion = {
