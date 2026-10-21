@@ -28,7 +28,7 @@
             "$next" /nix/var/nix/gcroots/nixos-next
 
           ${lib.getExe pkgs.difftastic} /etc/nixos /nix/var/nix/gcroots/nixos-next
-          ${pkgs.diffutils}/bin/diff -r /etc/nixos /nix/var/nix/gcroots/nixos-next
+          ${pkgs.diffutils}/bin/diff -rN /etc/nixos /nix/var/nix/gcroots/nixos-next
         ''
       )
       (
