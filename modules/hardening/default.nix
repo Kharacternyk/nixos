@@ -4,6 +4,10 @@
     account-utils.enable = true;
     enableWrappers = false;
     polkit.extraConfig = builtins.readFile ./polkit.js;
+    pki.caCertificateBlacklist = [
+      "Comodo AAA Services root"
+      "emSign ECC Root CA - G3"
+    ];
     protectKernelImage = true;
     run0.enable = true;
     sudo.enable = false;
