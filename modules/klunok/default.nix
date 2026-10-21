@@ -1,9 +1,4 @@
-{ lib, host, klunok, pkgs, ... }: {
-  system.activationScripts.klunok.text = ''
-    mkdir -p /klunok
-    chown klunok:klunok /klunok
-    ${pkgs.acl}/bin/setfacl -m u:klunok:rx -m mask:rx /home/nazar{,/.bash_history}
-  '';
+{ host, klunok, pkgs, ... }: {
   systemd.services =
     let
       package = klunok.packages.${host.system}.default;
@@ -18,8 +13,8 @@
         environment.KLUNOK_SUFFIX = host.klunokSuffix;
         serviceConfig = {
           Restart = "on-failure";
-          RestartSteps = 5;
           RestartMaxDelaySec = 5;
+          RestartSteps = 5;
         };
         wantedBy = [
           "multi-user.target"
@@ -30,11 +25,27 @@
         script = "${pkgs.valgrind-light}/bin/valgrind --leak-check=full -- ${script}";
       };
     };
+  systemd.tmpfiles.settings.klunok = {
+    "/home/nazar"."a+".argument = "u:klunok:rx,m::rx";
+    "/home/nazar/.bash_history" = {
+      "a+".argument = "u:klunok:r,m::r";
+      f = {
+        group = "users";
+        mode = "0600";
+        user = "nazar";
+      };
+    };
+    "/klunok".d = {
+      group = "klunok";
+      mode = "0700";
+      user = "klunok";
+    };
+  };
   users = {
     groups.klunok.gid = 500;
     users.klunok = {
-      isSystemUser = true;
       group = "klunok";
+      isSystemUser = true;
       uid = 500;
     };
   };
