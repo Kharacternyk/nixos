@@ -33,7 +33,7 @@
 
         nix store gc
 
-        /nix/var/nix/profiles/system/bin/switch-to-configuration switch
+        /nix/var/nix/profiles/system/bin/switch-to-configuration boot
       '';
       serviceConfig.Type = "oneshot";
     };
