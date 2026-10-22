@@ -2,8 +2,8 @@
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]
-      x-scheme-handler/http=qb.desktop
-      x-scheme-handler/https=qb.desktop
+      x-scheme-handler/http=cb.desktop
+      x-scheme-handler/https=cb.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
     systemPackages = fretwire.lib.import pkgs ./packages.few ++ [

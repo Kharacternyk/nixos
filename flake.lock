@@ -149,30 +149,6 @@
         "type": "github"
       }
     },
-    "qutebrowser-mypy": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-HwSN2EN8HjXsRMYscViG5h/4sVo5JxXqbd6CSSDJnvw=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/qutebrowser/qutebrowser/refs/heads/main/.mypy.ini"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/qutebrowser/qutebrowser/refs/heads/main/.mypy.ini"
-      }
-    },
-    "qutebrowser-patch": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-H7MLhxvcSwVLptV1UC8eJ8Fq18iz+yZlW9rOufLwn/I=",
-        "type": "file",
-        "url": "https://patch-diff.githubusercontent.com/raw/qutebrowser/qutebrowser/pull/8642.patch"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://patch-diff.githubusercontent.com/raw/qutebrowser/qutebrowser/pull/8642.patch"
-      }
-    },
     "root": {
       "inputs": {
         "bspwm-utils": "bspwm-utils",
@@ -180,8 +156,6 @@
         "fretwire": "fretwire",
         "klunok": "klunok",
         "nixpkgs": "nixpkgs",
-        "qutebrowser-mypy": "qutebrowser-mypy",
-        "qutebrowser-patch": "qutebrowser-patch",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
         "vim-typst": "vim-typst"

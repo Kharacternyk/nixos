@@ -8,7 +8,7 @@ alt + ctrl + semicolon
     term -e btm --theme default-light
 
 alt + u
-    qb
+    cb
 
 alt + y
     PIPEWIRE_RATE=1/44100 reaper
@@ -29,7 +29,7 @@ alt + o
     Telegram
 
 alt + p
-    firefox
+    chromium
 
 alt + bracketleft
     thunar
