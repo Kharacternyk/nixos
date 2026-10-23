@@ -314,21 +314,13 @@
           O: () => prompt("", true),
           d: () => prompt(location.href),
           u: () => prompt("!", false, false),
-          x: () =>
-            send({
-              action: "close",
-            }),
-          X: () =>
-            send({
-              action: "restore",
-            }),
           yy: copyUrl,
           i: () => {
             mode = "insert";
           },
           "?": () =>
             notice(
-              "j/k/h/l scroll · J/K page · gg/G top/bottom · f/F hints · o/O open · d edit URL · H/L history · r/R reload · yy copy · x/X close/restore · i insert · Esc normal",
+              "j/k/h/l scroll · J/K page · gg/G top/bottom · f/F hints · o/O open · d edit URL · H/L history · r/R reload · yy copy · i insert · Esc normal",
             ),
         };
         action = actions[key];

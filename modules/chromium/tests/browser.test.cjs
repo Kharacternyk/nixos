@@ -287,23 +287,6 @@ test("Chromium loads the extension and handles real keyboard input", {
     flatten: true,
   });
   await until(() => evaluate("document.readyState === 'complete'", newSession));
-  await key("x", newSession).catch((error) => {
-    if (!/Target detached|Session with given id not found/.test(error.message))
-      throw error;
-  });
-  await until(
-    async () =>
-      !(await call("Target.getTargets")).targetInfos.some(
-        (target) => target.targetId === newWindow.targetId,
-      ),
-  );
-  await call("Page.bringToFront", {}, sessionId);
-  await key("X");
-  await until(async () =>
-    (await call("Target.getTargets")).targetInfos.some(
-      (target) => target.type === "page" && target.url === `${origin}/link0`,
-    ),
-  );
   const errors = events.filter(
     (event) => event.method === "Runtime.exceptionThrown",
   );

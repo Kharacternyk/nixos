@@ -47,35 +47,6 @@ async function handle(message, sender) {
         });
       break;
     }
-    case "close": {
-      const url = address(sender.tab.url);
-      const { closed = [] } = await chrome.storage.session.get("closed");
-      await chrome.storage.session.set({
-        closed: [
-          url,
-          ...closed,
-        ].slice(0, 20),
-      });
-      try {
-        await chrome.tabs.remove(sender.tab.id);
-      } catch (error) {
-        await chrome.storage.session.set({
-          closed,
-        });
-        throw error;
-      }
-      break;
-    }
-    case "restore": {
-      const { closed = [] } = await chrome.storage.session.get("closed");
-      if (!closed.length)
-        throw new Error("No windows closed with x in this browser session");
-      await openWindow(closed[0]);
-      await chrome.storage.session.set({
-        closed: closed.slice(1),
-      });
-      break;
-    }
     case "back":
       await chrome.tabs.goBack(sender.tab.id);
       break;
@@ -92,12 +63,8 @@ async function handle(message, sender) {
   }
 }
 
-// Serialize actions so rapid closes cannot overwrite the undo stack.
-let actions = Promise.resolve();
 chrome.runtime.onMessage.addListener((message, sender, respond) => {
-  const operation = actions.then(() => handle(message, sender));
-  actions = operation.catch(() => {});
-  operation.then(
+  handle(message, sender).then(
     () =>
       respond({
         ok: true,
