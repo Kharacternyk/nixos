@@ -26,9 +26,9 @@
       };
     };
   systemd.tmpfiles.settings.klunok = {
-    "/home/nazar"."a+".argument = "u:klunok:rx,m::rx";
+    "/home/nazar".a.argument = "u:klunok:rx,m::rx";
     "/home/nazar/.bash_history" = {
-      "a+".argument = "u:klunok:r,m::r";
+      a.argument = "u:klunok:r,m::r";
       f = {
         group = "users";
         mode = "0600";

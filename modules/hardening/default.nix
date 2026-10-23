@@ -30,7 +30,7 @@
     tmpfiles.settings.hardening = lib.genAttrs
       ([ "/klunok" ] ++ lib.optional (host ? hasBackup) "/backup")
       (_: {
-        "a+".argument = "u:nazar:rx,g::---,m::rx,o::---";
+        a.argument = "u:nazar:rx,g::---,m::rx,o::---";
       });
   };
 }
