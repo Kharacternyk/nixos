@@ -1,4 +1,15 @@
-{
+{ lib, ... }: {
+  systemd.tmpfiles.settings.users = lib.mergeAttrsList (map
+    (name: {
+      "/home/${name}"."D!" = {
+        group = "users";
+        mode = "0700";
+        user = name;
+      };
+      "/home/${name}/.bash_history".x = {};
+    })
+    [ "x-wing" "y-wing" ]
+  );
   users.users =
     let
       user = uid: {
