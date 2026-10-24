@@ -1,4 +1,4 @@
-{ lib, fretwire, host, pkgs, ... }:
+{ fretwire, host, lib, pkgs, ... }:
 let
   packages = if host ? hasCuda then pkgs.pkgsCuda else pkgs;
   python = packages.python3.withPackages (packages: (

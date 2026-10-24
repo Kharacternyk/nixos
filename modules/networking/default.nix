@@ -1,4 +1,4 @@
-{ lib, host, ... }: {
+{ host, lib, ... }: {
   networking = {
     hostName = host.name;
   } // lib.optionalAttrs (host ? hasWifi) {

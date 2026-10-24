@@ -35,10 +35,13 @@
         user = "nazar";
       };
     };
-    "/klunok".d = {
-      group = "klunok";
-      mode = "0700";
-      user = "klunok";
+    "/klunok" = {
+      a.argument = "u:nazar:rx,g::---,m::rx,o::---";
+      d = {
+        group = "klunok";
+        mode = "0700";
+        user = "klunok";
+      };
     };
   };
   users = {

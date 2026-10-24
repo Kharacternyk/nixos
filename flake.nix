@@ -4,6 +4,7 @@
       nixos-desktop = import ./hosts {
         inherit inputs;
         name = "nixos-desktop";
+        primaryKey = "Hoth";
         system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "";
         hasBackup = true;
@@ -21,10 +22,10 @@
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
         name = "nixos-laptop-vm";
+        primaryKey = "Dantooine";
         system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "lvm";
         hasScreen = true;
-        usesDantooine = true;
       };
     };
   };

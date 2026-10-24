@@ -1,4 +1,4 @@
-{ lib, flake-utils, host, nixpkgs, pkgs, ... }: {
+{ flake-utils, host, lib, nixpkgs, ... }: {
   nix = {
     registry = {
       flake-utils.to = {

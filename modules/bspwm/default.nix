@@ -1,4 +1,4 @@
-{ lib, bspwm-utils, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ bspwm-utils, host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages =
     let
       clutter = name: command: pkgs.writeShellScriptBin name ''

@@ -1,4 +1,4 @@
-{ lib, fretwire, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ fretwire, host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]

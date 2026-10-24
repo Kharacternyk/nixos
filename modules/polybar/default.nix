@@ -1,4 +1,4 @@
-{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."polybar.conf".text = builtins.readFile ./polybar.conf
       + lib.optionalString (!host ? hasGpu) ''

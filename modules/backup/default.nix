@@ -1,4 +1,4 @@
-{ host, pkgs, ... }:
+{ host, lib, pkgs, ... }:
 let
   makeBackupScript = name: flags: pkgs.writeShellScriptBin name ''
     ${pkgs.rsync}/bin/rsync -vba --mkpath --suffix="~$(date +%s)~" --exclude='*~' ${flags}\
@@ -15,16 +15,24 @@ in
     backup
     (makeBackupScript "backup-run0" "-e 'ssh -A' --rsync-path='run0 rsync'")
   ];
-  systemd = {
-    services.backup = {
-      after = [
+  systemd = lib.optionalAttrs (host ? hasBackup) {
+    services = {
+      backup = {
+        after = [
+          "backup.mount"
+        ];
+        requires = [
+          "backup.mount"
+        ];
+        script = "${lib.getExe backup} /backup";
+        serviceConfig.Type = "oneshot";
+      };
+      systemd-tmpfiles-resetup.after = [
         "backup.mount"
       ];
-      requires = [
+      systemd-tmpfiles-setup.after = [
         "backup.mount"
       ];
-      script = "${backup}/bin/backup /backup";
-      serviceConfig.Type = "oneshot";
     };
     timers.backup = {
       enable = host ? hasBackup;
@@ -36,5 +44,6 @@ in
         "timers.target"
       ];
     };
+    tmpfiles.settings.backup."/backup" = "u:nazar:rx,g::---,m::rx,o::---";
   };
 }

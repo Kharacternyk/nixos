@@ -1,4 +1,4 @@
-{ lib, host, pkgs, ... }: {
+{ pkgs, ... }: {
   boot = {
     initrd.availableKernelModules = [
       "uhci_hcd"

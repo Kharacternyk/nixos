@@ -1,4 +1,4 @@
-{ lib, fretwire, host, pkgs, ... }: {
+{ fretwire, host, lib, pkgs, ... }: {
   environment = {
     sessionVariables.EDITOR =
       let

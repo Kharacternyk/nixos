@@ -1,15 +1,15 @@
-{ lib, host, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages =
     let
-      alacritty = "${pkgs.alacritty}/bin/alacritty";
+      inherit (pkgs) alacritty;
       term = pkgs.writeShellScriptBin "term" ''
-        if ! ${alacritty} msg create-window "$@"; then
-          ${alacritty} --config-file ${./alacritty.toml} "$@"
+        if ! ${lib.getExe alacritty} msg create-window "$@"; then
+          ${lib.getExe alacritty} --config-file ${./alacritty.toml} "$@"
         fi
       '';
     in
     [
-      pkgs.alacritty
+      alacritty
       term
     ];
 }
