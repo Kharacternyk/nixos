@@ -3,7 +3,7 @@
     pkgs.docker-compose
   ];
   virtualisation.podman = {
-    enable = true;
     dockerCompat = true;
+    enable = true;
   };
 }

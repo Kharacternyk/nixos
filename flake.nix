@@ -11,12 +11,6 @@
         name = "nixos-desktop";
         primaryKey = "Hoth";
       };
-      nixos-server = import ./hosts {
-        inherit inputs;
-        klunokSuffix = "s";
-        lacksSensibility = true;
-        name = "nixos-server";
-      };
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
         hasScreen = true;
@@ -24,38 +18,50 @@
         name = "nixos-laptop-vm";
         primaryKey = "Dantooine";
       };
+      nixos-server = import ./hosts {
+        inherit inputs;
+        klunokSuffix = "s";
+        lacksSensibility = true;
+        name = "nixos-server";
+      };
     };
   };
 
   inputs = {
     bspwm-utils = {
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:Kharacternyk/bspwm-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     flake-utils.url = "github:numtide/flake-utils";
     fretwire = {
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:Kharacternyk/fretwire";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     klunok = {
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:Kharacternyk/klunok";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     vim-conform = {
-      url = "github:stevearc/conform.nvim";
       flake = false;
+      url = "github:stevearc/conform.nvim";
     };
     vim-gruvbox = {
-      url = "github:gruvbox-community/gruvbox";
       flake = false;
+      url = "github:gruvbox-community/gruvbox";
     };
     vim-typst = {
-      url = "github:kaarmu/typst.vim";
       flake = false;
+      url = "github:kaarmu/typst.vim";
     };
   };
 }

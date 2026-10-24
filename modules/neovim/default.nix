@@ -1,4 +1,4 @@
-{ fretwire, host, lib, pkgs, ... }: {
+{ fretwire, host, lib, pkgs, system, ... }: {
   environment = {
     sessionVariables.EDITOR =
       let
@@ -21,16 +21,13 @@
         '';
       in
       "${package}/bin/editor";
-    systemPackages = fretwire.lib.import pkgs ./packages.few ++ (
-      lib.optionals (host ? hasScreen) [
-        pkgs.xsel
-      ]
-    ) ++ [
-      fretwire.packages.${host.system}.default
+    systemPackages = fretwire.lib.import pkgs ./packages.few ++ lib.optionals (host ? hasScreen) [
+      pkgs.xsel
+    ] ++ [
+      fretwire.packages.${system}.default
     ];
   };
   programs.neovim = {
-    enable = true;
     configure = {
       customLuaRC = builtins.readFile ./init.lua;
       customRC = builtins.readFile ./init.vim;
@@ -48,9 +45,10 @@
             "typst"
           ]
         ) ++ [
-        fretwire.packages.${host.system}.vim
+        fretwire.packages.${system}.vim
       ];
     };
+    enable = true;
     vimAlias = true;
   };
 }

@@ -21,19 +21,19 @@ lib.optionalAttrs (host ? hasScreen) {
     cb
     chromium
     (pkgs.makeDesktopItem {
-      name = "cb";
       desktopName = "Chromium Keyboard";
       exec = "${cb}/bin/cb %u";
       mimeTypes = [
         "x-scheme-handler/http"
         "x-scheme-handler/https"
       ];
+      name = "cb";
     })
   ];
   programs.chromium = {
-    enable = true;
     defaultSearchProviderEnabled = true;
     defaultSearchProviderSearchURL = "https://unduck.link/?q={searchTerms}";
+    enable = true;
     extraOpts = {
       AutoplayAllowed = false;
       BlockThirdPartyCookies = true;
@@ -51,6 +51,6 @@ lib.optionalAttrs (host ? hasScreen) {
       SyncDisabled = true;
       WebRtcIPHandling = "default_public_interface_only";
     };
-    initialPrefs = builtins.fromJSON (builtins.readFile ./initial-preferences.json);
+    initialPrefs = lib.importJSON ./initial-preferences.json;
   };
 }

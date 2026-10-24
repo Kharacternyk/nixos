@@ -1,7 +1,4 @@
 { modulesPath, pkgs, ... }: {
-  imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
-  ];
   boot = {
     initrd.availableKernelModules = [
       "ahci"
@@ -31,6 +28,9 @@
       fsType = "virtiofs";
     };
   };
+  imports = [
+    (modulesPath + "/profiles/qemu-guest.nix")
+  ];
   services = {
     libinput = {
       mouse.disableWhileTyping = true;
@@ -39,10 +39,10 @@
     qemuGuest.enable = true;
     xserver.xrandrHeads = [
       {
-        output = "Virtual-1";
         monitorConfig = ''
           Option "PreferredMode" "1920x1080"
         '';
+        output = "Virtual-1";
       }
     ];
   };

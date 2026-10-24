@@ -1,20 +1,6 @@
 { fretwire, host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   fonts = {
     enableDefaultPackages = false;
-    packages = fretwire.lib.import pkgs ./packages.few ++ [
-      (
-        let version = "6.4.0"; in
-        pkgs.fetchzip {
-          name = "ibm-plex-ttf-${version}";
-          url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
-          postFetch = ''
-            mkdir -p "$out/share/fonts"
-            unzip -oj /build/TrueType.zip "TrueType/*/*.ttf" -d "$out/share/fonts/truetype"
-          '';
-          hash = "sha256-PJxgCnYqSCRF3DfPddVWwMgt1QCoKpJ/wg4w0xTZ8Mw=";
-        }
-      )
-    ];
     fontconfig = {
       defaultFonts = {
         emoji = [ "Noto Emoji" ];
@@ -45,5 +31,19 @@
         </fontconfig>
       '';
     };
+    packages = fretwire.lib.import pkgs ./packages.few ++ [
+      (
+        let version = "6.4.0"; in
+        pkgs.fetchzip {
+          hash = "sha256-PJxgCnYqSCRF3DfPddVWwMgt1QCoKpJ/wg4w0xTZ8Mw=";
+          name = "ibm-plex-ttf-${version}";
+          postFetch = ''
+            mkdir -p "$out/share/fonts"
+            unzip -oj /build/TrueType.zip "TrueType/*/*.ttf" -d "$out/share/fonts/truetype"
+          '';
+          url = "https://github.com/IBM/plex/releases/download/v${version}/TrueType.zip";
+        }
+      )
+    ];
   };
 }

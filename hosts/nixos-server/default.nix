@@ -1,12 +1,12 @@
-{ lib, host, modulesPath, pkgs, ... }: {
-  imports = [
-    "${modulesPath}/virtualisation/amazon-image.nix"
-  ];
+{ host, lib, modulesPath, pkgs, ... }: {
   hardware = lib.optionalAttrs (host ? hasCuda) {
     graphics.enable = true;
     nvidia.open = true;
     nvidia-container-toolkit.enable = true;
   };
+  imports = [
+    "${modulesPath}/virtualisation/amazon-image.nix"
+  ];
   services = {
     amazon-ssm-agent.enable = lib.mkForce false;
     xserver.videoDrivers = lib.optionals (host ? hasCuda) [

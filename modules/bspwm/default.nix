@@ -1,4 +1,4 @@
-{ bspwm-utils, host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ bspwm-utils, host, lib, pkgs, system, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages =
     let
       clutter = name: command: pkgs.writeShellScriptBin name ''
@@ -9,7 +9,7 @@
       '';
     in
     [
-      bspwm-utils.defaultPackage.${host.system}
+      bspwm-utils.defaultPackage.${system}
       (clutter "crosshair" "xcolor -s")
       (clutter "screenshot" "import screenshot.png")
     ];
@@ -18,8 +18,8 @@
       bspwmrc = pkgs.writeShellScriptBin "bspwmrc" (builtins.readFile ./bspwmrc);
     in
     {
-      enable = true;
       configFile = "${bspwmrc}/bin/bspwmrc";
+      enable = true;
       sxhkd.configFile = ./sxhkdrc;
     };
 }

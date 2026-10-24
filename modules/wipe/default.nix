@@ -13,8 +13,8 @@
         };
       };
     in
-    lib.getAttrs' wipeHome [
+    lib.genAttrs' [
       "x-wing"
       "y-wing"
-    ];
+    ] wipeHome;
 }

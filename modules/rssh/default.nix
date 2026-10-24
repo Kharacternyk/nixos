@@ -3,8 +3,8 @@
     rssh = {
       enable = true;
       settings = {
-        ssh_agent_addr = "/run/user/1984/ssh-agent-fw";
         auth_key_file = keys.ssh;
+        ssh_agent_addr = "/run/user/1984/ssh-agent-fw";
       };
     };
     services.polkit-1.rssh = true;

@@ -14,9 +14,9 @@
             "libqtocencore.so.3.15"
           ];
           src = pkgs.fetchurl {
+            hash = "sha256-flO5jlWZllUPl31okwmNjHI/9ctR0pziUx4/i+YRWQY=";
             name = "ocenaudio.deb";
             url = "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb?version=v${finalAttrs.version}";
-            hash = "sha256-flO5jlWZllUPl31okwmNjHI/9ctR0pziUx4/i+YRWQY=";
           };
           version = "3.18.2";
         })
@@ -30,8 +30,8 @@
       freeMemThreshold = 5;
     };
     picom = {
-      enable = host ? hasGpu;
       backend = "glx";
+      enable = host ? hasGpu;
       vSync = true;
     };
     pipewire = {
@@ -58,10 +58,10 @@
     ];
     unclutter-xfixes.enable = true;
     xserver = {
-      enable = true;
       # CC BY-SA 4.0 by MultisampledNight
       # https://creativecommons.org/licenses/by-sa/4.0/
       displayManager.lightdm.background = ./wallpaper.png;
+      enable = true;
       xkb = {
         layout = "us,ua";
         options = "grp:shifts_toggle,compose:ins,ctrl:swap_lwin_lctl";

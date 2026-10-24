@@ -13,7 +13,7 @@
         repo = "nixpkgs";
         type = "github";
       };
-    } // lib.attrsets.mapAttrs'
+    } // lib.mapAttrs'
       (name: value: { name = "${name}-local"; value.flake = value; })
       host.inputs;
     settings = {

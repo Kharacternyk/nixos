@@ -36,10 +36,10 @@
     xkb.options = "caps:swapescape,ctrl:swap_rwin_rctl";
     xrandrHeads = [
       {
-        output = "HDMI-1";
         monitorConfig = ''
           Option "Rotate" "left"
         '';
+        output = "HDMI-1";
       }
       {
         output = "DVI-D-1";
