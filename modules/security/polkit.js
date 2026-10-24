@@ -23,7 +23,7 @@ polkit.addRule(function (action, subject) {
             "org.freedesktop.NetworkManager.wifi.scan",
         ].indexOf(action.id) >= 0
     ) {
-        return "auth_self";
+        return "yes";
     }
 
     if (
