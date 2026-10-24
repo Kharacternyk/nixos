@@ -32,11 +32,11 @@
         ''
       )
       (
-        pkgs.writeScriptBin "switch" ''
+        pkgs.writeScriptBin "rebuild" ''
           #!${lib.getExe pkgs.bash} -p
 
           ${lib.getExe pkgs.nixos-rebuild-ng} --flake /nix/var/nix/gcroots/nixos-next \
-            --elevate run0 switch
+            --elevate run0 "$@"
         ''
       )
     ];
