@@ -17,7 +17,7 @@
       user = "nazar";
     };
     "/tmp/codex-runtime-nazar" = {
-      "R!" = {};
+      "R!" = { };
       d = {
         group = "users";
         mode = "0700";

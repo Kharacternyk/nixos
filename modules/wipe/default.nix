@@ -12,9 +12,10 @@
           "/home/${user}/.bash_history".x = { };
         };
       };
+      users = [
+        "x-wing"
+        "y-wing"
+      ];
     in
-    lib.genAttrs' [
-      "x-wing"
-      "y-wing"
-    ] wipeHome;
+    lib.genAttrs' users wipeHome;
 }
