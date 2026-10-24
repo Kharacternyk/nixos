@@ -23,7 +23,6 @@
       )
     ];
   };
-  hardware.enableAllFirmware = true;
   security.rtkit.enable = true;
   services = {
     earlyoom = {
