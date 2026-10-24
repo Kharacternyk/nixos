@@ -3,29 +3,26 @@
     nixosConfigurations = {
       nixos-desktop = import ./hosts {
         inherit inputs;
-        name = "nixos-desktop";
-        primaryKey = "Hoth";
-        system = inputs.flake-utils.lib.system.x86_64-linux;
-        klunokSuffix = "";
         hasBackup = true;
         hasGpu = true;
         hasScreen = true;
         hasWifi = true;
+        klunokSuffix = "";
+        name = "nixos-desktop";
+        primaryKey = "Hoth";
       };
       nixos-server = import ./hosts {
         inherit inputs;
-        name = "nixos-server";
-        system = inputs.flake-utils.lib.system.x86_64-linux;
         klunokSuffix = "s";
         lacksSensibility = true;
+        name = "nixos-server";
       };
       nixos-laptop-vm = import ./hosts {
         inherit inputs;
+        hasScreen = true;
+        klunokSuffix = "lvm";
         name = "nixos-laptop-vm";
         primaryKey = "Dantooine";
-        system = inputs.flake-utils.lib.system.x86_64-linux;
-        klunokSuffix = "lvm";
-        hasScreen = true;
       };
     };
   };

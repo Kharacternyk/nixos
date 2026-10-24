@@ -1,6 +1,5 @@
 host:
 let inherit (host.inputs.nixpkgs) lib; in lib.nixosSystem {
-  inherit (host) system;
   modules = import ../modules lib ++ [
     ./${host.name}
   ];
@@ -8,4 +7,5 @@ let inherit (host.inputs.nixpkgs) lib; in lib.nixosSystem {
     inherit host;
     keys = import ../keys lib;
   } // host.inputs;
+  system = host.inputs.flake-utils.lib.system.x86_64-linux;
 }
