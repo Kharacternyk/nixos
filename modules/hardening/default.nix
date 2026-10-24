@@ -7,7 +7,10 @@
       "Comodo AAA Services root"
       "emSign ECC Root CA - G3"
     ];
-    polkit.extraConfig = builtins.readFile ./polkit.js;
+    polkit = {
+      adminIdentities = [ ];
+      extraConfig = builtins.readFile ./polkit.js;
+    };
     protectKernelImage = true;
     run0.enable = true;
     sudo.enable = false;

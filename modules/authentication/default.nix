@@ -6,7 +6,7 @@
     rssh = lib.optionalAttrs (!host ? hasScreen) {
       enable = true;
       settings = {
-        ssh_agent_addr = "/run/user/2000/ssh-agent-fw";
+        ssh_agent_addr = "/run/user/1984/ssh-agent-fw";
         auth_key_file = "${../users/authorized_keys}";
       };
     };
@@ -32,7 +32,11 @@
               ];
             keyString = builtins.concatStringsSep ":" keyList;
           in
-          "nazar:${keyString}\nwheel:${keyString}\n"
+          lib.strings.concatMapStrings (user: "${user}:${keyString}\n") [
+            "nazar"
+            "x-wing"
+            "y-wing"
+          ]
         );
         origin = "nixos";
       };
