@@ -26,7 +26,6 @@
       };
     };
   };
-
   inputs = {
     bspwm-utils = {
       inputs = {

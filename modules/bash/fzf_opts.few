@@ -1,0 +1,9 @@
+--bind=change:top
+--color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1
+--color gutter:7
+--color prompt:4,spinner:4,marker:4,pointer:4
+--info=hidden
+--no-separator
+--pointer='>'
+--prompt='/ '
+--reverse

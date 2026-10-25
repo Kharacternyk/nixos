@@ -1,4 +1,10 @@
-{ host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{
+  host,
+  lib,
+  pkgs,
+  ...
+}:
+lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc.zathurarc.source = ./zathurarc;
     systemPackages = [

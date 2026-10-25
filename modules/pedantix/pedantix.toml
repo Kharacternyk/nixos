@@ -1,0 +1,24 @@
+top-level-blank-lines = 0
+top-level-blank-lines-mode = "all"
+
+[args]
+sort = true
+
+[attrs]
+blank-lines = 0
+blank-lines-mode = "all"
+flatten = true
+merge = true
+name-style = "identifier"
+sort = true
+
+[inherits]
+name-style = "identifier"
+sort = true
+
+[lets]
+name-style = "identifier"
+
+[[files]]
+pattern = "flake.nix"
+attrs.first = ["outputs"]

@@ -1,9 +1,11 @@
 BOLD="$(tput bold)"
-RED="$(tput setaf 1)"
+CYAN="$(tput setaf 6)"
 GREEN="$(tput setaf 2)"
 MAGENTA="$(tput setaf 5)"
-CYAN="$(tput setaf 6)"
+RED="$(tput setaf 1)"
+
 RESET="$(tput sgr0)"
+
 PROMPT_COMMAND='
     if [[ $? = 0 ]]; then
         if [[ -z $lf ]]; then
@@ -23,5 +25,6 @@ PROMPT_COMMAND='
     history -a
     history -n
 '
+
 PS1='\[$PROMPT_COLOR\]\$ \[$RESET\]'
 PS2='\[$PROMPT_COLOR\]> \[$RESET\]'

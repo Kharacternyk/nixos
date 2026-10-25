@@ -1,4 +1,11 @@
-{ flake-utils, host, lib, nixpkgs, ... }: {
+{
+  flake-utils,
+  host,
+  lib,
+  nixpkgs,
+  ...
+}:
+{
   nix = {
     registry = {
       flake-utils.to = {
@@ -13,9 +20,11 @@
         repo = "nixpkgs";
         type = "github";
       };
-    } // lib.mapAttrs'
-      (name: value: { name = "${name}-local"; value.flake = value; })
-      host.inputs;
+    }
+    // lib.mapAttrs' (name: value: {
+      name = "${name}-local";
+      value.flake = value;
+    }) host.inputs;
     settings = {
       experimental-features = [
         "flakes"
@@ -28,7 +37,8 @@
         "nixpkgs=${nixpkgs}"
       ];
       warn-dirty = false;
-    } // lib.optionalAttrs (host ? hasCuda) {
+    }
+    // lib.optionalAttrs (host ? hasCuda) {
       extra-substituters = [
         "https://nix-community.cachix.org"
       ];

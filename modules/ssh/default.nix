@@ -1,4 +1,9 @@
-{ host, lib, ... }: {
+{
+  host,
+  lib,
+  ...
+}:
+{
   programs.ssh = {
     agentTimeout = null;
     enableAskPassword = false;

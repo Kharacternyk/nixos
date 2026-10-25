@@ -1,7 +1,14 @@
-{ fretwire, host, lib, pkgs, ... }:
+{
+  fretwire,
+  host,
+  lib,
+  pkgs,
+  ...
+}:
 let
   packages = if host ? hasCuda then pkgs.pkgsCuda else pkgs;
-  python = packages.python3.withPackages (packages:
+  python = packages.python3.withPackages (
+    packages:
     fretwire.lib.import packages ./packages.few
     ++ lib.optionals (host ? hasCuda) (
       let
@@ -10,12 +17,10 @@ let
         };
       in
       [
+        (packages.encodec.override {
+          inherit torchaudio;
+        })
         torchaudio
-        (
-          packages.encodec.override {
-            inherit torchaudio;
-          }
-        )
       ]
     )
   );

@@ -1,0 +1,6 @@
+ata_piix
+ehci_pci
+sd_mod
+uhci_hcd
+usbhid
+xhci_pci

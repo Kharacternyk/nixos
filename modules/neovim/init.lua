@@ -65,11 +65,19 @@ require("conform").setup({
       },
     },
     fretwire = {
-      command = "fretwire",
-      stdin = true,
       args = {
         "-dw",
       },
+      command = "fretwire",
+      stdin = true,
+    },
+    pedantix = {
+      args = {
+        "--stdin-filepath",
+        "$FILENAME",
+      },
+      command = "pedantix",
+      stdin = true,
     },
   },
   formatters_by_ft = {
@@ -89,7 +97,7 @@ require("conform").setup({
       "stylua",
     },
     nix = {
-      "nixpkgs_fmt",
+      "pedantix",
     },
     python = {
       "ruff_format",

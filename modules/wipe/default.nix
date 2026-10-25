@@ -1,6 +1,14 @@
-{ lib, ... }: {
+{
+  lib,
+  ...
+}:
+{
   systemd.tmpfiles.settings =
     let
+      users = [
+        "x-wing"
+        "y-wing"
+      ];
       wipeHome = user: {
         name = "wipe-home-${user}";
         value = {
@@ -12,10 +20,6 @@
           "/home/${user}/.bash_history".x = { };
         };
       };
-      users = [
-        "x-wing"
-        "y-wing"
-      ];
     in
     lib.genAttrs' users wipeHome;
 }

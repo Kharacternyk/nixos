@@ -1,6 +1,14 @@
 lib:
-lib.pipe ./. [
-  lib.readDir
-  (lib.filterAttrs (_: type: type == "directory"))
-  (lib.mapAttrsToList (name: _: import (./. + "/${name}")))
+let
+  inherit (lib)
+    filterAttrs
+    mapAttrsToList
+    pipe
+    readDir
+    ;
+in
+pipe ./. [
+  readDir
+  (filterAttrs (_: type: type == "directory"))
+  (mapAttrsToList (name: _: import (./. + "/${name}")))
 ]

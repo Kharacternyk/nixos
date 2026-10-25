@@ -3,6 +3,5 @@ lua-language-server
 nixd
 rust-analyzer
 rustfmt
-stylua
 tinymist
 ty

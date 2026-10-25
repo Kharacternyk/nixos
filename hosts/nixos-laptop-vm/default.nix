@@ -1,10 +1,12 @@
-{ modulesPath, pkgs, ... }: {
+{
+  fretwire,
+  modulesPath,
+  pkgs,
+  ...
+}:
+{
   boot = {
-    initrd.availableKernelModules = [
-      "ahci"
-      "xhci_pci"
-      "sr_mod"
-    ];
+    initrd.availableKernelModules = fretwire.lib.read ./modules.few;
     kernelModules = [
       "kvm-intel"
     ];
@@ -16,7 +18,8 @@
       fsType = "ext4";
       label = "nixos";
     };
-    "/home/nazar" /* so that klunok doesn't shadow the portal */ = {
+    # So that klunok doesn't shadow the portal
+    "/home/nazar" = {
       device = "/home/nazar";
       fsType = "auto";
       options = [

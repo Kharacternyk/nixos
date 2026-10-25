@@ -1,4 +1,12 @@
-{ fretwire, host, lib, pkgs, system, ... }: {
+{
+  fretwire,
+  host,
+  lib,
+  pkgs,
+  system,
+  ...
+}:
+{
   environment = {
     sessionVariables.EDITOR =
       let
@@ -21,32 +29,33 @@
         '';
       in
       lib.getExe package;
-    systemPackages = fretwire.lib.import pkgs ./packages.few ++ lib.optionals (host ? hasScreen) [
-      pkgs.xsel
-    ] ++ [
-      fretwire.packages.${system}.default
-    ];
+    systemPackages =
+      fretwire.lib.import pkgs ./packages.few
+      ++ lib.optionals (host ? hasScreen) [
+        pkgs.xsel
+      ]
+      ++ [
+        fretwire.packages.${system}.default
+      ];
   };
   programs.neovim = {
     configure = {
       customLuaRC = builtins.readFile ./init.lua;
       customRC = builtins.readFile ./init.vim;
-      packages.plugins.start = fretwire.lib.import pkgs.vimPlugins ./plugins.few ++
-        (
-          let
-            buildPlugin = name: pkgs.vimUtils.buildVimPlugin {
-              inherit name;
-              src = host.inputs."vim-${name}";
-            };
-          in
-          map buildPlugin [
-            "conform"
-            "gruvbox"
-            "typst"
-          ]
-        ) ++ [
-        fretwire.packages.${system}.vim
-      ];
+      packages.plugins.start =
+        fretwire.lib.import pkgs.vimPlugins ./plugins.few
+        ++ lib.pipe host.inputs [
+          (lib.filterAttrs (name: _: lib.hasPrefix "vim-" name))
+          (lib.mapAttrsToList (
+            name: src:
+            pkgs.vimUtils.buildVimPlugin {
+              inherit name src;
+            }
+          ))
+        ]
+        ++ [
+          fretwire.packages.${system}.vim
+        ];
     };
     enable = true;
     vimAlias = true;

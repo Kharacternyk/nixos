@@ -1,4 +1,8 @@
-{ config, ... }: {
+{
+  config,
+  ...
+}:
+{
   systemd = {
     services.prune = {
       path = [

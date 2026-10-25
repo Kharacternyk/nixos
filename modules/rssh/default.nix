@@ -1,4 +1,10 @@
-{ host, keys, lib, ... }: lib.optionalAttrs (!host ? hasScreen) {
+{
+  host,
+  keys,
+  lib,
+  ...
+}:
+lib.optionalAttrs (!host ? hasScreen) {
   security.pam = {
     rssh = {
       enable = true;

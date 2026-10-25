@@ -21,17 +21,7 @@
       DFT_COLOR = "always";
       DFT_SKIP_UNCHANGED = "true";
       DFT_SYNTAX_HIGHLIGHT = "off";
-      FZF_DEFAULT_OPTS = ''
-        --bind=change:top
-        --prompt='/ '
-        --pointer='>'
-        --info=hidden
-        --color fg:-1,bg:-1,hl:1,fg+:-1,bg+:-1,hl+:1
-        --color prompt:4,spinner:4,marker:4,pointer:4
-        --color gutter:7
-        --reverse
-        --no-separator
-      '';
+      FZF_DEFAULT_OPTS = builtins.readFile ./fzf_opts.few;
       LESSHISTFILE = "/dev/null";
       _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=on";
     };

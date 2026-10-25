@@ -1,4 +1,12 @@
-{ host, klunok, lib, pkgs, system, ... }: {
+{
+  host,
+  klunok,
+  lib,
+  pkgs,
+  system,
+  ...
+}:
+{
   systemd = {
     services =
       let

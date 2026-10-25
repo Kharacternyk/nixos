@@ -11,5 +11,6 @@ lib.nixosSystem {
   specialArgs = {
     inherit host system;
     keys = import ../keys lib;
-  } // host.inputs;
+  }
+  // host.inputs;
 }

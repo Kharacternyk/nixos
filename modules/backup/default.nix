@@ -1,9 +1,16 @@
-{ host, lib, pkgs, ... }:
+{
+  host,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  makeBackupScript = name: flags: pkgs.writeShellScriptBin name ''
-    ${lib.getExe pkgs.rsync} -vba --mkpath --suffix="~$(date +%s)~" --exclude='*~' ${flags}\
-      "$2/klunok/store/" "$1/klunok/store/"
-  '';
+  makeBackupScript =
+    name: flags:
+    pkgs.writeShellScriptBin name ''
+      ${lib.getExe pkgs.rsync} -vba --mkpath --suffix="~$(date +%s)~" --exclude='*~' \
+        ${flags} "$2/klunok/store/" "$1/klunok/store/"
+    '';
   backup = makeBackupScript "backup" "";
   check = pkgs.writeShellScriptBin "check" ''
     diff --color=always -r --no-dereference "$2/klunok/store" "$1/klunok/store"
@@ -11,9 +18,9 @@ let
 in
 {
   environment.systemPackages = [
-    check
-    backup
     (makeBackupScript "backup-run0" "-e 'ssh -A' --rsync-path='run0 rsync'")
+    backup
+    check
   ];
   systemd = lib.optionalAttrs (host ? hasBackup) {
     services = {

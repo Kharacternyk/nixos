@@ -1,4 +1,9 @@
-{ host, lib, pkgs, ... }:
+{
+  host,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (pkgs) chromium;
   cb = pkgs.writeShellScriptBin "cb" ''
@@ -18,8 +23,6 @@ let
 in
 lib.optionalAttrs (host ? hasScreen) {
   environment.systemPackages = [
-    cb
-    chromium
     (pkgs.makeDesktopItem {
       desktopName = "Chromium Keyboard";
       exec = "${lib.getExe cb} %u";
@@ -29,6 +32,8 @@ lib.optionalAttrs (host ? hasScreen) {
       ];
       name = "cb";
     })
+    cb
+    chromium
   ];
   programs.chromium = {
     defaultSearchProviderEnabled = true;
