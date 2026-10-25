@@ -18,6 +18,7 @@ sort = true
 
 [lets]
 name-style = "identifier"
+sort = false
 
 [[files]]
 pattern = "flake.nix"
