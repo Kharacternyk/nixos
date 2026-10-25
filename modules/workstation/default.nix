@@ -1,4 +1,4 @@
-{ fretwire, host, lib, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
+{ fretwire, host, lib, ocenaudio, pkgs, ... }: lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]
@@ -8,17 +8,20 @@
     '';
     systemPackages = fretwire.lib.import pkgs ./packages.few ++ [
       (
-        pkgs.ocenaudio.overrideAttrs (finalAttrs: {
-          autoPatchelfIgnoreMissingDeps = [
-            "libqtocenai.so.3.15"
-            "libqtocencore.so.3.15"
+        pkgs.ocenaudio.overrideAttrs (oldAttrs: {
+          autoPatchelfIgnoreMissingDeps = [];
+          buildInputs = oldAttrs.buildInputs ++ [
+            pkgs.libxcrypt-legacy
           ];
-          src = pkgs.fetchurl {
-            hash = "sha256-flO5jlWZllUPl31okwmNjHI/9ctR0pziUx4/i+YRWQY=";
+          preInstall = ''
+            # The nixpkgs install phase replaces this with its own bzip2 library.
+            rm -f opt/ocenaudio/lib/libbz2.so.1.0
+          '';
+          src = builtins.path {
             name = "ocenaudio.deb";
-            url = "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb?version=v${finalAttrs.version}";
+            path = ocenaudio.outPath;
           };
-          version = "3.18.2";
+          version = "latest";
         })
       )
     ];

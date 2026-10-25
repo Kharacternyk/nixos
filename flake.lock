@@ -88,6 +88,19 @@
         "type": "github"
       }
     },
+    "ibm-plex": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706293671,
+        "narHash": "sha256-JZiEtPpE2XECTYuaS69hqtnOdglmI3himLFc4t+EYCE=",
+        "type": "tarball",
+        "url": "https://github.com/IBM/plex/releases/download/v6.4.0/TrueType.zip"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/IBM/plex/releases/download/v6.4.0/TrueType.zip"
+      }
+    },
     "klunok": {
       "inputs": {
         "flake-utils": [
@@ -149,13 +162,27 @@
         "type": "github"
       }
     },
+    "ocenaudio": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-1pF8tNCa7d9pkBsNzO6UceGaL09Zb2Qe+ONhbkK8MMQ=",
+        "type": "file",
+        "url": "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb"
+      }
+    },
     "root": {
       "inputs": {
         "bspwm-utils": "bspwm-utils",
         "flake-utils": "flake-utils",
         "fretwire": "fretwire",
+        "ibm-plex": "ibm-plex",
         "klunok": "klunok",
         "nixpkgs": "nixpkgs",
+        "ocenaudio": "ocenaudio",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
         "vim-typst": "vim-typst"
