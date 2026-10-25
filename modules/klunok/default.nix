@@ -35,9 +35,16 @@
         };
       };
     tmpfiles.settings.klunok = {
-      "/home/nazar".a.argument = "u:klunok:rx,m::rx";
+      "/home/nazar" = {
+        a.argument = "u:klunok:rx";
+        d = {
+          group = "users";
+          mode = "0700";
+          user = "nazar";
+        };
+      };
       "/home/nazar/.bash_history" = {
-        a.argument = "u:klunok:r,m::r";
+        a.argument = "u:klunok:r";
         f = {
           group = "users";
           mode = "0600";
@@ -45,7 +52,7 @@
         };
       };
       "/klunok" = {
-        a.argument = "u:nazar:rx,g::---,m::rx,o::---";
+        a.argument = "u:nazar:rx";
         d = {
           group = "klunok";
           mode = "0700";

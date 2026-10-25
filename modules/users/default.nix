@@ -11,6 +11,9 @@
       lib.mapAttrs
         (_: uid: {
           inherit uid;
+          # Homes are managed by tmpfiles.
+          # Enabling breaks ACLs.
+          createHome = false;
           isNormalUser = true;
           openssh.authorizedKeys.keyFiles = [
             keys.ssh

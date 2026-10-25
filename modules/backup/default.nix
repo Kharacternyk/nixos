@@ -51,6 +51,13 @@ in
         "timers.target"
       ];
     };
-    tmpfiles.settings.backup."/backup".a.argument = "u:nazar:rx,g::---,m::rx,o::---";
+    tmpfiles.settings.backup."/backup" = {
+      a.argument = "u:nazar:rx";
+      d = {
+        group = "root";
+        mode = "0700";
+        user = "root";
+      };
+    };
   };
 }
