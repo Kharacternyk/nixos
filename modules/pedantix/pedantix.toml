@@ -21,4 +21,4 @@ name-style = "identifier"
 
 [[files]]
 pattern = "flake.nix"
-attrs.first = ["outputs"]
+attrs.first = ["description", "outputs"]
