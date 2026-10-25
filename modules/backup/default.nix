@@ -1,7 +1,7 @@
 { host, lib, pkgs, ... }:
 let
   makeBackupScript = name: flags: pkgs.writeShellScriptBin name ''
-    ${pkgs.rsync}/bin/rsync -vba --mkpath --suffix="~$(date +%s)~" --exclude='*~' ${flags}\
+    ${lib.getExe pkgs.rsync} -vba --mkpath --suffix="~$(date +%s)~" --exclude='*~' ${flags}\
       "$2/klunok/store/" "$1/klunok/store/"
   '';
   backup = makeBackupScript "backup" "";

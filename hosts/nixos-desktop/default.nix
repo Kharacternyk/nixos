@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   boot = {
     initrd.availableKernelModules = [
       "uhci_hcd"
@@ -30,8 +30,8 @@
   hardware.amdgpu.initrd.enable = true;
   services.xserver = {
     displayManager.setupCommands = ''
-      ${pkgs.setxkbmap}/bin/setxkbmap
-      ${pkgs.xset}/bin/xset -dpms
+      ${lib.getExe pkgs.setxkbmap}
+      ${lib.getExe pkgs.xset} -dpms
     '';
     xkb.options = "caps:swapescape,ctrl:swap_rwin_rctl";
     xrandrHeads = [

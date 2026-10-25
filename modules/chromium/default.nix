@@ -10,7 +10,7 @@ let
       http://*|https://*) ;;
       *) exit 1 ;;
     esac
-    exec ${chromium}/bin/chromium \
+    exec ${lib.getExe chromium} \
       --user-data-dir="$profile" \
       --load-extension=${./extension} \
       --new-window "$1"
@@ -22,7 +22,7 @@ lib.optionalAttrs (host ? hasScreen) {
     chromium
     (pkgs.makeDesktopItem {
       desktopName = "Chromium Keyboard";
-      exec = "${cb}/bin/cb %u";
+      exec = "${lib.getExe cb} %u";
       mimeTypes = [
         "x-scheme-handler/http"
         "x-scheme-handler/https"

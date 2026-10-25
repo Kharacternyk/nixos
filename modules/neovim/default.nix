@@ -20,7 +20,7 @@
           exec /run/current-system/sw/bin/nvim "$@"
         '';
       in
-      "${package}/bin/editor";
+      lib.getExe package;
     systemPackages = fretwire.lib.import pkgs ./packages.few ++ lib.optionals (host ? hasScreen) [
       pkgs.xsel
     ] ++ [

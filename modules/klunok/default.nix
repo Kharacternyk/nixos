@@ -1,10 +1,10 @@
-{ host, klunok, pkgs, system, ... }: {
+{ host, klunok, lib, pkgs, system, ... }: {
   systemd = {
     services =
       let
         package = klunok.packages.${system}.default;
         script = ''
-          ${package}/bin/klunok \
+          ${lib.getExe' package "klunok"} \
           -c ${./config.lua} -d /klunok -w /home/nazar -e /nix/store
         '';
       in
@@ -23,7 +23,7 @@
         };
         klunok-valgrind = {
           environment.KLUNOK_PREFIX = "klunok/valgrind";
-          script = "${pkgs.valgrind-light}/bin/valgrind --leak-check=full -- ${script}";
+          script = "${lib.getExe pkgs.valgrind-light} --leak-check=full -- ${script}";
         };
       };
     tmpfiles.settings.klunok = {

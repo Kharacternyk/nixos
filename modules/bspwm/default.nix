@@ -18,7 +18,7 @@
       bspwmrc = pkgs.writeShellScriptBin "bspwmrc" (builtins.readFile ./bspwmrc);
     in
     {
-      configFile = "${bspwmrc}/bin/bspwmrc";
+      configFile = lib.getExe bspwmrc;
       enable = true;
       sxhkd.configFile = ./sxhkdrc;
     };
