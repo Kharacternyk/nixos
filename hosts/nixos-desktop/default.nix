@@ -34,7 +34,6 @@
     '';
     xkb.options = "caps:swapescape,ctrl:swap_rwin_rctl";
     xrandrHeads = [
-      "HDMI-2"
       {
         monitorConfig = ''
           Option "Rotate" "left"
@@ -45,6 +44,7 @@
         output = "DVI-D-1";
         primary = true;
       }
+      "HDMI-2"
     ];
   };
   system.stateVersion = "20.09";
