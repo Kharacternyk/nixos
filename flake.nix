@@ -20,6 +20,7 @@
       };
       nixos-server = import ./hosts {
         inherit inputs;
+        hasCuda = true;
         klunokSuffix = "s";
         lacksSensibility = true;
         name = "nixos-server";
