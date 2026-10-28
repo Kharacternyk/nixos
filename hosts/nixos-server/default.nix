@@ -9,7 +9,6 @@
   hardware = lib.optionalAttrs (host ? hasCuda) {
     graphics.enable = true;
     nvidia.open = true;
-    nvidia-container-toolkit.enable = true;
   };
   imports = [
     "${modulesPath}/virtualisation/amazon-image.nix"
