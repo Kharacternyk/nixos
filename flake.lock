@@ -162,6 +162,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-cuda": {
+      "locked": {
+        "lastModified": 1792502884,
+        "narHash": "sha256-IoNisKcGbUjdd45qCqywGMCYmZ5EnkxezvLII0FWwNA=",
+        "owner": "flox",
+        "repo": "nixpkgs",
+        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "flox",
+        "repo": "nixpkgs",
+        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "type": "github"
+      }
+    },
     "ocenaudio": {
       "flake": false,
       "locked": {
@@ -182,6 +198,7 @@
         "ibm-plex": "ibm-plex",
         "klunok": "klunok",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-cuda": "nixpkgs-cuda",
         "ocenaudio": "ocenaudio",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",

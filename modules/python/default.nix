@@ -2,11 +2,23 @@
   fretwire,
   host,
   lib,
+  nixpkgs-cuda,
   pkgs,
+  system,
   ...
 }:
 let
-  packages = if host ? hasCuda then pkgs.pkgsCuda else pkgs;
+  packages =
+    if host ? hasCuda then
+      import nixpkgs-cuda {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          cudaSupport = true;
+        };
+      }
+    else
+      pkgs;
   python = packages.python3.withPackages (
     packages:
     fretwire.lib.import packages ./packages.few
