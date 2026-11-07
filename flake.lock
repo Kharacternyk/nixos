@@ -216,6 +216,7 @@
         "nixpkgs-cuda": "nixpkgs-cuda",
         "ocenaudio": "ocenaudio",
         "qbium": "qbium",
+        "ublock-origin-lite": "ublock-origin-lite",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
         "vim-typst": "vim-typst"
@@ -250,6 +251,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "ublock-origin-lite": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793727876,
+        "narHash": "sha256-hzDI79PLZ74Czbk/AFLXClNVPnistJ5Xu6Lbq2QcgD0=",
+        "owner": "uBlockOrigin",
+        "repo": "uBOL-home",
+        "rev": "e03161e379f8316b28a42df33c397d50716b2ab7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "uBlockOrigin",
+        "repo": "uBOL-home",
         "type": "github"
       }
     },

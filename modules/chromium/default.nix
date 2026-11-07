@@ -3,6 +3,7 @@
   lib,
   pkgs,
   qbium,
+  ublock-origin-lite,
   ...
 }:
 let
@@ -14,9 +15,13 @@ let
     searchUrl = "https://unduck.link/?q=";
     startPage = "https://wortschatz.link";
   };
-  extension = qbium.lib.mkQbium browserConfig;
+  qbium' = qbium.lib.mkQbium browserConfig;
+  ublock = pkgs.callPackage ./ublock-origin-lite.nix {
+    src = ublock-origin-lite;
+  };
   launcher = pkgs.writeShellScriptBin "qbium" ''
     profile="''${XDG_CONFIG_HOME:-$HOME/.config}/chromium-keyboard"
+
     if [ "$#" -eq 0 ]; then
       set -- ${lib.escapeShellArg browserConfig.startPage}
     fi
@@ -24,9 +29,14 @@ let
       http://*|https://*) ;;
       *) exit 1 ;;
     esac
-    exec ${lib.getExe chromium} \
+
+    # Keep compiled filter rules only for this browser's lifetime.
+    exec ${lib.getExe pkgs.bubblewrap} \
+      --dev-bind / / \
+      --tmpfs ${ublock}/_metadata \
+      -- ${lib.getExe chromium} \
       --user-data-dir="$profile" \
-      --load-extension=${extension} \
+      --load-extension=${qbium'},${ublock} \
       --new-window "$1"
   '';
 in

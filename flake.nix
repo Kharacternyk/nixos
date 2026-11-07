@@ -61,6 +61,10 @@
       url = "file+https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb";
     };
     qbium.url = "github:Kharacternyk/qbium";
+    ublock-origin-lite = {
+      flake = false;
+      url = "github:uBlockOrigin/uBOL-home";
+    };
     vim-conform = {
       flake = false;
       url = "github:stevearc/conform.nvim";
