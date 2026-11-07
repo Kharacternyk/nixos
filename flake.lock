@@ -190,6 +190,21 @@
         "url": "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb"
       }
     },
+    "qbium": {
+      "locked": {
+        "lastModified": 1794066460,
+        "narHash": "sha256-5VuNusAtSCcTecmHpoInwff15pa/vOuTibHLYnYTSYE=",
+        "owner": "Kharacternyk",
+        "repo": "qbium",
+        "rev": "e52707fcb6b03422f8cc58a05d482a9679ed0163",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kharacternyk",
+        "repo": "qbium",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "bspwm-utils": "bspwm-utils",
@@ -200,6 +215,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-cuda": "nixpkgs-cuda",
         "ocenaudio": "ocenaudio",
+        "qbium": "qbium",
         "vim-conform": "vim-conform",
         "vim-gruvbox": "vim-gruvbox",
         "vim-typst": "vim-typst"

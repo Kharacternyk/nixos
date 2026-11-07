@@ -60,6 +60,7 @@
       flake = false;
       url = "file+https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb";
     };
+    qbium.url = "github:Kharacternyk/qbium";
     vim-conform = {
       flake = false;
       url = "github:stevearc/conform.nvim";

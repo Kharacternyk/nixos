@@ -9,8 +9,8 @@ lib.optionalAttrs (host ? hasScreen) {
   environment = {
     etc."xdg/mimeapps.list".text = ''
       [Default Applications]
-      x-scheme-handler/http=cb.desktop
-      x-scheme-handler/https=cb.desktop
+      x-scheme-handler/http=qbium.desktop
+      x-scheme-handler/https=qbium.desktop
       application/pdf=org.pwmt.zathura.desktop
     '';
     systemPackages = fretwire.lib.import pkgs ./packages.few;
