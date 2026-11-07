@@ -58,7 +58,7 @@
     nixpkgs-cuda.url = "github:flox/nixpkgs/02c087f3fe673c9e317f206a627cb6b910336dbe";
     ocenaudio = {
       flake = false;
-      url = "file+https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb";
+      url = "https://www.ocenaudio.com/downloads/index.php/ocenaudio_debian12.deb";
     };
     qbium.url = "github:Kharacternyk/qbium";
     ublock-origin-lite = {
