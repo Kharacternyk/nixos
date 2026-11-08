@@ -192,11 +192,11 @@
     },
     "qbium": {
       "locked": {
-        "lastModified": 1794073538,
-        "narHash": "sha256-plNTnGdyXa4fU65Ok0zSLexbPfpIYoPtPHGUJ6wnE1Y=",
+        "lastModified": 1794141367,
+        "narHash": "sha256-MNn+OdFvO2dIfX1M+LNTO83/rqQ2p+LoXysUpH6VLXE=",
         "owner": "Kharacternyk",
         "repo": "qbium",
-        "rev": "62b13244a2db4ee8ff1de2d6f2f18a98004e827e",
+        "rev": "7e0c03385758188d422096874de3a7996056578a",
         "type": "github"
       },
       "original": {
