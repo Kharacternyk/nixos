@@ -2,38 +2,26 @@
   host,
   klunok,
   lib,
-  pkgs,
   system,
   ...
 }:
 {
   systemd = {
-    services =
-      let
-        package = klunok.packages.${system}.default;
-        script = ''
-          ${lib.getExe' package "klunok"} \
-          -c ${./config.lua} -d /klunok -w /home/nazar -e /nix/store
-        '';
-      in
-      {
-        klunok = {
-          inherit script;
-          environment.KLUNOK_SUFFIX = host.klunokSuffix;
-          serviceConfig = {
-            Restart = "on-failure";
-            RestartMaxDelaySec = 5;
-            RestartSteps = 5;
-          };
-          wantedBy = [
-            "multi-user.target"
-          ];
-        };
-        klunok-valgrind = {
-          environment.KLUNOK_PREFIX = "klunok/valgrind";
-          script = "${lib.getExe pkgs.valgrind-light} --leak-check=full -- ${script}";
-        };
+    services.klunok = {
+      environment.KLUNOK_SUFFIX = host.klunokSuffix;
+      script = ''
+        ${lib.getExe' klunok.packages.${system}.default "klunok"} \
+        -c ${./config.lua} -d /klunok -w /home/nazar -e /nix/store
+      '';
+      serviceConfig = {
+        Restart = "on-failure";
+        RestartMaxDelaySec = 5;
+        RestartSteps = 5;
       };
+      wantedBy = [
+        "multi-user.target"
+      ];
+    };
     tmpfiles.settings.klunok = {
       "/home/nazar" = {
         a.argument = "u:klunok:rx";
