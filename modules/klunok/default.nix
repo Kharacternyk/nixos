@@ -10,7 +10,7 @@
     services.klunok = {
       environment.KLUNOK_SUFFIX = host.klunokSuffix;
       script = ''
-        ${lib.getExe' klunok.packages.${system}.default "klunok"} \
+        ${lib.getExe klunok.packages.${system}.default} \
         -c ${./config.lua} -d /klunok -w /home/nazar -e /nix/store
       '';
       serviceConfig = {
