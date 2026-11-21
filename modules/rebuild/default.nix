@@ -13,8 +13,8 @@
         set -euo pipefail
 
         next="$(
-          ${lib.getExe pkgs.nix} flake metadata --json . \
-          | ${lib.getExe pkgs.jq} -r .path
+          ${lib.getExe pkgs.nix} flake prefetch --json \
+          | ${lib.getExe pkgs.jq} -r .storePath
         )"
 
         ${lib.getExe' pkgs.coreutils "ln"} -sfT "$next" /tmp/nixos-next
