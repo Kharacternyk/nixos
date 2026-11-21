@@ -6,7 +6,7 @@
 }:
 lib.optionalAttrs (host ? lacksSensibility) {
   environment = {
-    shellAliases.codex = "XDG_RUNTIME_DIR=/tmp/codex-runtime-nazar codex";
+    shellAliases.cx = "XDG_RUNTIME_DIR=/tmp/codex-runtime-nazar codex resume";
     systemPackages = [
       pkgs.codex
     ];
