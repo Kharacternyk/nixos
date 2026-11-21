@@ -48,10 +48,7 @@
       url = "https://github.com/IBM/plex/releases/download/v6.4.0/TrueType.zip";
     };
     klunok = {
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Kharacternyk/klunok";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
