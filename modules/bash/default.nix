@@ -21,6 +21,7 @@
       DFT_COLOR = "always";
       DFT_SKIP_UNCHANGED = "true";
       DFT_SYNTAX_HIGHLIGHT = "off";
+      FRETWIRE_TIMESTAMP_MARKER = ". :";
       FZF_DEFAULT_OPTS = builtins.readFile ./fzf_opts.few;
       LESSHISTFILE = "/dev/null";
       _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=on";

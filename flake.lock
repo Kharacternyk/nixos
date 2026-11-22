@@ -75,11 +75,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792944210,
-        "narHash": "sha256-/en/sbo4YRq130bEvLcRyZTWPkJsGjHSqj4zbVHd7S0=",
+        "lastModified": 1795373989,
+        "narHash": "sha256-yiE1OvfQUQuH0fqvP7E0dTxvygSf66m72sKaxvHA+Cg=",
         "owner": "Kharacternyk",
         "repo": "fretwire",
-        "rev": "22a2c1f4f092a0494e6229ba35b0aae80cf2599f",
+        "rev": "cfe88b63d186f50ec0f6c28b7feb9fc9ed800591",
         "type": "github"
       },
       "original": {
